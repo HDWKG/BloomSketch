@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+    // ini color
 extension Color {
     init(hex: UInt, alpha: Double = 1) {
         self.init(
