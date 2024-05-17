@@ -11,11 +11,12 @@ import PencilKit
 struct ContentView: View {
     @State private var sproutName = ""
     @State var canvas = PKCanvasView()
-    @State private var isDrawingViewActive = false
+//    @State private var isDrawingViewActive = false
     @State var isDraw = true
     @State var color : Color = .black
     @State var type: PKInkingTool.InkType = .pencil
     @State var colorPicker = false
+    @State private var action: Int? = 0
     
     var body: some View {
         NavigationStack {
@@ -62,7 +63,7 @@ struct ContentView: View {
                         //                        .padding(.top, 24)
                         
                         //tes buton buat ke drawing fitur.
-                        Button(action: {}) {
+                        Button(action: {self.action = 1}) {
                             Text("Start")
                                 .font(.headline)
                                 .foregroundColor(.white)
@@ -138,6 +139,8 @@ struct ContentView: View {
                             ),
                         //deprecated
 //                        isActive: $isDrawingViewActive,
+                        tag: 1,
+                        selection: $action,
                         label: {
                             EmptyView()
                         }
@@ -168,8 +171,6 @@ struct ContentView: View {
 func createSprout() {
     // masukin ke controller sendiri kaaah
 }
-
-
 
 #Preview {
     ContentView()
