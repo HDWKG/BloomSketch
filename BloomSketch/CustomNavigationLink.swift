@@ -9,77 +9,224 @@ import SwiftUI
 import PencilKit
 
 struct CustomNavigationLink: View {
-    @Binding var canvas: PKCanvasView
-    @Binding var isDraw: Bool
-    @Binding var type: PKInkingTool.InkType
-    @Binding var color: Color
-    @Binding var action: Int?
+    @State private var canvas = PKCanvasView()
+    @State private var isDrawing = true
+    @State private var color: Color = .black
+    @State private var pencilType: PKInkingTool.InkType = .pencil
+    @State private var colorPicker = false
+    @Environment(\.undoManager) private var undoManager
+//    @State private var action: Int?
     
     var body: some View {
         NavigationLink(
-            destination: DrawingView(canvas: $canvas, isDraw: $isDraw, type: $type, color: $color)
-                .navigationTitle("Drawing")
+            destination: DrawingView(canvas: $canvas, isDrawing: $isDrawing, pencilType: $pencilType, color: $color)
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationBarItems(
-                    trailing: HStack(spacing: 1) {
-                        ColorPicker("", selection: $color)
-                            .padding()
-                        
-                        Button(action: {
-                            isDraw = false
-                        }) {
-                            Image(systemName: "pencil.slash")
-                                .font(.title)
+                .toolbar {
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        Button {
+                            // Clear the canvas. Reset the drawing
+                            canvas.drawing = PKDrawing()
+                        } label: {
+                            Image(systemName: "scissors")
                         }
                         
+                        Button {
+                            // Undo drawing
+                            undoManager?.undo()
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                        }
+                        
+                        Button {
+                            // Redo drawing
+                            undoManager?.redo()
+                        } label: {
+                            Image(systemName: "arrow.uturn.forward")
+                        }
+                        
+                        Button {
+                            // Erase tool
+                            isDrawing = false
+                        } label: {
+                            Image(systemName: "eraser.line.dashed")
+                        }
+                        
+                        Divider()
+                            .rotationEffect(.degrees(90))
+                        
+                        Button {
+                            // Tool picker
+                            //let toolPicker = PKToolPicker.init()
+                            @State var toolPicker = PKToolPicker()
+                            toolPicker.setVisible(true, forFirstResponder: canvas)
+                            toolPicker.addObserver(canvas)
+                            canvas.becomeFirstResponder()
+                        } label: {
+                            Image(systemName: "pencil.tip.crop.circle.badge.plus")
+                        }
+                        
+                        // Menu for pencil types and color
                         Menu {
-                            Button(action: {
-                                isDraw = true
-                                type = .pencil
-                            }) {
-                                Label {
-                                    Text("Pencil")
-                                } icon: {
-                                    Image(systemName: "pencil")
-                                }
-                            }
-                            Button(action: {
-                                isDraw = true
-                                type = .pen
-                            }) {
-                                Label {
-                                    Text("Pen")
-                                } icon: {
-                                    Image(systemName: "pencil.tip")
-                                }
-                            }
-                            Button(action: {
-                                isDraw = true
-                                type = .marker
-                            }) {
-                                Label {
-                                    Text("Marker")
-                                } icon: {
-                                    Image(systemName: "highlighter")
-                                }
+                            Button {
+                                // Menu: Pick a color
+                                colorPicker.toggle()
+                            } label: {
+                                Label("Color", systemImage: "paintpalette")
                             }
                             
-                            Button(action: {
-                                SaveImage()
-                            }) {
-                                Label {
-                                    Text("Save to Photos")
-                                } icon: {
-                                    Image(systemName: "highlighter")
-                                }
+                            Button {
+                                // Menu: Pencil
+                                isDrawing = true
+                                pencilType = .pencil
+                            } label: {
+                                Label("Pencil", systemImage: "pencil")
                             }
+                            
+                            Button {
+                                // Menu: pen
+                                isDrawing = true
+                                pencilType = .pen
+                            } label: {
+                                Label("Pen", systemImage: "pencil.tip")
+                            }
+                            
+                            Button {
+                                // Menu: Marker
+                                isDrawing = true
+                                pencilType = .marker
+                            } label: {
+                                Label("Marker", systemImage: "paintbrush.pointed")
+                            }
+                            
+                            Button {
+                                // Menu: Monoline
+                                isDrawing = true
+                                pencilType = .monoline
+                            } label: {
+                                Label("Monoline", systemImage: "pencil.line")
+                            }
+                            
+                            Button {
+                                // Menu: pen
+                                isDrawing = true
+                                pencilType = .fountainPen
+                            } label: {
+                                Label("Fountain", systemImage: "paintbrush.pointed.fill")
+                            }
+                            
+                            Button {
+                                // Menu: Watercolor
+                                isDrawing = true
+                                pencilType = .watercolor
+                            } label: {
+                                Label("Watercolor", systemImage: "eyedropper.halffull")
+                            }
+                            
+                            Button {
+                                // Menu: Crayon
+                                isDrawing = true
+                                pencilType = .crayon
+                            } label: {
+                                Label("Crayon", systemImage: "pencil.tip")
+                            }
+                            
                         } label: {
-                            Image("menu")
-                                .resizable()
-                                .frame(width: 22, height: 22)
+                            Image(systemName: "hand.draw")
+                        }
+                        .sheet(isPresented: $colorPicker) {
+                            ColorPicker("Pick color", selection: $color)
+                                .padding()
+                        }
+                        
+                        Spacer()
+                        
+                        // Drawing Tools
+                        Button {
+                            // Pencil
+                            isDrawing = true
+                            pencilType = .pencil
+                        } label: {
+                            Label("Pencil", systemImage: "pencil.and.scribble")
+                        }
+                        
+                        Button {
+                            // Pen
+                            isDrawing = true
+                            pencilType = .pen
+                        } label: {
+                            Label("Pen", systemImage: "applepencil.tip")
+                        }
+                        
+                        Button {
+                            // Monoline
+                            isDrawing = true
+                            pencilType = .monoline
+                        } label: {
+                            Label("Monoline", systemImage: "pencil.line")
+                        }
+                        
+                        Button {
+                            // Fountain: Variable scribbling
+                            isDrawing = true
+                            pencilType = .fountainPen
+                        } label: {
+                            Label("Fountain", systemImage: "scribble.variable")
+                        }
+                        
+                        Button {
+                            // Marker
+                            isDrawing = true
+                            pencilType = .marker
+                        } label: {
+                            Label("Marker", systemImage: "paintbrush.pointed")
+                        }
+                        
+                        Button {
+                            // Crayon
+                            isDrawing = true
+                            pencilType = .crayon
+                        } label: {
+                            Label("Crayon", systemImage: "paintbrush")
+                        }
+                        
+                        Button {
+                            // Water Color
+                            isDrawing = true
+                            pencilType = .watercolor
+                        } label: {
+                            Label("Watercolor", systemImage: "eyedropper.halffull")
+                        }
+                        
+                        Divider()
+                            .rotationEffect(.degrees(90))
+                        
+                        // Color picker
+                        Button {
+                            // Pick a color
+                            colorPicker.toggle()
+                        } label: {
+                            Label("Color", systemImage: "paintpalette")
+                        }
+                        
+                        Button {
+                            // Set ruler as active
+                            canvas.isRulerActive.toggle()
+                        } label: {
+                            Image(systemName: "pencil.and.ruler.fill")
+                        }
+                        
+                        Button {
+                            saveDrawing()
+                            
+                        } label: {
+                            VStack {
+                                Image(systemName: "square.and.arrow.down.on.square")
+                                Text("Save")
+                                    .font(.caption2)
+                            }
                         }
                     }
-                ),
+                },
             tag: 1,
             selection: $action,
             label: {
@@ -88,12 +235,13 @@ struct CustomNavigationLink: View {
         )
         .hidden()
     }
-    func SaveImage() {
-        //get image from canvas
-        let image = canvas.drawing.image(from: canvas.drawing.bounds, scale: 1)
+    
+    func saveDrawing() {
+        // Your saving logic here...
+        // Get the drawing image from the canvas
+        let drawingImage = canvas.drawing.image(from: canvas.drawing.bounds, scale: 1.0)
         
-        //save to photos/albums
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        // Save drawings to the Photos Album
+        UIImageWriteToSavedPhotosAlbum(drawingImage, nil, nil, nil)
     }
 }
-

@@ -10,12 +10,10 @@ import PencilKit
 
 struct NewSprout_View: View {
     @State private var sproutName = ""
-    @State var canvas = PKCanvasView()
-    //    @State private var isDrawingViewActive = false
-    @State var isDraw = true
-    @State var color : Color = .black
-    @State var type: PKInkingTool.InkType = .pencil
-    @State var colorPicker = false
+//    @State var canvas = PKCanvasView()
+//    @State var isDrawing = true
+//    @State var color : Color = .black
+//    @State var pencilType: PKInkingTool.InkType = .pencil
     @State private var action: Int? = 0
     
     var body: some View {
@@ -82,7 +80,7 @@ struct NewSprout_View: View {
                         }
                         .padding(.top, 24)
                     }
-                    CustomNavigationLink(canvas: $canvas, isDraw: $isDraw, type: $type, color: $color, action: $action)
+                    CustomNavigationLink()
                 }
                 
                 
