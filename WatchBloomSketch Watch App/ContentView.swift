@@ -1,16 +1,14 @@
 //
-//  NewSprout_View.swift
-//  BloomSketch
+//  ContentView.swift
+//  WatchBloomSketch Watch App
 //
-//  Created by MacBook Pro on 16/05/24.
+//  Created by MacBook Pro on 17/05/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    
     var body: some View {
-        //lol
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
