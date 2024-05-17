@@ -20,6 +20,8 @@
 		04C89B5C2BF6E8FA0024E261 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C89B5B2BF6E8FA0024E261 /* Preview Assets.xcassets */; };
 		04C89B5F2BF6E8FA0024E261 /* WatchBloomSketch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04C89B692BF6ECB60024E261 /* PageControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B682BF6ECB60024E261 /* PageControll.swift */; };
+		04C89B6C2BF702BE0024E261 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B6B2BF702BE0024E261 /* NotificationController.swift */; };
+		04C89B6E2BF703900024E261 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B6D2BF703900024E261 /* NotificationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		04C89B5B2BF6E8FA0024E261 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04C89B652BF6EA2E0024E261 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; name = PushNotificationPayload.apns; path = ../../../../PushNotificationPayload.apns; sourceTree = "<group>"; };
 		04C89B682BF6ECB60024E261 /* PageControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PageControll.swift; path = ../../../../PageControll.swift; sourceTree = "<group>"; };
+		04C89B6B2BF702BE0024E261 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationController.swift; path = ../../../../NotificationController.swift; sourceTree = "<group>"; };
+		04C89B6D2BF703900024E261 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationView.swift; path = ../../../../NotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 				04C89B582BF6E8FA0024E261 /* Assets.xcassets */,
 				04C89B5A2BF6E8FA0024E261 /* Preview Content */,
 				04C89B652BF6EA2E0024E261 /* PushNotificationPayload.apns */,
+				04C89B6B2BF702BE0024E261 /* NotificationController.swift */,
+				04C89B6D2BF703900024E261 /* NotificationView.swift */,
 			);
 			path = "WatchBloomSketch Watch App";
 			sourceTree = "<group>";
@@ -303,7 +309,9 @@
 			files = (
 				04C89B692BF6ECB60024E261 /* PageControll.swift in Sources */,
 				04C89B572BF6E8F90024E261 /* ContentView.swift in Sources */,
+				04C89B6C2BF702BE0024E261 /* NotificationController.swift in Sources */,
 				04C89B552BF6E8F90024E261 /* WatchBloomSketchApp.swift in Sources */,
+				04C89B6E2BF703900024E261 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
