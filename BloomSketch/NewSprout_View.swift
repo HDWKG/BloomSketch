@@ -87,13 +87,13 @@ struct NewSprout_View: View {
                             .navigationTitle("Drawing")
                             .navigationBarTitleDisplayMode(.inline)
                             .navigationBarItems(
-                                leading: Button(action: {
-                                    // Save image action
-                                    SaveImage()
-                                }) {
-                                    EmptyView()
-                                },
-                                trailing: HStack(spacing: 15) {
+//                                leading: Button(action: {
+//                                    // Save image action
+//                                    SaveImage()
+//                                }) {
+//                                    EmptyView()
+//                                },
+                                trailing: HStack(spacing: 1) {
                                     ColorPicker("", selection: $color)
                                         .padding()
                                     
@@ -135,6 +135,17 @@ struct NewSprout_View: View {
                                                 Image(systemName: "highlighter")
                                             }
                                         }
+                                        
+                                        Button(action: {
+                                            SaveImage()
+                                        }) {
+                                            Label {
+                                                Text("Save to Photos")
+                                            } icon: {
+                                                Image(systemName: "highlighter")
+                                            }
+                                        }
+                                        
                                         
                                         
                                     } label: {
