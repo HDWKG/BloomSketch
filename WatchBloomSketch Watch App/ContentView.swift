@@ -1,24 +1,50 @@
-//
-//  ContentView.swift
-//  WatchBloomSketch Watch App
-//
-//  Created by MacBook Pro on 17/05/24.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView1: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Page 1")
+                .font(.largeTitle)
+                .foregroundColor(.red)
+            Spacer()
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView2: View {
+    var body: some View {
+        VStack {
+            Text("Page 2")
+                .font(.largeTitle)
+                .foregroundColor(.green)
+            Spacer()
+        }
+    }
+}
+
+struct ContentView3: View {
+    var body: some View {
+        VStack {
+            Text("Page 3")
+                .font(.largeTitle)
+                .foregroundColor(.blue)
+            Spacer()
+        }
+    }
+}
+struct ContentView: View {
+    @State private var currentIndex = 0
+
+    var body: some View {
+        PagerManager(pageCount: 2, currentIndex: $currentIndex) {
+            ContentView1()
+            ContentView2()
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
