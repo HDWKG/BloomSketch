@@ -166,12 +166,6 @@ struct ContentView: View {
     }
 }
 
-
-
-func createSprout() {
-    // masukin ke controller sendiri kaaah
-}
-
 #Preview {
     ContentView()
 }
