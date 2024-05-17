@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440C1F82BF61409007D74E0 /* SplashScreen.swift */; };
 		047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */; };
 		047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D42BF5D28C006525EB /* ContentView.swift */; };
 		047DF8D72BF5D28E006525EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047DF8D62BF5D28E006525EB /* Assets.xcassets */; };
 		047DF8DA2BF5D28E006525EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047DF8D92BF5D28E006525EB /* Preview Assets.xcassets */; };
 		047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8F72BF5D418006525EB /* NewSprout_View.swift */; };
-		047DF8FA2BF5D42F006525EB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8F92BF5D42F006525EB /* SplashScreen.swift */; };
 		047DF8FC2BF5D449006525EB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8FB2BF5D449006525EB /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0440C1F82BF61409007D74E0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		047DF8CF2BF5D28C006525EB /* BloomSketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomSketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomSketchApp.swift; sourceTree = "<group>"; };
 		047DF8D42BF5D28C006525EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -24,7 +25,6 @@
 		047DF8D92BF5D28E006525EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		047DF8E42BF5D2EA006525EB /* NewSproutView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSproutView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8F72BF5D418006525EB /* NewSprout_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSprout_View.swift; sourceTree = "<group>"; };
-		047DF8F92BF5D42F006525EB /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		047DF8FB2BF5D449006525EB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +68,7 @@
 			children = (
 				047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */,
 				047DF8F72BF5D418006525EB /* NewSprout_View.swift */,
-				047DF8F92BF5D42F006525EB /* SplashScreen.swift */,
+				0440C1F82BF61409007D74E0 /* SplashScreen.swift */,
 				047DF8D42BF5D28C006525EB /* ContentView.swift */,
 				047DF8FB2BF5D449006525EB /* Color.swift */,
 				047DF8D62BF5D28E006525EB /* Assets.xcassets */,
@@ -183,7 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047DF8FA2BF5D42F006525EB /* SplashScreen.swift in Sources */,
+				0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */,
 				047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */,
 				047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */,
 				047DF8FC2BF5D449006525EB /* Color.swift in Sources */,

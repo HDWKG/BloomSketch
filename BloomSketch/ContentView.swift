@@ -1,3 +1,10 @@
+//
+//  NewSprout_View.swift
+//  BloomSketch
+//
+//  Created by MacBook Pro on 16/05/24.
+//
+
 import SwiftUI
 
 struct ContentView: View {
@@ -5,9 +12,6 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color(#colorLiteral(red: 0.8352941176, green: 0.8941176471, blue: 0.8666666667, alpha: 1))
-                .ignoresSafeArea()
-            
             VStack {
                 Image("BloomSketch_LogoWhite")
                     .resizable()
@@ -67,32 +71,3 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-
-// Bekas Widget Streak Testing lama
-//struct ContentView: View {
-//    var body: some View {
-//        let streak = 10
-//
-//        VStack {
-//            GroupBox {
-//                if streak > 7 {
-//                    Text("Current Streak Is \(streak)!\nKeep Up The Good Work!")
-//                } else {
-//                    Text("Current Streak is \(streak)!\nLet's Get Brushing")
-//                }
-//            } label: {
-//                Label("Streak", systemImage: "flame.fill")
-//                    .foregroundColor(.red)
-//            }
-//            .frame(width: 350)
-//            NavigationView {
-//                NavigationLink(destination: NewSproutView()) {
-//                    Image(systemName: "livephoto.play")
-//                        .font(.system(size: 120))
-//                        .foregroundColor(.red)
-//                }
-//            }
-//            Spacer()
-//        }
-//    }
-//}
