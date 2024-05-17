@@ -14,7 +14,36 @@
 		047DF8DA2BF5D28E006525EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047DF8D92BF5D28E006525EB /* Preview Assets.xcassets */; };
 		047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8F72BF5D418006525EB /* NewSprout_View.swift */; };
 		047DF8FC2BF5D449006525EB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8FB2BF5D449006525EB /* Color.swift */; };
+		04C89B552BF6E8F90024E261 /* WatchBloomSketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B542BF6E8F90024E261 /* WatchBloomSketchApp.swift */; };
+		04C89B572BF6E8F90024E261 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B562BF6E8F90024E261 /* ContentView.swift */; };
+		04C89B592BF6E8FA0024E261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C89B582BF6E8FA0024E261 /* Assets.xcassets */; };
+		04C89B5C2BF6E8FA0024E261 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C89B5B2BF6E8FA0024E261 /* Preview Assets.xcassets */; };
+		04C89B5F2BF6E8FA0024E261 /* WatchBloomSketch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04C89B5D2BF6E8FA0024E261 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 047DF8C72BF5D28C006525EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04C89B512BF6E8F90024E261;
+			remoteInfo = "WatchBloomSketch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04C89B602BF6E8FA0024E261 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				04C89B5F2BF6E8FA0024E261 /* WatchBloomSketch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0440C1F82BF61409007D74E0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -26,6 +55,11 @@
 		047DF8E42BF5D2EA006525EB /* NewSproutView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSproutView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8F72BF5D418006525EB /* NewSprout_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSprout_View.swift; sourceTree = "<group>"; };
 		047DF8FB2BF5D449006525EB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchBloomSketch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C89B542BF6E8F90024E261 /* WatchBloomSketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBloomSketchApp.swift; sourceTree = "<group>"; };
+		04C89B562BF6E8F90024E261 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04C89B582BF6E8FA0024E261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04C89B5B2BF6E8FA0024E261 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +77,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04C89B4F2BF6E8F90024E261 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -50,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				047DF8D12BF5D28C006525EB /* BloomSketch */,
+				04C89B532BF6E8F90024E261 /* WatchBloomSketch Watch App */,
 				047DF8D02BF5D28C006525EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +101,7 @@
 			children = (
 				047DF8CF2BF5D28C006525EB /* BloomSketch.app */,
 				047DF8E42BF5D2EA006525EB /* NewSproutView.app */,
+				04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +128,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		04C89B532BF6E8F90024E261 /* WatchBloomSketch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				04C89B542BF6E8F90024E261 /* WatchBloomSketchApp.swift */,
+				04C89B562BF6E8F90024E261 /* ContentView.swift */,
+				04C89B582BF6E8FA0024E261 /* Assets.xcassets */,
+				04C89B5A2BF6E8FA0024E261 /* Preview Content */,
+			);
+			path = "WatchBloomSketch Watch App";
+			sourceTree = "<group>";
+		};
+		04C89B5A2BF6E8FA0024E261 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				04C89B5B2BF6E8FA0024E261 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,10 +157,12 @@
 				047DF8CB2BF5D28C006525EB /* Sources */,
 				047DF8CC2BF5D28C006525EB /* Frameworks */,
 				047DF8CD2BF5D28C006525EB /* Resources */,
+				04C89B602BF6E8FA0024E261 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				04C89B5E2BF6E8FA0024E261 /* PBXTargetDependency */,
 			);
 			name = BloomSketch;
 			productName = BloomSketch;
@@ -122,6 +186,23 @@
 			productReference = 047DF8E42BF5D2EA006525EB /* NewSproutView.app */;
 			productType = "com.apple.product-type.application";
 		};
+		04C89B512BF6E8F90024E261 /* WatchBloomSketch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04C89B632BF6E8FA0024E261 /* Build configuration list for PBXNativeTarget "WatchBloomSketch Watch App" */;
+			buildPhases = (
+				04C89B4E2BF6E8F90024E261 /* Sources */,
+				04C89B4F2BF6E8F90024E261 /* Frameworks */,
+				04C89B502BF6E8F90024E261 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchBloomSketch Watch App";
+			productName = "WatchBloomSketch Watch App";
+			productReference = 04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -136,6 +217,9 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					047DF8E32BF5D2EA006525EB = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					04C89B512BF6E8F90024E261 = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
@@ -155,6 +239,7 @@
 			targets = (
 				047DF8CE2BF5D28C006525EB /* BloomSketch */,
 				047DF8E32BF5D2EA006525EB /* NewSproutView */,
+				04C89B512BF6E8F90024E261 /* WatchBloomSketch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -173,6 +258,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C89B502BF6E8F90024E261 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C89B5C2BF6E8FA0024E261 /* Preview Assets.xcassets in Resources */,
+				04C89B592BF6E8FA0024E261 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +292,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04C89B4E2BF6E8F90024E261 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C89B572BF6E8F90024E261 /* ContentView.swift in Sources */,
+				04C89B552BF6E8F90024E261 /* WatchBloomSketchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04C89B5E2BF6E8FA0024E261 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04C89B512BF6E8F90024E261 /* WatchBloomSketch Watch App */;
+			targetProxy = 04C89B5D2BF6E8FA0024E261 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		047DF8DB2BF5D28E006525EB /* Debug */ = {
@@ -323,6 +434,7 @@
 		047DF8DE2BF5D28E006525EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -352,6 +464,7 @@
 		047DF8DF2BF5D28E006525EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +563,64 @@
 			};
 			name = Release;
 		};
+		04C89B612BF6E8FA0024E261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchBloomSketch Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchBloomSketch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = BS.BloomSketch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BS.BloomSketch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+			};
+			name = Debug;
+		};
+		04C89B622BF6E8FA0024E261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchBloomSketch Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchBloomSketch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = BS.BloomSketch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BS.BloomSketch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -476,6 +647,15 @@
 			buildConfigurations = (
 				047DF8F12BF5D2EC006525EB /* Debug */,
 				047DF8F22BF5D2EC006525EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04C89B632BF6E8FA0024E261 /* Build configuration list for PBXNativeTarget "WatchBloomSketch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04C89B612BF6E8FA0024E261 /* Debug */,
+				04C89B622BF6E8FA0024E261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
