@@ -13,13 +13,13 @@ struct CustomNavigationLink: View {
     @State private var isDrawing = true
     @State private var color: Color = .black
     @State private var pencilType: PKInkingTool.InkType = .pencil
-    @State private var colorPicker = false
     @Environment(\.undoManager) private var undoManager
-//    @State private var action: Int?
+    @Binding var action: Int?
     
     var body: some View {
         NavigationLink(
             destination: DrawingView(canvas: $canvas, isDrawing: $isDrawing, pencilType: $pencilType, color: $color)
+            
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItemGroup(placement: .bottomBar) {
@@ -54,26 +54,8 @@ struct CustomNavigationLink: View {
                         Divider()
                             .rotationEffect(.degrees(90))
                         
-                        Button {
-                            // Tool picker
-                            //let toolPicker = PKToolPicker.init()
-                            @State var toolPicker = PKToolPicker()
-                            toolPicker.setVisible(true, forFirstResponder: canvas)
-                            toolPicker.addObserver(canvas)
-                            canvas.becomeFirstResponder()
-                        } label: {
-                            Image(systemName: "pencil.tip.crop.circle.badge.plus")
-                        }
-                        
                         // Menu for pencil types and color
                         Menu {
-                            Button {
-                                // Menu: Pick a color
-                                colorPicker.toggle()
-                            } label: {
-                                Label("Color", systemImage: "paintpalette")
-                            }
-                            
                             Button {
                                 // Menu: Pencil
                                 isDrawing = true
@@ -133,80 +115,14 @@ struct CustomNavigationLink: View {
                         } label: {
                             Image(systemName: "hand.draw")
                         }
-                        .sheet(isPresented: $colorPicker) {
-                            ColorPicker("Pick color", selection: $color)
-                                .padding()
-                        }
                         
                         Spacer()
-                        
-                        // Drawing Tools
-                        Button {
-                            // Pencil
-                            isDrawing = true
-                            pencilType = .pencil
-                        } label: {
-                            Label("Pencil", systemImage: "pencil.and.scribble")
-                        }
-                        
-                        Button {
-                            // Pen
-                            isDrawing = true
-                            pencilType = .pen
-                        } label: {
-                            Label("Pen", systemImage: "applepencil.tip")
-                        }
-                        
-                        Button {
-                            // Monoline
-                            isDrawing = true
-                            pencilType = .monoline
-                        } label: {
-                            Label("Monoline", systemImage: "pencil.line")
-                        }
-                        
-                        Button {
-                            // Fountain: Variable scribbling
-                            isDrawing = true
-                            pencilType = .fountainPen
-                        } label: {
-                            Label("Fountain", systemImage: "scribble.variable")
-                        }
-                        
-                        Button {
-                            // Marker
-                            isDrawing = true
-                            pencilType = .marker
-                        } label: {
-                            Label("Marker", systemImage: "paintbrush.pointed")
-                        }
-                        
-                        Button {
-                            // Crayon
-                            isDrawing = true
-                            pencilType = .crayon
-                        } label: {
-                            Label("Crayon", systemImage: "paintbrush")
-                        }
-                        
-                        Button {
-                            // Water Color
-                            isDrawing = true
-                            pencilType = .watercolor
-                        } label: {
-                            Label("Watercolor", systemImage: "eyedropper.halffull")
-                        }
                         
                         Divider()
                             .rotationEffect(.degrees(90))
                         
-                        // Color picker
-                        Button {
-                            // Pick a color
-                            colorPicker.toggle()
-                        } label: {
-                            Label("Color", systemImage: "paintpalette")
-                        }
+                        ColorPicker("", selection: $color)
+                    
                         
                         Button {
                             // Set ruler as active

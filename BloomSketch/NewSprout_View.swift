@@ -80,16 +80,18 @@ struct NewSprout_View: View {
                         }
                         .padding(.top, 24)
                     }
-                    CustomNavigationLink()
+                    CustomNavigationLink(action: $action)
+                    
+                    
+                    Spacer()
+                    
+                    Image("BottomBarLeaves")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: .infinity, alignment: .bottomLeading)
                 }
                 
-                
-                Spacer()
-                
-                Image("BottomBarLeaves")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: .infinity, alignment: .bottomLeading)
+
             }
         }
     }

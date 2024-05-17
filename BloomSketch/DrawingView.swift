@@ -25,12 +25,6 @@ struct DrawingView: UIViewRepresentable {
         canvas.tool = isDrawing ? ink : eraser
         canvas.alwaysBounceVertical = true
         
-        //Toolpicker
-        let toolPicker = PKToolPicker.init()
-        toolPicker.setVisible(true, forFirstResponder: canvas)
-        toolPicker.addObserver(canvas)
-        canvas.becomeFirstResponder()
-        
         return canvas
     }
     
