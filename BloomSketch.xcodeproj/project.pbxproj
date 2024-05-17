@@ -14,6 +14,7 @@
 		047DF8DA2BF5D28E006525EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047DF8D92BF5D28E006525EB /* Preview Assets.xcassets */; };
 		047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8F72BF5D418006525EB /* NewSprout_View.swift */; };
 		047DF8FC2BF5D449006525EB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8FB2BF5D449006525EB /* Color.swift */; };
+		04D104E52BF6F31A00587A3C /* TreeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D104E42BF6F31A00587A3C /* TreeHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		047DF8E42BF5D2EA006525EB /* NewSproutView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSproutView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8F72BF5D418006525EB /* NewSprout_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSprout_View.swift; sourceTree = "<group>"; };
 		047DF8FB2BF5D449006525EB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		04D104E42BF6F31A00587A3C /* TreeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				0440C1F82BF61409007D74E0 /* SplashScreen.swift */,
 				047DF8D42BF5D28C006525EB /* ContentView.swift */,
 				047DF8FB2BF5D449006525EB /* Color.swift */,
+				04D104E42BF6F31A00587A3C /* TreeHomeView.swift */,
 				047DF8D62BF5D28E006525EB /* Assets.xcassets */,
 				047DF8D82BF5D28E006525EB /* Preview Content */,
 			);
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */,
+				04D104E52BF6F31A00587A3C /* TreeHomeView.swift in Sources */,
 				047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */,
 				047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */,
 				047DF8FC2BF5D449006525EB /* Color.swift in Sources */,
