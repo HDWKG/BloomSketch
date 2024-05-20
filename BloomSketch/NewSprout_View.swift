@@ -58,19 +58,8 @@ struct NewSprout_View: View {
                         .frame(width: 300)
                         .padding(.top, 16)
                         
-                        //button yang bener ini
-                        //                        Button(action: createSprout) {
-                        //                            Text("Start")
-                        //                                .font(.headline)
-                        //                                .foregroundColor(.white)
-                        //                                .padding(.vertical, 12)
-                        //                                .padding(.horizontal, 64)
-                        //                                .background(Color(hex: 0x1B3F2E))
-                        //                                .cornerRadius(16)
-                        //                        }
-                        //                        .padding(.top, 24)
                         
-                        //tes buton buat ke drawing fitur.
+                        
                         Button(action: {self.action = 1}) {
                             Text("Start")
                                 .font(.headline)
@@ -82,23 +71,19 @@ struct NewSprout_View: View {
                         }
                         .padding(.top, 24)
                     }
-                    CustomNavigationLink(canvas: $canvas, isDraw: $isDraw, type: $type, color: $color, action: $action)
+                    
+                    DefaultNavigationLink(action: $action)
+                    
+                    Spacer()
+                    
+                    Image("BottomBarLeaves")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: .infinity, alignment: .bottomLeading)
                 }
-                
-                
-                Spacer()
-                
-                Image("BottomBarLeaves")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: .infinity, alignment: .bottomLeading)
             }
         }
     }
-}
-
-func createSprout() {
-    // masukin ke controller sendiri kaaah
 }
 
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440C1F82BF61409007D74E0 /* SplashScreen.swift */; };
+		045763BE2BF7B81300FF9AA9 /* TreeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045763BD2BF7B81300FF9AA9 /* TreeHomeView.swift */; };
+		045763C02BF7B89E00FF9AA9 /* DefaultNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045763BF2BF7B89E00FF9AA9 /* DefaultNavigationLink.swift */; };
 		047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */; };
 		047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D42BF5D28C006525EB /* ContentView.swift */; };
 		047DF8D72BF5D28E006525EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047DF8D62BF5D28E006525EB /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		0440C1F82BF61409007D74E0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		045763BD2BF7B81300FF9AA9 /* TreeHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeHomeView.swift; sourceTree = "<group>"; };
+		045763BF2BF7B89E00FF9AA9 /* DefaultNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNavigationLink.swift; sourceTree = "<group>"; };
 		047DF8CF2BF5D28C006525EB /* BloomSketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomSketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomSketchApp.swift; sourceTree = "<group>"; };
 		047DF8D42BF5D28C006525EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,9 +123,11 @@
 				047DF8F72BF5D418006525EB /* NewSprout_View.swift */,
 				0440C1F82BF61409007D74E0 /* SplashScreen.swift */,
 				047DF8D42BF5D28C006525EB /* ContentView.swift */,
-				047DF8FB2BF5D449006525EB /* Color.swift */,
+				045763BD2BF7B81300FF9AA9 /* TreeHomeView.swift */,
 				3F33718B2BF6EAFC00318356 /* DrawingView.swift */,
+				045763BF2BF7B89E00FF9AA9 /* DefaultNavigationLink.swift */,
 				3F3371902BF6FAA700318356 /* CustomNavigationLink.swift */,
+				047DF8FB2BF5D449006525EB /* Color.swift */,
 				047DF8D62BF5D28E006525EB /* Assets.xcassets */,
 				047DF8D82BF5D28E006525EB /* Preview Content */,
 			);
@@ -286,6 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */,
+				045763BE2BF7B81300FF9AA9 /* TreeHomeView.swift in Sources */,
+				045763C02BF7B89E00FF9AA9 /* DefaultNavigationLink.swift in Sources */,
 				047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */,
 				047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */,
 				3F3371912BF6FAA700318356 /* CustomNavigationLink.swift in Sources */,
