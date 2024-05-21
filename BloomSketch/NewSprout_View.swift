@@ -1,20 +1,22 @@
-//
-//  NewSprout_View.swift
-//  BloomSketch
-//
-//  Created by MacBook Pro on 16/05/24.
-//
-
 import SwiftUI
 import PencilKit
 
+struct Change: View {
+    @State var success = false
+
+    var body: some View {
+        return Group {
+            if success {
+                ContentView()
+            }
+        }
+    }
+}
+
 struct NewSprout_View: View {
     @State private var sproutName = ""
-//    @State var canvas = PKCanvasView()
-//    @State var isDrawing = true
-//    @State var color : Color = .black
-//    @State var pencilType: PKInkingTool.InkType = .pencil
     @State private var action: Int? = 0
+    @Binding var success: Bool
     
     var body: some View {
         NavigationStack {
@@ -55,21 +57,10 @@ struct NewSprout_View: View {
                         }
                         .frame(width: 300)
                         .padding(.top, 16)
-                        
-                        //button yang bener ini
-                        //                        Button(action: createSprout) {
-                        //                            Text("Start")
-                        //                                .font(.headline)
-                        //                                .foregroundColor(.white)
-                        //                                .padding(.vertical, 12)
-                        //                                .padding(.horizontal, 64)
-                        //                                .background(Color(hex: 0x1B3F2E))
-                        //                                .cornerRadius(16)
-                        //                        }
-                        //                        .padding(.top, 24)
-                        
-                        //tes buton buat ke drawing fitur.
-                        Button(action: {self.action = 1}) {
+                        NavigationLink(destination: ContentView(), isActive: $success) {
+                                                   EmptyView() // This is necessary to avoid displaying an additional button
+                                               }
+                        Button(action: { success = true }) {
                             Text("Start")
                                 .font(.headline)
                                 .foregroundColor(.white)
@@ -80,8 +71,6 @@ struct NewSprout_View: View {
                         }
                         .padding(.top, 24)
                     }
-                    CustomNavigationLink(action: $action)
-                    
                     
                     Spacer()
                     
@@ -90,8 +79,6 @@ struct NewSprout_View: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity, alignment: .bottomLeading)
                 }
-                
-
             }
         }
     }
@@ -101,8 +88,7 @@ func createSprout() {
     // masukin ke controller sendiri kaaah
 }
 
-
-
 #Preview {
-    NewSprout_View()
+    @State var success = false
+    return NewSprout_View(success: $success)
 }
