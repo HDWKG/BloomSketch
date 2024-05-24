@@ -13,6 +13,10 @@ struct TreeHomeView: View {
     @State private var treeWidth: CGFloat = 160
     @State private var action: Int? = 0
     
+    // Responsive
+    private let screenWidth = UIScreen.main.bounds.width
+    private let screenHeight = UIScreen.main.bounds.height
+
     
     var body: some View {
         NavigationView {
@@ -22,7 +26,7 @@ struct TreeHomeView: View {
                         Image("LeafOn")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 160, height: 160)
+                            .frame(width: self.screenWidth > 600 ? 300 : 160, height: 160)
                             .foregroundColor(.red)
                     } else {
                         Image("LeafOff")
@@ -39,19 +43,22 @@ struct TreeHomeView: View {
                 
                 Spacer()
                 
-                Image(treePhase)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: treeWidth, height: treeWidth)
-                    .onAppear {
-                        updateTreePhase()
-                    }
-                    .onChange(of: streak) { newValue in
-                        updateTreePhase()
-                    }
+                ZStack {
+                    // Chatbox
+                    
+                    Image(treePhase)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: treeWidth, height: treeWidth)
+                        .onAppear {
+                            updateTreePhase()
+                        }
+                        .onChange(of: streak) { newValue in
+                            updateTreePhase()
+                        }
+                }
 
                 VStack {
-                                        
                     if dailyDone {
                         VStack {
                             Button(action: {

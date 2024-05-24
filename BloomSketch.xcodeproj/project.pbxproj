@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440C1F82BF61409007D74E0 /* SplashScreen.swift */; };
+		044E23BD2C001F7B00FFA6F3 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E23BC2C001F7B00FFA6F3 /* Drawing.swift */; };
+		044E23C02C00278500FFA6F3 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E23BF2C00278500FFA6F3 /* Tree.swift */; };
 		045763BE2BF7B81300FF9AA9 /* TreeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045763BD2BF7B81300FF9AA9 /* TreeHomeView.swift */; };
 		045763C02BF7B89E00FF9AA9 /* DefaultNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045763BF2BF7B89E00FF9AA9 /* DefaultNavigationLink.swift */; };
 		047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		0440C1F82BF61409007D74E0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		044E23BC2C001F7B00FFA6F3 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		044E23BF2C00278500FFA6F3 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		045763BD2BF7B81300FF9AA9 /* TreeHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeHomeView.swift; sourceTree = "<group>"; };
 		045763BF2BF7B89E00FF9AA9 /* DefaultNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNavigationLink.swift; sourceTree = "<group>"; };
 		047DF8CF2BF5D28C006525EB /* BloomSketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomSketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		044E23BE2C001F8500FFA6F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				044E23BC2C001F7B00FFA6F3 /* Drawing.swift */,
+				044E23BF2C00278500FFA6F3 /* Tree.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		047DF8C62BF5D28C006525EB = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +131,7 @@
 		047DF8D12BF5D28C006525EB /* BloomSketch */ = {
 			isa = PBXGroup;
 			children = (
+				044E23BE2C001F8500FFA6F3 /* Model */,
 				3F33718F2BF6F75300318356 /* Info.plist */,
 				047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */,
 				047DF8F72BF5D418006525EB /* NewSprout_View.swift */,
@@ -295,7 +309,9 @@
 				045763BE2BF7B81300FF9AA9 /* TreeHomeView.swift in Sources */,
 				045763C02BF7B89E00FF9AA9 /* DefaultNavigationLink.swift in Sources */,
 				047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */,
+				044E23BD2C001F7B00FFA6F3 /* Drawing.swift in Sources */,
 				047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */,
+				044E23C02C00278500FFA6F3 /* Tree.swift in Sources */,
 				3F3371912BF6FAA700318356 /* CustomNavigationLink.swift in Sources */,
 				3F33718C2BF6EAFC00318356 /* DrawingView.swift in Sources */,
 				047DF8FC2BF5D449006525EB /* Color.swift in Sources */,
