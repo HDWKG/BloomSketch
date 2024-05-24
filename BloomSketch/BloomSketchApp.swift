@@ -13,5 +13,9 @@ struct BloomSketchApp: App {
         WindowGroup {
             SplashScreenView()
         }
+        
+        #if os(watchOS)
+        WKNotificationScene(Controller: NotificationController.self, category: "StreakEnding")
+        #endif
     }
 }

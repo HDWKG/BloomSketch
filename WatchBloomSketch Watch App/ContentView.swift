@@ -1,5 +1,5 @@
 import SwiftUI
-
+import UserNotifications
 struct ContentView1: View {
     var body: some View {
         VStack {
@@ -8,6 +8,12 @@ struct ContentView1: View {
                 .foregroundColor(.red)
             Spacer()
         }
+        .task {
+                        let center = UNUserNotificationCenter.current()
+                        _ = try? await center.requestAuthorization(
+                            options: [.alert, .sound, .badge]
+                        )
+                    }
     }
 }
 
