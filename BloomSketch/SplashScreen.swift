@@ -11,7 +11,7 @@ struct SplashScreenView: View {
     @State private var isActive = false
     @State private var size = 0.8
     @State private var opacity = 0.5
-    @State private var isSuccess = false
+//    @State private var isSuccess = false
     
     var body: some View {
         ZStack {
@@ -19,7 +19,7 @@ struct SplashScreenView: View {
                 .ignoresSafeArea()
             
             if isActive {
-                NewSprout_View(success: $isSuccess)
+                NewSprout_View()
             } else {
                 VStack {
                     

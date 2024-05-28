@@ -1,22 +1,23 @@
 import SwiftUI
 import PencilKit
 
-struct Change: View {
-    @State var success = false
-
-    var body: some View {
-        return Group {
-            if success {
-                ContentView()
-            }
-        }
-    }
-}
+//struct Change: View {
+//    @State var success = false
+//    @State var action = 1
+//    
+//    var body: some View {
+//        Group {
+//            if success {
+//                ContentView(action: action)
+//            }
+//        }
+//    }
+//}
 
 struct NewSprout_View: View {
     @State private var sproutName = ""
-    @State private var action: Int? = 0
-    @Binding var success: Bool
+    @State private var navigateToContentView = false
+    @State private var navigateToAlbumView = false
     
     var body: some View {
         NavigationStack {
@@ -57,11 +58,26 @@ struct NewSprout_View: View {
                         }
                         .frame(width: 300)
                         .padding(.top, 16)
-                        NavigationLink(destination: ContentView(), isActive: $success) {
-                                                   EmptyView() // This is necessary to avoid displaying an additional button
-                                               }
-                        Button(action: { success = true }) {
+                        NavigationLink(destination: ContentView(), isActive: $navigateToContentView) {
+                            EmptyView()
+                        }
+                        Button(action: { navigateToContentView = true }) {
                             Text("Start")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding(.vertical, 12)
+                                .padding(.horizontal, 64)
+                                .background(Color(hex: 0x1B3F2E))
+                                .cornerRadius(16)
+                        }
+                        .padding(.top, 24)
+                        
+                        NavigationLink(destination: AlbumImagesView(), isActive: $navigateToAlbumView) {
+                            EmptyView()
+                        }
+                        
+                        Button(action: { navigateToAlbumView = true }) {
+                            Text("Album")
                                 .font(.headline)
                                 .foregroundColor(.white)
                                 .padding(.vertical, 12)
@@ -88,7 +104,7 @@ func createSprout() {
     // masukin ke controller sendiri kaaah
 }
 
-#Preview {
-    @State var success = false
-    return NewSprout_View(success: $success)
-}
+//#Preview {
+//    @State var success = false
+//    return NewSprout_View(success: $success)
+//}
