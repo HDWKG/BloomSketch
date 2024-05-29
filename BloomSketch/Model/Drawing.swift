@@ -8,7 +8,11 @@
 import Foundation
 import SwiftData
 
-//@Model
+@Model
 class Drawing {
+    var test = true
     
+    init(test: Bool = true) {
+        self.test = test
+    }
 }

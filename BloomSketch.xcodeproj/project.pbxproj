@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043D3D912C0764AD00AC0CD5 /* SwiftDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D3D902C0764AD00AC0CD5 /* SwiftDataContainer.swift */; };
 		0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440C1F82BF61409007D74E0 /* SplashScreen.swift */; };
 		044E23BD2C001F7B00FFA6F3 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E23BC2C001F7B00FFA6F3 /* Drawing.swift */; };
 		044E23C02C00278500FFA6F3 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E23BF2C00278500FFA6F3 /* Tree.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		043D3D902C0764AD00AC0CD5 /* SwiftDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataContainer.swift; sourceTree = "<group>"; };
 		0440C1F82BF61409007D74E0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		044E23BC2C001F7B00FFA6F3 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		044E23BF2C00278500FFA6F3 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
@@ -62,7 +64,6 @@
 		047DF8D42BF5D28C006525EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		047DF8D62BF5D28E006525EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047DF8D92BF5D28E006525EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		047DF8E42BF5D2EA006525EB /* NewSproutView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSproutView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8F72BF5D418006525EB /* NewSprout_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSprout_View.swift; sourceTree = "<group>"; };
 		047DF8FB2BF5D449006525EB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchBloomSketch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,13 +84,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		047DF8E12BF5D2EA006525EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		04C89B4F2BF6E8F90024E261 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,6 +97,7 @@
 		044E23BE2C001F8500FFA6F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				043D3D902C0764AD00AC0CD5 /* SwiftDataContainer.swift */,
 				044E23BC2C001F7B00FFA6F3 /* Drawing.swift */,
 				044E23BF2C00278500FFA6F3 /* Tree.swift */,
 			);
@@ -122,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				047DF8CF2BF5D28C006525EB /* BloomSketch.app */,
-				047DF8E42BF5D2EA006525EB /* NewSproutView.app */,
 				04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */,
 			);
 			name = Products;
@@ -131,9 +125,9 @@
 		047DF8D12BF5D28C006525EB /* BloomSketch */ = {
 			isa = PBXGroup;
 			children = (
-				044E23BE2C001F8500FFA6F3 /* Model */,
 				3F33718F2BF6F75300318356 /* Info.plist */,
 				047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */,
+				044E23BE2C001F8500FFA6F3 /* Model */,
 				047DF8F72BF5D418006525EB /* NewSprout_View.swift */,
 				0440C1F82BF61409007D74E0 /* SplashScreen.swift */,
 				047DF8D42BF5D28C006525EB /* ContentView.swift */,
@@ -197,23 +191,6 @@
 			productReference = 047DF8CF2BF5D28C006525EB /* BloomSketch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		047DF8E32BF5D2EA006525EB /* NewSproutView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 047DF8F02BF5D2EC006525EB /* Build configuration list for PBXNativeTarget "NewSproutView" */;
-			buildPhases = (
-				047DF8E02BF5D2EA006525EB /* Sources */,
-				047DF8E12BF5D2EA006525EB /* Frameworks */,
-				047DF8E22BF5D2EA006525EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NewSproutView;
-			productName = NewSproutView;
-			productReference = 047DF8E42BF5D2EA006525EB /* NewSproutView.app */;
-			productType = "com.apple.product-type.application";
-		};
 		04C89B512BF6E8F90024E261 /* WatchBloomSketch Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04C89B632BF6E8FA0024E261 /* Build configuration list for PBXNativeTarget "WatchBloomSketch Watch App" */;
@@ -244,9 +221,6 @@
 					047DF8CE2BF5D28C006525EB = {
 						CreatedOnToolsVersion = 15.3;
 					};
-					047DF8E32BF5D2EA006525EB = {
-						CreatedOnToolsVersion = 15.3;
-					};
 					04C89B512BF6E8F90024E261 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -266,7 +240,6 @@
 			projectRoot = "";
 			targets = (
 				047DF8CE2BF5D28C006525EB /* BloomSketch */,
-				047DF8E32BF5D2EA006525EB /* NewSproutView */,
 				04C89B512BF6E8F90024E261 /* WatchBloomSketch Watch App */,
 			);
 		};
@@ -279,13 +252,6 @@
 			files = (
 				047DF8DA2BF5D28E006525EB /* Preview Assets.xcassets in Resources */,
 				047DF8D72BF5D28E006525EB /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		047DF8E22BF5D2EA006525EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,19 +276,13 @@
 				045763C02BF7B89E00FF9AA9 /* DefaultNavigationLink.swift in Sources */,
 				047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */,
 				044E23BD2C001F7B00FFA6F3 /* Drawing.swift in Sources */,
+				043D3D912C0764AD00AC0CD5 /* SwiftDataContainer.swift in Sources */,
 				047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */,
 				044E23C02C00278500FFA6F3 /* Tree.swift in Sources */,
 				3F3371912BF6FAA700318356 /* CustomNavigationLink.swift in Sources */,
 				3F33718C2BF6EAFC00318356 /* DrawingView.swift in Sources */,
 				047DF8FC2BF5D449006525EB /* Color.swift in Sources */,
 				047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		047DF8E02BF5D2EA006525EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,78 +487,6 @@
 			};
 			name = Release;
 		};
-		047DF8F12BF5D2EC006525EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = NewSproutView/NewSproutView.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"NewSproutView/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = BS.NewSproutView;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		047DF8F22BF5D2EC006525EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = NewSproutView/NewSproutView.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"NewSproutView/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = BS.NewSproutView;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		04C89B612BF6E8FA0024E261 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -674,15 +562,6 @@
 			buildConfigurations = (
 				047DF8DE2BF5D28E006525EB /* Debug */,
 				047DF8DF2BF5D28E006525EB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		047DF8F02BF5D2EC006525EB /* Build configuration list for PBXNativeTarget "NewSproutView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				047DF8F12BF5D2EC006525EB /* Debug */,
-				047DF8F22BF5D2EC006525EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

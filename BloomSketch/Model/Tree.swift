@@ -10,17 +10,18 @@ import SwiftData
 
 @Model
 class Tree {
-    var dailyDone = true
-    var streak = 99
+    var name = "Yebol"
+    var dailyDone = false
+    var streak = 0
     var treePhase = ""
 
-    init(dailyDone: Bool = true, streak: Int = 99, treePhase: String = "") {
+    init(dailyDone: Bool = false, streak: Int = 24, treePhase: String = "") {
         self.dailyDone = dailyDone
         self.streak = streak
         self.treePhase = treePhase
     }
     
-    func updateTreePhase() -> CGFloat {
+    func checkTreePhase() -> CGFloat {
         var treeWidth: CGFloat
         
         if streak < 5 {
@@ -43,6 +44,4 @@ class Tree {
         return treeWidth
     }
     
-    
-
 }

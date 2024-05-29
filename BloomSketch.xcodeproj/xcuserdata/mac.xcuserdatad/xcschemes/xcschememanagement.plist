@@ -12,12 +12,25 @@
 		<key>NewSproutView.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<key>WatchBloomSketch Watch App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>047DF8CE2BF5D28C006525EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>04C89B512BF6E8F90024E261</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
