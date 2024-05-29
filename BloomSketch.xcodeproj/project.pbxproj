@@ -10,6 +10,10 @@
 		041672FE2C00613A002BBB06 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8FB2BF5D449006525EB /* Color.swift */; };
 		041673002C006534002BBB06 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041672FF2C006534002BBB06 /* StreakView.swift */; };
 		041673022C006546002BBB06 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041673012C006546002BBB06 /* TreeView.swift */; };
+		042041532C0786A500BF995F /* BoardingScreen_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041522C0786A500BF995F /* BoardingScreen_1.swift */; };
+		042041552C0786B900BF995F /* BoardingScreen_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041542C0786B900BF995F /* BoardingScreen_2.swift */; };
+		042041572C0786D200BF995F /* BoardingScreen_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041562C0786D200BF995F /* BoardingScreen_3.swift */; };
+		042041592C0786F800BF995F /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041582C0786F800BF995F /* AlertView.swift */; };
 		0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440C1F82BF61409007D74E0 /* SplashScreen.swift */; };
 		047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */; };
 		047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D42BF5D28C006525EB /* ContentView.swift */; };
@@ -54,6 +58,10 @@
 /* Begin PBXFileReference section */
 		041672FF2C006534002BBB06 /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
 		041673012C006546002BBB06 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
+		042041522C0786A500BF995F /* BoardingScreen_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_1.swift; sourceTree = "<group>"; };
+		042041542C0786B900BF995F /* BoardingScreen_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_2.swift; sourceTree = "<group>"; };
+		042041562C0786D200BF995F /* BoardingScreen_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_3.swift; sourceTree = "<group>"; };
+		042041582C0786F800BF995F /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		0440C1F82BF61409007D74E0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		047DF8CF2BF5D28C006525EB /* BloomSketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomSketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomSketchApp.swift; sourceTree = "<group>"; };
@@ -122,6 +130,10 @@
 			isa = PBXGroup;
 			children = (
 				047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */,
+				042041522C0786A500BF995F /* BoardingScreen_1.swift */,
+				042041542C0786B900BF995F /* BoardingScreen_2.swift */,
+				042041562C0786D200BF995F /* BoardingScreen_3.swift */,
+				042041582C0786F800BF995F /* AlertView.swift */,
 				047DF8F72BF5D418006525EB /* NewSprout_View.swift */,
 				0440C1F82BF61409007D74E0 /* SplashScreen.swift */,
 				047DF8D42BF5D28C006525EB /* ContentView.swift */,
@@ -296,10 +308,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */,
+				042041572C0786D200BF995F /* BoardingScreen_3.swift in Sources */,
+				042041592C0786F800BF995F /* AlertView.swift in Sources */,
 				047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */,
 				047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */,
 				047DF8FC2BF5D449006525EB /* Color.swift in Sources */,
 				047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */,
+				042041552C0786B900BF995F /* BoardingScreen_2.swift in Sources */,
+				042041532C0786A500BF995F /* BoardingScreen_1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
