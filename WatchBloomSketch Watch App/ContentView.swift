@@ -15,10 +15,9 @@ struct ContentView: View {
     @State private var streak = 5
     @State private var dailyDone = true
     var body: some View {
-        PagerManager(pageCount: 3, currentIndex: $currentIndex) {
+        PagerManager(pageCount: 2, currentIndex: $currentIndex) {
             StreakView(dailyDone: $dailyDone, streak: $streak)
             TreeView(streak: $streak)
-            ContentView3()
         }
     }
 }

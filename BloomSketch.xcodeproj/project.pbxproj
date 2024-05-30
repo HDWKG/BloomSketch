@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041A5D2C2C083D5E00718673 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D2B2C083D5E00718673 /* PageControl.swift */; };
+		041A5D2E2C083D6F00718673 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D2D2C083D6F00718673 /* NotificationView.swift */; };
+		041A5D302C083D8000718673 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D2F2C083D8000718673 /* NotificationController.swift */; };
+		041A5D342C083E6500718673 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D322C083E6400718673 /* StreakView.swift */; };
+		041A5D352C083E6500718673 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D332C083E6400718673 /* TreeView.swift */; };
 		0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440C1F82BF61409007D74E0 /* SplashScreen.swift */; };
 		047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */; };
 		047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D42BF5D28C006525EB /* ContentView.swift */; };
@@ -49,6 +54,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		041A5D2B2C083D5E00718673 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		041A5D2D2C083D6F00718673 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		041A5D2F2C083D8000718673 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		041A5D312C083D9000718673 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		041A5D322C083E6400718673 /* StreakView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
+		041A5D332C083E6400718673 /* TreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
 		0440C1F82BF61409007D74E0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		047DF8CF2BF5D28C006525EB /* BloomSketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomSketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomSketchApp.swift; sourceTree = "<group>"; };
@@ -142,10 +153,16 @@
 		04C89B532BF6E8F90024E261 /* WatchBloomSketch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				041A5D322C083E6400718673 /* StreakView.swift */,
+				041A5D332C083E6400718673 /* TreeView.swift */,
 				04C89B542BF6E8F90024E261 /* WatchBloomSketchApp.swift */,
 				04C89B562BF6E8F90024E261 /* ContentView.swift */,
 				04C89B582BF6E8FA0024E261 /* Assets.xcassets */,
 				04C89B5A2BF6E8FA0024E261 /* Preview Content */,
+				041A5D2B2C083D5E00718673 /* PageControl.swift */,
+				041A5D2D2C083D6F00718673 /* NotificationView.swift */,
+				041A5D2F2C083D8000718673 /* NotificationController.swift */,
+				041A5D312C083D9000718673 /* PushNotificationPayload.apns */,
 			);
 			path = "WatchBloomSketch Watch App";
 			sourceTree = "<group>";
@@ -310,8 +327,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041A5D342C083E6500718673 /* StreakView.swift in Sources */,
+				041A5D302C083D8000718673 /* NotificationController.swift in Sources */,
 				04C89B572BF6E8F90024E261 /* ContentView.swift in Sources */,
 				04C89B552BF6E8F90024E261 /* WatchBloomSketchApp.swift in Sources */,
+				041A5D2C2C083D5E00718673 /* PageControl.swift in Sources */,
+				041A5D352C083E6500718673 /* TreeView.swift in Sources */,
+				041A5D2E2C083D6F00718673 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

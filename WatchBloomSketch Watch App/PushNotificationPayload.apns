@@ -1,0 +1,11 @@
+{
+    "aps": {
+        "alert": {
+            "title": "Your Daily Streak Is Ending!",
+            "body": "Get to drawing! So you don't lose your streak!"
+        },
+        "category": "DailyStreak",
+        "thread-id": "5280"
+    },
+    "Simulator Target Bundle": "BS.BloomSketch.watchkitapp"
+}
