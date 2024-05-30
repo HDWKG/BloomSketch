@@ -150,7 +150,7 @@ struct CustomNavigationLink: View {
         
         PHPhotoLibrary.shared().performChanges({
             let request = PHAssetChangeRequest.creationRequestForAsset(from: drawingImage)
-            let albumTitle = "My Drawings"
+            let albumTitle = "BloomSketch"
             if let album = fetchAlbum(named: albumTitle) {
                 let albumChangeRequest = PHAssetCollectionChangeRequest(for: album)
                 albumChangeRequest?.addAssets([request.placeholderForCreatedAsset!] as NSArray)
@@ -159,14 +159,14 @@ struct CustomNavigationLink: View {
                 albumChangeRequest.addAssets([request.placeholderForCreatedAsset!] as NSArray)
             }
         }) { success, error in
-            DispatchQueue.main.async {
-                if success {
-                    self.alertMessage = "Your drawing has been saved to the My Drawings album."
-                } else {
-                    self.alertMessage = "Failed to save drawing: \(error?.localizedDescription ?? "unknown error")."
-                }
-                self.showAlert = true
-            }
+//            DispatchQueue.main.async {
+//                if success {
+//                    self.alertMessage = "Your drawing has been saved to the My Drawings album."
+//                } else {
+//                    self.alertMessage = "Failed to save drawing: \(error?.localizedDescription ?? "unknown error")."
+//                }
+//                self.showAlert = true
+//            }
         }
     }
     func fetchAlbum(named title: String) -> PHAssetCollection? {

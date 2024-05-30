@@ -20,7 +20,7 @@ struct PagerManager<Content: View>: View {
     }
     
     @GestureState private var translation: CGFloat = 0
-    private let swipeThreshold: CGFloat = 0.1 // Minimum swipe distance
+    private let swipeThreshold: CGFloat = 0.1 
     
     var body: some View {
         GeometryReader { geometry in

@@ -14,7 +14,7 @@ struct ContentView: View {
         PagerManager(pageCount: 2, currentIndex: $currentIndex) {
             TreeHomeView()
                 .modelContainer(SwiftDataContainer.container)
-            NewSprout_View()
+            AlbumImagesView()
         }
         
     }

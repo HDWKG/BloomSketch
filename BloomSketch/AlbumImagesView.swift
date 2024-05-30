@@ -27,7 +27,7 @@ struct AlbumImagesView: View {
     }
     
     func loadImages() {
-        let albumTitle = "My Drawings"
+        let albumTitle = "BloomSketch"
         if let album = fetchAlbum(named: albumTitle) {
             let assets = PHAsset.fetchAssets(in: album, options: nil)
             let imageManager = PHCachingImageManager()

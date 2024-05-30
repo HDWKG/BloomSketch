@@ -12,7 +12,7 @@ import UIKit
 struct TreeHomeView: View {
     @Environment(\.modelContext) var modelContext
     @Query var trees: [Tree]
-    @State private var navigateToDrawingList = false
+    @State private var navigateToDrawingView = false
     @State private var timerToggle = false
     @State private var action: Int? = 0
     
@@ -79,7 +79,7 @@ struct TreeHomeView: View {
                         if tree.dailyDone {
                             VStack {
                                 Button(action: {
-                                    navigateToDrawingList = true
+                                    navigateToDrawingView = true
                                 }) {
                                     HStack {
                                         Text("Draw Again")
@@ -103,7 +103,7 @@ struct TreeHomeView: View {
                             }
                             
                         } else {
-                            Button(action: { navigateToDrawingList = true
+                            Button(action: { navigateToDrawingView = true
                             }) {
                                 Text("Start Drawing Today")
                                     .font(.headline)
@@ -124,7 +124,7 @@ struct TreeHomeView: View {
                         .fixedSize()
                         .padding(.top, 8)
                         
-                        NavigationLink(destination: NewSprout_View(), isActive: $navigateToDrawingList) {
+                        NavigationLink(destination: CustomNavigationLink(), isActive: $navigateToDrawingView) {
                             EmptyView()
                         }
                     }
