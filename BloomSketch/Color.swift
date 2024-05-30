@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
-    // ini color
+
 extension Color {
+    // this is color, translate to hex
     init(hex: UInt, alpha: Double = 1) {
         self.init(
             .sRGB,
