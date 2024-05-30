@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct PagerManager<Content: View>: View {
+struct OpeningPager<Content: View>: View {
     let pageCount: Int
     @Binding var currentIndex: Int
     let content: Content
@@ -46,15 +46,16 @@ struct PagerManager<Content: View>: View {
                         }
                 )
                 
-                HStack(spacing: 8) {
+                HStack(spacing: 12) {
                     ForEach(0..<pageCount, id: \.self) { index in
                         Circle()
-                            .fill(index == currentIndex ? Color.green : Color.gray)
-                            .frame(width: 10, height: 10)
+                            .fill(index == currentIndex ? Color(hex: 0x98D13F) : Color.gray)
+                            .frame(width: 12, height: 12)
                     }
                 }
                 .padding(.top, 10)
             }
+            .background(Color(#colorLiteral(red: 0.8352941176, green: 0.8941176471, blue: 0.8666666667, alpha: 1)))
         }
     }
 }

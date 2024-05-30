@@ -11,15 +11,14 @@ struct SplashScreenView: View {
     @State private var isActive = false
     @State private var size = 0.8
     @State private var opacity = 0.5
-//    @State private var isSuccess = false
-    
+
     var body: some View {
         ZStack {
             Color(#colorLiteral(red: 0.8352941176, green: 0.8941176471, blue: 0.8666666667, alpha: 1))
                 .ignoresSafeArea()
             
             if isActive {
-                NewSprout_View()
+                OpeningView()
             } else {
                 VStack {
                     

@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-struct BoardingScreen1: View {
+struct BoardingScreen_1: View {
     @State private var sproutName = ""
-    @State private var action: Int? = 0
-    @Binding var success: Bool
+    let onNext: () -> Void
     
     var body: some View {
         NavigationStack {
@@ -23,26 +22,27 @@ struct BoardingScreen1: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity, alignment: .topTrailing)
-                        .overlay(
-                    Text("An app where you can draw and grow your plant daily!")
-                        .font(.system(size: 30, weight: .bold))
-                        .foregroundColor(Color(hex: 0x1B3F2E))
-                        .padding(.horizontal, 40)
-                        .offset(y: 90)
-                    )
-                        .offset(y: -60)
+                        .edgesIgnoringSafeArea(.top)
                     
-                        Image("boarding_1")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 240, height: 240)
-                            .foregroundColor(.red)
-                            .padding(.top, 12)
-                            .offset(y: 110)
+                    Text("“An app where you can draw and grow your plant Daily.”")
+                        .font(.system(size: 32, weight: .bold))
+                        .foregroundColor(Color(hex: 0x1B3F2E))
+                        .padding(.horizontal, 32)
+                        .fixedSize(horizontal: false, vertical: true)
+                    
                     Spacer()
-
+                    
+                    Image("boarding_1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 240, height: 240)
+                        .foregroundColor(.red)
+                        .offset(y: 110)
+                                 
+                    Spacer()
+                    
                     ZStack {
-                        Button(action: { success = true }) {
+                        Button(action: onNext) {
                             Text("Continue")
                                 .font(.headline)
                                 .foregroundColor(.white)
@@ -50,22 +50,18 @@ struct BoardingScreen1: View {
                                 .padding(.horizontal, 64)
                                 .background(Color(hex: 0x1B3F2E))
                                 .cornerRadius(16)
-                                .padding(.top, 200)
+                                .padding(.top, 140)
                         }
                     }
-                    Image("BottomBarLeaves")
+                    
+                    Image("")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                        .offset(y: 33)
+                        .offset(y: 34)
                 }
             }
         }
     }
-}
-
-#Preview {
-    @State var success = false
-    return BoardingScreen1(success: $success)
 }
 
