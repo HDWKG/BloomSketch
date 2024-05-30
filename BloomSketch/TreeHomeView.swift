@@ -7,13 +7,13 @@
 import SwiftUI
 import SwiftData
 import PencilKit
+import UIKit
 
 struct TreeHomeView: View {
     @Environment(\.modelContext) var modelContext
     @Query var trees: [Tree]
-    @State private var selectedPage = 0
     @State private var navigateToDrawingList = false
-    
+    @State private var timerToggle = false
     @State private var action: Int? = 0
     
     @State var canvas = PKCanvasView()
@@ -28,14 +28,20 @@ struct TreeHomeView: View {
     
     var body: some View {
         if let tree = trees.first {
-            NavigationView { // Wrap the view in NavigationView
+            NavigationView {
                 VStack {
+                    
                     // Segmented Picker
-                    Picker("Select a page", selection: $selectedPage) {
-                        Text("\(tree.name)'s Den").tag(0)
-                        Text("Drawing List").tag(1) // Assign tag 1 to Drawing List
-                    }
-                    .pickerStyle(.segmented)
+//                    Picker("Select a page", selection: $selectedPage) {
+//                        Text("\(tree.name)'s Den").tag(0)
+//                        Text("New Sprout View").tag(1)
+//                    }
+//                    .pickerStyle(.segmented)
+//                    .padding(.vertical, 16)
+//                    .onChange(of: selectedPage) { value in
+//                        navigateToDrawingList = value == 1
+//                    }
+                    
                     
                     ZStack {
                         if tree.dailyDone {
@@ -48,7 +54,7 @@ struct TreeHomeView: View {
                             Image("LeafOff")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 160, height: 160)
+                                .frame(width: self.screenWidth > 600 ? 300 : 160, height: 160)
                                 .foregroundColor(.red)
                         }
                         
@@ -72,10 +78,10 @@ struct TreeHomeView: View {
                         if tree.dailyDone {
                             VStack {
                                 Button(action: {
-                                    self.action = 1
+                                    navigateToDrawingList = true
                                 }) {
                                     HStack {
-                                        Text("Today's Done")
+                                        Text("Draw Again")
                                             .font(.headline)
                                             .foregroundColor(Color(hex: 0x1B3F2E))
                                         
@@ -83,7 +89,7 @@ struct TreeHomeView: View {
                                             .foregroundColor(Color(hex: 0x1B3F2E))
                                     }
                                     .padding(.vertical, 12)
-                                    .padding(.horizontal, 40)
+                                    .padding(.horizontal, 72)
                                     .background(Color.white)
                                     .cornerRadius(16)
                                     .overlay(
@@ -93,16 +99,11 @@ struct TreeHomeView: View {
                                 }
                                 .padding(.top, 24)
                                 
-                                Text("Draw Again")
-                                    .font(.system(size: 16, weight: .semibold))
-                                    .foregroundColor(Color(hex: 0x1B3F2E))
-                                    .underline()
-                                    .padding(.top, 4)
-                                
                             }
                             
                         } else {
-                            Button(action: { navigateToDrawingList = true }) {
+                            Button(action: { navigateToDrawingList = true
+                            }) {
                                 Text("Start Drawing Today")
                                     .font(.headline)
                                     .foregroundColor(.white)
@@ -112,10 +113,17 @@ struct TreeHomeView: View {
                                     .cornerRadius(16)
                             }
                             .padding(.top, 24)
-                            
                         }
                         
-                        NavigationLink(destination: TreeHomeView(), isActive: $navigateToDrawingList) {
+                        Toggle(isOn: $timerToggle) {
+                            Text("Enable Timer")
+                                .font(.subheadline)
+                                .foregroundColor(Color(hex: 0x1B3F2E))
+                        }
+                        .fixedSize()
+                        .padding(.top, 8)
+                        
+                        NavigationLink(destination: NewSprout_View(), isActive: $navigateToDrawingList) {
                             EmptyView()
                         }
                     }
@@ -123,6 +131,7 @@ struct TreeHomeView: View {
                 }
                 .padding(.horizontal, 32)
             }
+            .navigationBarBackButtonHidden(true) // Hide back button
         }
     }
 }

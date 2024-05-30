@@ -10,15 +10,18 @@ import SwiftData
 
 @Model
 class Tree {
-    var name = "Yebol"
-    var dailyDone = false
-    var streak = 0
-    var treePhase = ""
+    var name: String
+    var dailyDone: Bool
+    var streak: Int
+    var treePhase: String
+    var enableTimer: Bool
 
-    init(dailyDone: Bool = false, streak: Int = 24, treePhase: String = "") {
+    init(name: String, dailyDone: Bool, streak: Int, enableTimer: Bool) {
+        self.name = name
         self.dailyDone = dailyDone
         self.streak = streak
-        self.treePhase = treePhase
+        self.treePhase = ""
+        self.enableTimer = enableTimer
     }
     
     func checkTreePhase() -> CGFloat {

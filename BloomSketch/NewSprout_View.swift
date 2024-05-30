@@ -58,6 +58,10 @@ struct NewSprout_View: View {
                             .frame(width: 300)
                             .padding(.top, 16)
                             
+                            NavigationLink(destination: TreeHomeView().modelContainer(SwiftDataContainer.container), isActive: $navigateToTreeHome) {
+                                EmptyView()
+                            }
+                            
                             
                             Button(action: {
                                 saveSproutName()
@@ -72,9 +76,7 @@ struct NewSprout_View: View {
                             }
                             .padding(.top, 16)
                             
-                            NavigationLink(destination: TreeHomeView(), isActive: $navigateToTreeHome) {
-                                EmptyView()
-                            }
+                            
                             
                             Spacer()
                             

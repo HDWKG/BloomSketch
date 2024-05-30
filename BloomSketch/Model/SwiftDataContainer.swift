@@ -16,7 +16,7 @@ class SwiftDataContainer {
             let container = try ModelContainer(for: Tree.self, Drawing.self, configurations: config)
             
             // Seeder
-            container.mainContext.insert(Tree())
+            container.mainContext.insert(Tree(name: "Yebol", dailyDone: true, streak: 34, enableTimer: true))
             
             return container
         } catch {
