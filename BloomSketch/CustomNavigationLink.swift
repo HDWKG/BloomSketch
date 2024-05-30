@@ -6,7 +6,7 @@ struct CustomNavigationLink: View {
     @State private var canvas = PKCanvasView()
     @State private var isDrawing = true
     @State private var color: Color = .black
-    @State private var pencilType: PKInkingTool.InkType = .pencil
+    @State private var pencilType: PKInkingTool.InkType = .crayon
     @Environment(\.undoManager) private var undoManager
     //    @Binding var action: Int?
     
@@ -24,7 +24,7 @@ struct CustomNavigationLink: View {
                             // Clear the canvas. Reset the drawing
                             canvas.drawing = PKDrawing()
                         } label: {
-                            Image(systemName: "scissors")
+                            Image(systemName: "trash.slash")
                         }
                         
                         Button {
@@ -66,7 +66,7 @@ struct CustomNavigationLink: View {
                                 isDrawing = true
                                 pencilType = .pen
                             } label: {
-                                Label("Pen", systemImage: "pencil.tip")
+                                Label("Pen", systemImage: "applepencil")
                             }
                             
                             Button {
@@ -74,7 +74,7 @@ struct CustomNavigationLink: View {
                                 isDrawing = true
                                 pencilType = .marker
                             } label: {
-                                Label("Marker", systemImage: "paintbrush.pointed")
+                                Label("Marker", systemImage: "pencil.tip")
                             }
                             
                             Button {
@@ -98,7 +98,7 @@ struct CustomNavigationLink: View {
                                 isDrawing = true
                                 pencilType = .watercolor
                             } label: {
-                                Label("Watercolor", systemImage: "eyedropper.halffull")
+                                Label("Watercolor", systemImage: "paintbrush.pointed")
                             }
                             
                             Button {
@@ -106,11 +106,11 @@ struct CustomNavigationLink: View {
                                 isDrawing = true
                                 pencilType = .crayon
                             } label: {
-                                Label("Crayon", systemImage: "pencil.tip")
+                                Label("Crayon", systemImage: "applepencil.and.scribble")
                             }
                             
                         } label: {
-                            Image(systemName: "hand.draw")
+                            Image(systemName: "pencil.tip.crop.circle.fill")
                         }
                         
                         Spacer()
