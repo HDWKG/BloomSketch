@@ -42,6 +42,7 @@ struct TreeHomeView: View {
 //                        navigateToDrawingList = value == 1
 //                    }
                     
+                    Text("\(tree.name)'s Den")
                     
                     ZStack {
                         if tree.dailyDone {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct BloomSketchApp: App {
@@ -13,6 +14,7 @@ struct BloomSketchApp: App {
         WindowGroup {
             SplashScreenView()
         }
+        .modelContainer(for: [Tree.self, Drawing.self])
         
         #if os(watchOS)
         WKNotificationScene(Controller: NotificationController.self, category: "StreakEnding")

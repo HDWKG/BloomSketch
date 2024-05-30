@@ -12,6 +12,13 @@
 		041A5D302C083D8000718673 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D2F2C083D8000718673 /* NotificationController.swift */; };
 		041A5D342C083E6500718673 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D322C083E6400718673 /* StreakView.swift */; };
 		041A5D352C083E6500718673 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D332C083E6400718673 /* TreeView.swift */; };
+		043D20C72C08472D00BEBFE0 /* PagerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C62C08472D00BEBFE0 /* PagerManager.swift */; };
+		043D20CD2C08474000BEBFE0 /* DefaultNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C82C08474000BEBFE0 /* DefaultNavigationLink.swift */; };
+		043D20CE2C08474000BEBFE0 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C92C08474000BEBFE0 /* Drawing.swift */; };
+		043D20CF2C08474000BEBFE0 /* SwiftDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20CA2C08474000BEBFE0 /* SwiftDataContainer.swift */; };
+		043D20D02C08474000BEBFE0 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20CB2C08474000BEBFE0 /* Tree.swift */; };
+		043D20D32C08474F00BEBFE0 /* SoftContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20D12C08474F00BEBFE0 /* SoftContentView.swift */; };
+		043D20D42C08474F00BEBFE0 /* TreeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20D22C08474F00BEBFE0 /* TreeHomeView.swift */; };
 		0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440C1F82BF61409007D74E0 /* SplashScreen.swift */; };
 		047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */; };
 		047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D42BF5D28C006525EB /* ContentView.swift */; };
@@ -60,6 +67,13 @@
 		041A5D312C083D9000718673 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		041A5D322C083E6400718673 /* StreakView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
 		041A5D332C083E6400718673 /* TreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
+		043D20C62C08472D00BEBFE0 /* PagerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerManager.swift; sourceTree = "<group>"; };
+		043D20C82C08474000BEBFE0 /* DefaultNavigationLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNavigationLink.swift; sourceTree = "<group>"; };
+		043D20C92C08474000BEBFE0 /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		043D20CA2C08474000BEBFE0 /* SwiftDataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDataContainer.swift; sourceTree = "<group>"; };
+		043D20CB2C08474000BEBFE0 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		043D20D12C08474F00BEBFE0 /* SoftContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftContentView.swift; sourceTree = "<group>"; };
+		043D20D22C08474F00BEBFE0 /* TreeHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeHomeView.swift; sourceTree = "<group>"; };
 		0440C1F82BF61409007D74E0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		047DF8CF2BF5D28C006525EB /* BloomSketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomSketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomSketchApp.swift; sourceTree = "<group>"; };
@@ -105,6 +119,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043D20CC2C08474000BEBFE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				043D20C92C08474000BEBFE0 /* Drawing.swift */,
+				043D20CA2C08474000BEBFE0 /* SwiftDataContainer.swift */,
+				043D20CB2C08474000BEBFE0 /* Tree.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		047DF8C62BF5D28C006525EB = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +151,13 @@
 		047DF8D12BF5D28C006525EB /* BloomSketch */ = {
 			isa = PBXGroup;
 			children = (
-				3F33718F2BF6F75300318356 /* Info.plist */,
 				047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */,
+				3F33718F2BF6F75300318356 /* Info.plist */,
+				043D20CC2C08474000BEBFE0 /* Model */,
+				043D20D12C08474F00BEBFE0 /* SoftContentView.swift */,
+				043D20D22C08474F00BEBFE0 /* TreeHomeView.swift */,
+				043D20C82C08474000BEBFE0 /* DefaultNavigationLink.swift */,
+				043D20C62C08472D00BEBFE0 /* PagerManager.swift */,
 				047DF8F72BF5D418006525EB /* NewSprout_View.swift */,
 				0440C1F82BF61409007D74E0 /* SplashScreen.swift */,
 				047DF8D42BF5D28C006525EB /* ContentView.swift */,
@@ -305,7 +334,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043D20C72C08472D00BEBFE0 /* PagerManager.swift in Sources */,
 				0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */,
+				043D20D32C08474F00BEBFE0 /* SoftContentView.swift in Sources */,
 				047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */,
 				04D4371C2C0628F000459B30 /* AlbumImagesView.swift in Sources */,
 				047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */,
@@ -313,6 +344,11 @@
 				3F33718C2BF6EAFC00318356 /* DrawingView.swift in Sources */,
 				047DF8FC2BF5D449006525EB /* Color.swift in Sources */,
 				047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */,
+				043D20D42C08474F00BEBFE0 /* TreeHomeView.swift in Sources */,
+				043D20CF2C08474000BEBFE0 /* SwiftDataContainer.swift in Sources */,
+				043D20CD2C08474000BEBFE0 /* DefaultNavigationLink.swift in Sources */,
+				043D20D02C08474000BEBFE0 /* Tree.swift in Sources */,
+				043D20CE2C08474000BEBFE0 /* Drawing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,9 +13,7 @@ struct NewSprout_View: View {
     @Query var trees: [Tree]
     @State private var sproutName = ""
     @State private var navigateToTreeHome = false
-    
-    @State private var action: Int? = 0
-    
+        
     var body: some View {
         NavigationStack { // Wrap the VStack in NavigationStack
             VStack {
@@ -58,7 +56,8 @@ struct NewSprout_View: View {
                             .frame(width: 300)
                             .padding(.top, 16)
                             
-                            NavigationLink(destination: TreeHomeView().modelContainer(SwiftDataContainer.container), isActive: $navigateToTreeHome) {
+                        
+                            NavigationLink(destination: ContentView(), isActive: $navigateToTreeHome) {
                                 EmptyView()
                             }
                             
