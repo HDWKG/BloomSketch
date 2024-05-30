@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-truct BoardingScreen2: View {
+struct BoardingScreen2: View {
     @State private var sproutName = ""
     @State private var action: Int? = 0
     @Binding var success: Bool
