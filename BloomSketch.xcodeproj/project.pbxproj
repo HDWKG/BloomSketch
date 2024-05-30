@@ -12,6 +12,9 @@
 		041A5D302C083D8000718673 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D2F2C083D8000718673 /* NotificationController.swift */; };
 		041A5D342C083E6500718673 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D322C083E6400718673 /* StreakView.swift */; };
 		041A5D352C083E6500718673 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5D332C083E6400718673 /* TreeView.swift */; };
+		042041642C08663E00BF995F /* BoardingScreen_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041632C08663E00BF995F /* BoardingScreen_1.swift */; };
+		042041662C0866B900BF995F /* BoardingScreen_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041652C0866B900BF995F /* BoardingScreen_2.swift */; };
+		042041682C0866C500BF995F /* BoardingScreen_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041672C0866C500BF995F /* BoardingScreen_3.swift */; };
 		043D20C72C08472D00BEBFE0 /* PagerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C62C08472D00BEBFE0 /* PagerManager.swift */; };
 		043D20CD2C08474000BEBFE0 /* DefaultNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C82C08474000BEBFE0 /* DefaultNavigationLink.swift */; };
 		043D20CE2C08474000BEBFE0 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C92C08474000BEBFE0 /* Drawing.swift */; };
@@ -67,6 +70,9 @@
 		041A5D312C083D9000718673 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		041A5D322C083E6400718673 /* StreakView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
 		041A5D332C083E6400718673 /* TreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
+		042041632C08663E00BF995F /* BoardingScreen_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_1.swift; sourceTree = "<group>"; };
+		042041652C0866B900BF995F /* BoardingScreen_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_2.swift; sourceTree = "<group>"; };
+		042041672C0866C500BF995F /* BoardingScreen_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_3.swift; sourceTree = "<group>"; };
 		043D20C62C08472D00BEBFE0 /* PagerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerManager.swift; sourceTree = "<group>"; };
 		043D20C82C08474000BEBFE0 /* DefaultNavigationLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNavigationLink.swift; sourceTree = "<group>"; };
 		043D20C92C08474000BEBFE0 /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
@@ -119,6 +125,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042041622C08662400BF995F /* BoardingView */ = {
+			isa = PBXGroup;
+			children = (
+				042041632C08663E00BF995F /* BoardingScreen_1.swift */,
+				042041672C0866C500BF995F /* BoardingScreen_3.swift */,
+				042041652C0866B900BF995F /* BoardingScreen_2.swift */,
+			);
+			path = BoardingView;
+			sourceTree = "<group>";
+		};
 		043D20CC2C08474000BEBFE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +167,7 @@
 		047DF8D12BF5D28C006525EB /* BloomSketch */ = {
 			isa = PBXGroup;
 			children = (
+				042041622C08662400BF995F /* BoardingView */,
 				047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */,
 				3F33718F2BF6F75300318356 /* Info.plist */,
 				043D20CC2C08474000BEBFE0 /* Model */,
@@ -341,6 +358,9 @@
 				04D4371C2C0628F000459B30 /* AlbumImagesView.swift in Sources */,
 				047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */,
 				3F3371912BF6FAA700318356 /* CustomNavigationLink.swift in Sources */,
+				042041642C08663E00BF995F /* BoardingScreen_1.swift in Sources */,
+				042041662C0866B900BF995F /* BoardingScreen_2.swift in Sources */,
+				042041682C0866C500BF995F /* BoardingScreen_3.swift in Sources */,
 				3F33718C2BF6EAFC00318356 /* DrawingView.swift in Sources */,
 				047DF8FC2BF5D449006525EB /* Color.swift in Sources */,
 				047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */,
