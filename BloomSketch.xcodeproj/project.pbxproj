@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		041672FE2C00613A002BBB06 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8FB2BF5D449006525EB /* Color.swift */; };
-		041673002C006534002BBB06 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041672FF2C006534002BBB06 /* StreakView.swift */; };
-		041673022C006546002BBB06 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041673012C006546002BBB06 /* TreeView.swift */; };
 		0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440C1F82BF61409007D74E0 /* SplashScreen.swift */; };
 		047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */; };
 		047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8D42BF5D28C006525EB /* ContentView.swift */; };
@@ -22,9 +19,9 @@
 		04C89B592BF6E8FA0024E261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C89B582BF6E8FA0024E261 /* Assets.xcassets */; };
 		04C89B5C2BF6E8FA0024E261 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C89B5B2BF6E8FA0024E261 /* Preview Assets.xcassets */; };
 		04C89B5F2BF6E8FA0024E261 /* WatchBloomSketch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		04C89B692BF6ECB60024E261 /* PageControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B682BF6ECB60024E261 /* PageControll.swift */; };
-		04C89B6C2BF702BE0024E261 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B6B2BF702BE0024E261 /* NotificationController.swift */; };
-		04C89B6E2BF703900024E261 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B6D2BF703900024E261 /* NotificationView.swift */; };
+		04D4371C2C0628F000459B30 /* AlbumImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D4371B2C0628F000459B30 /* AlbumImagesView.swift */; };
+		3F33718C2BF6EAFC00318356 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F33718B2BF6EAFC00318356 /* DrawingView.swift */; };
+		3F3371912BF6FAA700318356 /* CustomNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3371902BF6FAA700318356 /* CustomNavigationLink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +49,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		041672FF2C006534002BBB06 /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
-		041673012C006546002BBB06 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
 		0440C1F82BF61409007D74E0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		047DF8CF2BF5D28C006525EB /* BloomSketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomSketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomSketchApp.swift; sourceTree = "<group>"; };
@@ -68,10 +63,10 @@
 		04C89B562BF6E8F90024E261 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04C89B582BF6E8FA0024E261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C89B5B2BF6E8FA0024E261 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		04C89B652BF6EA2E0024E261 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; name = PushNotificationPayload.apns; path = ../../../../PushNotificationPayload.apns; sourceTree = "<group>"; };
-		04C89B682BF6ECB60024E261 /* PageControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PageControll.swift; path = ../../../../PageControll.swift; sourceTree = "<group>"; };
-		04C89B6B2BF702BE0024E261 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationController.swift; path = ../../../../NotificationController.swift; sourceTree = "<group>"; };
-		04C89B6D2BF703900024E261 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationView.swift; path = ../../../../NotificationView.swift; sourceTree = "<group>"; };
+		04D4371B2C0628F000459B30 /* AlbumImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImagesView.swift; sourceTree = "<group>"; };
+		3F33718B2BF6EAFC00318356 /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		3F33718F2BF6F75300318356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3F3371902BF6FAA700318356 /* CustomNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationLink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,11 +116,15 @@
 		047DF8D12BF5D28C006525EB /* BloomSketch */ = {
 			isa = PBXGroup;
 			children = (
+				3F33718F2BF6F75300318356 /* Info.plist */,
 				047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */,
 				047DF8F72BF5D418006525EB /* NewSprout_View.swift */,
 				0440C1F82BF61409007D74E0 /* SplashScreen.swift */,
 				047DF8D42BF5D28C006525EB /* ContentView.swift */,
 				047DF8FB2BF5D449006525EB /* Color.swift */,
+				3F33718B2BF6EAFC00318356 /* DrawingView.swift */,
+				3F3371902BF6FAA700318356 /* CustomNavigationLink.swift */,
+				04D4371B2C0628F000459B30 /* AlbumImagesView.swift */,
 				047DF8D62BF5D28E006525EB /* Assets.xcassets */,
 				047DF8D82BF5D28E006525EB /* Preview Content */,
 			);
@@ -144,15 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				04C89B542BF6E8F90024E261 /* WatchBloomSketchApp.swift */,
-				04C89B682BF6ECB60024E261 /* PageControll.swift */,
 				04C89B562BF6E8F90024E261 /* ContentView.swift */,
-				041672FF2C006534002BBB06 /* StreakView.swift */,
-				041673012C006546002BBB06 /* TreeView.swift */,
 				04C89B582BF6E8FA0024E261 /* Assets.xcassets */,
 				04C89B5A2BF6E8FA0024E261 /* Preview Content */,
-				04C89B652BF6EA2E0024E261 /* PushNotificationPayload.apns */,
-				04C89B6B2BF702BE0024E261 /* NotificationController.swift */,
-				04C89B6D2BF703900024E261 /* NotificationView.swift */,
 			);
 			path = "WatchBloomSketch Watch App";
 			sourceTree = "<group>";
@@ -297,7 +290,10 @@
 			files = (
 				0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */,
 				047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */,
+				04D4371C2C0628F000459B30 /* AlbumImagesView.swift in Sources */,
 				047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */,
+				3F3371912BF6FAA700318356 /* CustomNavigationLink.swift in Sources */,
+				3F33718C2BF6EAFC00318356 /* DrawingView.swift in Sources */,
 				047DF8FC2BF5D449006525EB /* Color.swift in Sources */,
 				047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */,
 			);
@@ -314,14 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C89B692BF6ECB60024E261 /* PageControll.swift in Sources */,
 				04C89B572BF6E8F90024E261 /* ContentView.swift in Sources */,
-				04C89B6C2BF702BE0024E261 /* NotificationController.swift in Sources */,
-				041673002C006534002BBB06 /* StreakView.swift in Sources */,
-				041673022C006546002BBB06 /* TreeView.swift in Sources */,
 				04C89B552BF6E8F90024E261 /* WatchBloomSketchApp.swift in Sources */,
-				04C89B6E2BF703900024E261 /* NotificationView.swift in Sources */,
-				041672FE2C00613A002BBB06 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +456,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BloomSketch/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BloomSketch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -496,6 +487,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BloomSketch/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BloomSketch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -597,7 +589,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WatchBloomSketch Watch App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = BloomSketch;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchBloomSketch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = BS.BloomSketch;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -626,7 +618,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WatchBloomSketch Watch App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = BloomSketch;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchBloomSketch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = BS.BloomSketch;
 				LD_RUNPATH_SEARCH_PATHS = (
