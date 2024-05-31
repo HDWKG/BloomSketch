@@ -24,10 +24,10 @@ struct BoardingScreen_1: View {
                         .frame(maxWidth: .infinity, alignment: .topTrailing)
                         .edgesIgnoringSafeArea(.top)
                     
-                    Text("“An app where you can draw and grow your plant Daily.”")
-                        .font(.system(size: 32, weight: .bold))
+                    Text("“An App Where You Can Draw and Grow Your Plant Daily.”")
+                        .font(.system(size: 36, weight: .bold))
                         .foregroundColor(Color(hex: 0x1B3F2E))
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, 36)
                         .fixedSize(horizontal: false, vertical: true)
                     
                     Spacer()
@@ -50,7 +50,7 @@ struct BoardingScreen_1: View {
                                 .padding(.horizontal, 64)
                                 .background(Color(hex: 0x1B3F2E))
                                 .cornerRadius(16)
-                                .padding(.top, 140)
+                                .padding(.top, 100)
                         }
                     }
                     

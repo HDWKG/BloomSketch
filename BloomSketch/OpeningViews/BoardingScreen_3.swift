@@ -23,8 +23,8 @@ struct BoardingScreen_3: View {
                     .frame(maxWidth: .infinity, alignment: .topTrailing)
                     .edgesIgnoringSafeArea(.top)
                 
-                Text("Draw everyday to get daily streaks!")
-                    .font(.system(size: 32, weight: .bold))
+                Text("Draw Everyday to Get Daily Streaks!")
+                    .font(.system(size: 36, weight: .bold))
                     .foregroundColor(Color(hex: 0x1B3F2E))
                     .padding(.horizontal, 32)
                     .fixedSize(horizontal: false, vertical: true)
@@ -47,7 +47,7 @@ struct BoardingScreen_3: View {
                         .padding(.horizontal, 64)
                         .background(Color(hex: 0x1B3F2E))
                         .cornerRadius(16)
-                        .padding(.top, 200)
+                        .padding(.top, 215)
                 }
                 
                 Image("")

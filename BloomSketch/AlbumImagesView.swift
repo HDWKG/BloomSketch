@@ -27,6 +27,9 @@ struct AlbumImagesView: View {
     }
     
     func loadImages() {
+        // Clear, no duplicate images
+        images.removeAll()
+        
         let albumTitle = "BloomSketch"
         if let album = fetchAlbum(named: albumTitle) {
             let assets = PHAsset.fetchAssets(in: album, options: nil)

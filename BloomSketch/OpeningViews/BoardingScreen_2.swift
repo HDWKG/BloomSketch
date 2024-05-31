@@ -24,10 +24,10 @@ struct BoardingScreen_2: View {
                         .frame(maxWidth: .infinity, alignment: .topTrailing)
                         .edgesIgnoringSafeArea(.top)
                     
-                    Text("Unleash your creativity and see your plant grow!")
-                        .font(.system(size: 32, weight: .bold))
+                    Text("Unleash Your Creativity and See Your Plant Grow!")
+                        .font(.system(size: 36, weight: .bold))
                         .foregroundColor(Color(hex: 0x1B3F2E))
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, 36)
                         .fixedSize(horizontal: false, vertical: true)
                     
                     Spacer()
@@ -49,7 +49,7 @@ struct BoardingScreen_2: View {
                             .padding(.horizontal, 64)
                             .background(Color(hex: 0x1B3F2E))
                             .cornerRadius(16)
-                            .padding(.top, 120)
+                            .padding(.top, 130)
                     }
                     
                     Image("")

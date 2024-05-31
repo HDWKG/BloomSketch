@@ -13,7 +13,7 @@ struct NewSprout_View: View {
     @Query var trees: [Tree]
     @State private var sproutName = ""
     @State private var navigateToTreeHome = false
-    
+        
     var body: some View {
         NavigationStack {
             ZStack {
@@ -70,7 +70,7 @@ struct NewSprout_View: View {
                         }
                         .padding(.top, 16)
                         
-                        NavigationLink(destination: CustomNavigationLink(), isActive: $navigateToTreeHome) {
+                        NavigationLink(destination: ContentView(), isActive: $navigateToTreeHome) {
                             EmptyView()
                         }
                         
