@@ -8,7 +8,6 @@ struct CustomNavigationLink: View {
     @State private var color: Color = .black
     @State private var pencilType: PKInkingTool.InkType = .crayon
     @Environment(\.undoManager) private var undoManager
-    //    @Binding var action: Int?
     
     @State private var showAlert = false
     @State private var alertMessage = ""
@@ -159,14 +158,14 @@ struct CustomNavigationLink: View {
                 albumChangeRequest.addAssets([request.placeholderForCreatedAsset!] as NSArray)
             }
         }) { success, error in
-//            DispatchQueue.main.async {
-//                if success {
-//                    self.alertMessage = "Your drawing has been saved to the My Drawings album."
-//                } else {
-//                    self.alertMessage = "Failed to save drawing: \(error?.localizedDescription ?? "unknown error")."
-//                }
-//                self.showAlert = true
-//            }
+            DispatchQueue.main.async {
+                if success {
+                    self.alertMessage = "Your drawing has been saved to the My Drawings album."
+                } else {
+                    self.alertMessage = "Failed to save drawing: \(error?.localizedDescription ?? "unknown error")."
+                }
+                self.showAlert = true
+            }
         }
     }
     func fetchAlbum(named title: String) -> PHAssetCollection? {
@@ -175,17 +174,4 @@ struct CustomNavigationLink: View {
         let fetchResult = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: fetchOptions)
         return fetchResult.firstObject
     }
-    
-    //    func saveDrawing() {
-    //        // Your saving logic here...
-    //        // Get the drawing image from the canvas
-    //        let drawingImage = canvas.drawing.image(from: canvas.drawing.bounds, scale: 1.0)
-    //
-    //        // Save drawings to the Photos Album
-    //        UIImageWriteToSavedPhotosAlbum(drawingImage, nil, nil, nil)
-    //
-    //        // Update the alert message and show the alert
-    //        alertMessage = "Your drawing has been saved to your Photos."
-    //        showAlert = true
-    //    }
 }

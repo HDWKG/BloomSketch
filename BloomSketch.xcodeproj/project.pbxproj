@@ -15,6 +15,8 @@
 		042041642C08663E00BF995F /* BoardingScreen_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041632C08663E00BF995F /* BoardingScreen_1.swift */; };
 		042041662C0866B900BF995F /* BoardingScreen_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041652C0866B900BF995F /* BoardingScreen_2.swift */; };
 		042041682C0866C500BF995F /* BoardingScreen_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041672C0866C500BF995F /* BoardingScreen_3.swift */; };
+		043584372C0961FF00BAB29F /* AlbumImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043584362C0961FF00BAB29F /* AlbumImagesViewModel.swift */; };
+		043584392C09630600BAB29F /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043584382C09630600BAB29F /* ImagePreviewView.swift */; };
 		043D20C72C08472D00BEBFE0 /* OpeningPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C62C08472D00BEBFE0 /* OpeningPager.swift */; };
 		043D20CD2C08474000BEBFE0 /* DefaultNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C82C08474000BEBFE0 /* DefaultNavigationLink.swift */; };
 		043D20CE2C08474000BEBFE0 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C92C08474000BEBFE0 /* Drawing.swift */; };
@@ -74,6 +76,8 @@
 		042041632C08663E00BF995F /* BoardingScreen_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_1.swift; sourceTree = "<group>"; };
 		042041652C0866B900BF995F /* BoardingScreen_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_2.swift; sourceTree = "<group>"; };
 		042041672C0866C500BF995F /* BoardingScreen_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_3.swift; sourceTree = "<group>"; };
+		043584362C0961FF00BAB29F /* AlbumImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImagesViewModel.swift; sourceTree = "<group>"; };
+		043584382C09630600BAB29F /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
 		043D20C62C08472D00BEBFE0 /* OpeningPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningPager.swift; sourceTree = "<group>"; };
 		043D20C82C08474000BEBFE0 /* DefaultNavigationLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNavigationLink.swift; sourceTree = "<group>"; };
 		043D20C92C08474000BEBFE0 /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
@@ -140,6 +144,26 @@
 			path = OpeningViews;
 			sourceTree = "<group>";
 		};
+		043584352C09619900BAB29F /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				04D4371B2C0628F000459B30 /* AlbumImagesView.swift */,
+				043584362C0961FF00BAB29F /* AlbumImagesViewModel.swift */,
+				043584382C09630600BAB29F /* ImagePreviewView.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		0435843A2C09647900BAB29F /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				3F33718B2BF6EAFC00318356 /* DrawingView.swift */,
+				047DF8FB2BF5D449006525EB /* Color.swift */,
+				3F3371902BF6FAA700318356 /* CustomNavigationLink.swift */,
+			);
+			path = Draw;
+			sourceTree = "<group>";
+		};
 		043D20CC2C08474000BEBFE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +196,8 @@
 		047DF8D12BF5D28C006525EB /* BloomSketch */ = {
 			isa = PBXGroup;
 			children = (
+				0435843A2C09647900BAB29F /* Draw */,
+				043584352C09619900BAB29F /* Album */,
 				04F936AE2C08A79000D8D644 /* PagerManager */,
 				3F33718F2BF6F75300318356 /* Info.plist */,
 				042041622C08662400BF995F /* OpeningViews */,
@@ -180,10 +206,6 @@
 				043D20D22C08474F00BEBFE0 /* TreeHomeView.swift */,
 				043D20C82C08474000BEBFE0 /* DefaultNavigationLink.swift */,
 				047DF8D42BF5D28C006525EB /* ContentView.swift */,
-				047DF8FB2BF5D449006525EB /* Color.swift */,
-				3F33718B2BF6EAFC00318356 /* DrawingView.swift */,
-				3F3371902BF6FAA700318356 /* CustomNavigationLink.swift */,
-				04D4371B2C0628F000459B30 /* AlbumImagesView.swift */,
 				047DF8D62BF5D28E006525EB /* Assets.xcassets */,
 				047DF8D82BF5D28E006525EB /* Preview Content */,
 			);
@@ -369,6 +391,7 @@
 				04D4371C2C0628F000459B30 /* AlbumImagesView.swift in Sources */,
 				047DF8D52BF5D28C006525EB /* ContentView.swift in Sources */,
 				3F3371912BF6FAA700318356 /* CustomNavigationLink.swift in Sources */,
+				043584392C09630600BAB29F /* ImagePreviewView.swift in Sources */,
 				042041642C08663E00BF995F /* BoardingScreen_1.swift in Sources */,
 				042041662C0866B900BF995F /* BoardingScreen_2.swift in Sources */,
 				042041682C0866C500BF995F /* BoardingScreen_3.swift in Sources */,
@@ -378,6 +401,7 @@
 				043D20D42C08474F00BEBFE0 /* TreeHomeView.swift in Sources */,
 				043D20CF2C08474000BEBFE0 /* SwiftDataContainer.swift in Sources */,
 				043D20CD2C08474000BEBFE0 /* DefaultNavigationLink.swift in Sources */,
+				043584372C0961FF00BAB29F /* AlbumImagesViewModel.swift in Sources */,
 				04F936B02C08A7CF00D8D644 /* HomePager.swift in Sources */,
 				043D20D02C08474000BEBFE0 /* Tree.swift in Sources */,
 				043D20CE2C08474000BEBFE0 /* Drawing.swift in Sources */,

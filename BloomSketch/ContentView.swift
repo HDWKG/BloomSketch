@@ -16,7 +16,7 @@ struct ContentView: View {
                 .modelContainer(SwiftDataContainer.container)
             AlbumImagesView()
         }
-        
+//        AlbumImagesView()
     }
 }
 

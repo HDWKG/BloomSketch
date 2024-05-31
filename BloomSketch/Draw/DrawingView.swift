@@ -13,7 +13,6 @@ struct DrawingView: UIViewRepresentable {
     @Binding var isDrawing: Bool
     @Binding var pencilType: PKInkingTool.InkType
     @Binding var color: Color
-    //    let canvasImage: UIImage?
     
     var ink : PKInkingTool {
         PKInkingTool(pencilType, color: UIColor(color))
@@ -21,13 +20,6 @@ struct DrawingView: UIViewRepresentable {
     
     let eraser = PKEraserTool(.bitmap)
     
-    //    func makeUIView(context: Context) -> PKCanvasView {
-    //            canvas.drawingPolicy = .anyInput
-    //            canvas.tool = isDrawing ? ink : eraser
-    //            canvas.alwaysBounceVertical = true
-    //
-    //        return canvas
-    //    }
     func makeCoordinator() -> Coordinator {
         Coordinator()
     }
@@ -49,7 +41,6 @@ struct DrawingView: UIViewRepresentable {
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFill
             imageView.translatesAutoresizingMaskIntoConstraints = false
-//            imageView.clipsToBounds = true
             
             let contentView = canvasView.subviews[0]
             contentView.addSubview(imageView)
@@ -58,7 +49,7 @@ struct DrawingView: UIViewRepresentable {
             NSLayoutConstraint.activate([
                 imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
                 imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-                imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1), // Mengatur lebar gambar menjadi 80% dari lebar contentView
+                imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1), // Mengatur lebar gambar menjadi 100% dari lebar contentView
                 imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor) // Membuat gambar menjadi persegi panjang dengan tinggi yang sama dengan lebar
             ])
         }
