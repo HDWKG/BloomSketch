@@ -13,7 +13,6 @@ struct TreeHomeView: View {
     @Environment(\.modelContext) var modelContext
     @Query var trees: [Tree]
     @State private var navigateToDrawingView = false
-    @State private var timerToggle = false
     @State private var action: Int? = 0
     
     @State var canvas = PKCanvasView()
@@ -30,18 +29,6 @@ struct TreeHomeView: View {
         if let tree = trees.first {
             NavigationView {
                 VStack {
-                    
-                    // Segmented Picker
-//                    Picker("Select a page", selection: $selectedPage) {
-//                        Text("\(tree.name)'s Den").tag(0)
-//                        Text("New Sprout View").tag(1)
-//                    }
-//                    .pickerStyle(.segmented)
-//                    .padding(.vertical, 16)
-//                    .onChange(of: selectedPage) { value in
-//                        navigateToDrawingList = value == 1
-//                    }
-                    
                     Text("\(tree.name)'s Den")
                     
                     ZStack {
@@ -99,7 +86,6 @@ struct TreeHomeView: View {
                                     )
                                 }
                                 .padding(.top, 24)
-                                
                             }
                             
                         } else {
@@ -116,19 +102,13 @@ struct TreeHomeView: View {
                             .padding(.top, 24)
                         }
                         
-                        Toggle(isOn: $timerToggle) {
-                            Text("Enable Timer")
-                                .font(.subheadline)
-                                .foregroundColor(Color(hex: 0x1B3F2E))
-                        }
-                        .fixedSize()
-                        .padding(.top, 8)
-                        
                         NavigationLink(destination: CustomNavigationLink(), isActive: $navigateToDrawingView) {
                             EmptyView()
                         }
                     }
                     .frame(maxWidth: .infinity)
+                    .padding(.bottom, 24)
+
                 }
                 .padding(.horizontal, 32)
             }
