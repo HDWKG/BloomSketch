@@ -8,7 +8,8 @@ struct CustomNavigationLink: View {
     @State private var color: Color = .black
     @State private var pencilType: PKInkingTool.InkType = .crayon
     @Environment(\.undoManager) private var undoManager
-    
+    @State private var navigateBackToTreeHome = false
+
     @State private var showAlert = false
     @State private var alertMessage = ""
     
@@ -136,6 +137,10 @@ struct CustomNavigationLink: View {
                                     .font(.caption2)
                             }
                         }
+                        
+                        NavigationLink(destination: ContentView(), isActive: $navigateBackToTreeHome) {
+                            EmptyView()
+                        }
                     }
                 }
                 .alert(isPresented: $showAlert) {
@@ -144,6 +149,7 @@ struct CustomNavigationLink: View {
             
         }
     }
+    
     func saveDrawing() {
         let drawingImage = canvas.drawing.image(from: canvas.drawing.bounds, scale: 1.0)
         
@@ -158,16 +164,19 @@ struct CustomNavigationLink: View {
                 albumChangeRequest.addAssets([request.placeholderForCreatedAsset!] as NSArray)
             }
         }) { success, error in
-            DispatchQueue.main.async {
-                if success {
-                    self.alertMessage = "Your drawing has been saved to the My Drawings album."
-                } else {
-                    self.alertMessage = "Failed to save drawing: \(error?.localizedDescription ?? "unknown error")."
-                }
-                self.showAlert = true
-            }
+//            DispatchQueue.main.async {
+//                if success {
+//                    self.alertMessage = "Your drawing has been saved to the My Drawings album."
+//                } else {
+//                    self.alertMessage = "Failed to save drawing: \(error?.localizedDescription ?? "unknown error")."
+//                }
+//                self.showAlert = true
+//            }
         }
+        
+        navigateBackToTreeHome = true
     }
+    
     func fetchAlbum(named title: String) -> PHAssetCollection? {
         let fetchOptions = PHFetchOptions()
         fetchOptions.predicate = NSPredicate(format: "title = %@", title)

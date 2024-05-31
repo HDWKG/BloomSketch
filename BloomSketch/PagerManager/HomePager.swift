@@ -25,6 +25,14 @@ struct HomePager<Content: View>: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
+                Picker(selection: $currentIndex, label: Text("Page Picker")) {
+                    ForEach(0..<pageCount, id: \.self) { index in
+                        Text("Page \(index + 1)").tag(index)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.top, 10)
+                
                 HStack(spacing: 0) {
                     content.frame(width: geometry.size.width)
                 }
@@ -46,14 +54,6 @@ struct HomePager<Content: View>: View {
                         }
                 )
                 
-                HStack(spacing: 8) {
-                    ForEach(0..<pageCount, id: \.self) { index in
-                        Circle()
-                            .fill(index == currentIndex ? Color.green : Color.gray)
-                            .frame(width: 10, height: 10)
-                    }
-                }
-                .padding(.top, 10)
             }
         }
     }

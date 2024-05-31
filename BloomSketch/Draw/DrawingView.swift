@@ -37,7 +37,7 @@ struct DrawingView: UIViewRepresentable {
         canvasView.alwaysBounceVertical = true
         
         // Add background image
-        if let image = UIImage(named: "Tree_5") {
+        if let image = UIImage(named: "BloomSketch_LogoFull") {
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFill
             imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,6 +63,7 @@ struct DrawingView: UIViewRepresentable {
         
         uiView.tool = isDrawing ? ink : eraser
     }
+    
     class Coordinator: NSObject, PKCanvasViewDelegate {
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             // Handle drawing changes if needed
