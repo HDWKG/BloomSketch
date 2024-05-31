@@ -65,8 +65,16 @@ struct AlbumImagesView: View {
             }
             .onAppear(perform: viewModel.loadImages)
             .sheet(item: $selectedImage) { identifiableImage in
-                ImagePreviewView(image: identifiableImage.image)
+                ImagePreviewView(image: identifiableImage.image) {
+                    removeImage(identifiableImage.image)
+                }
+                
             }
+        }
+    }
+    func removeImage(_ image: UIImage) {
+        if let index = viewModel.images.firstIndex(where: { $0 === image }) {
+            viewModel.images.remove(at: index)
         }
     }
 }

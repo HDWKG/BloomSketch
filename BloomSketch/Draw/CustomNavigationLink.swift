@@ -3,27 +3,16 @@ import PencilKit
 import Photos
 
 struct CustomNavigationLink: View {
-    @State private var canvas = PKCanvasView()
-    @State private var isDrawing = true
-    @State private var color: Color = .black
-    @State private var pencilType: PKInkingTool.InkType = .crayon
+    @StateObject private var viewModel = DrawingViewModel()
     @Environment(\.undoManager) private var undoManager
-    @State private var navigateBackToTreeHome = false
-
-    @State private var showAlert = false
-    @State private var alertMessage = ""
     
     var body: some View {
-        NavigationStack{
-            
-            DrawingView(canvas: $canvas, isDrawing: $isDrawing, pencilType: $pencilType, color: $color)
+        NavigationStack {
+            DrawingView(canvas: $viewModel.canvas, isDrawing: $viewModel.isDrawing, pencilType: $viewModel.pencilType, color: $viewModel.color)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItemGroup(placement: .bottomBar) {
-                        Button {
-                            // Clear the canvas. Reset the drawing
-                            canvas.drawing = PKDrawing()
-                        } label: {
+                        Button(action: viewModel.clearCanvas) {
                             Image(systemName: "trash.slash")
                         }
                         
@@ -41,74 +30,41 @@ struct CustomNavigationLink: View {
                             Image(systemName: "arrow.uturn.forward")
                         }
                         
-                        Button {
-                            // Erase tool
-                            isDrawing = false
-                        } label: {
+                        Button(action: { viewModel.isDrawing = false }) {
                             Image(systemName: "eraser.line.dashed")
                         }
                         
                         Divider()
                             .rotationEffect(.degrees(90))
                         
-                        // Menu for pencil types and color
                         Menu {
-                            Button {
-                                // Menu: Pencil
-                                isDrawing = true
-                                pencilType = .pencil
-                            } label: {
+                            Button(action: { viewModel.isDrawing = true; viewModel.pencilType = .pencil }) {
                                 Label("Pencil", systemImage: "pencil")
                             }
                             
-                            Button {
-                                // Menu: Pen
-                                isDrawing = true
-                                pencilType = .pen
-                            } label: {
+                            Button(action: { viewModel.isDrawing = true; viewModel.pencilType = .pen }) {
                                 Label("Pen", systemImage: "applepencil")
                             }
                             
-                            Button {
-                                // Menu: Marker
-                                isDrawing = true
-                                pencilType = .marker
-                            } label: {
+                            Button(action: { viewModel.isDrawing = true; viewModel.pencilType = .marker }) {
                                 Label("Marker", systemImage: "pencil.tip")
                             }
                             
-                            Button {
-                                // Menu: Monoline
-                                isDrawing = true
-                                pencilType = .monoline
-                            } label: {
+                            Button(action: { viewModel.isDrawing = true; viewModel.pencilType = .monoline }) {
                                 Label("Monoline", systemImage: "pencil.line")
                             }
                             
-                            Button {
-                                // Menu: Fountain Pen
-                                isDrawing = true
-                                pencilType = .fountainPen
-                            } label: {
+                            Button(action: { viewModel.isDrawing = true; viewModel.pencilType = .fountainPen }) {
                                 Label("Fountain", systemImage: "paintbrush.pointed.fill")
                             }
                             
-                            Button {
-                                // Menu: Watercolor
-                                isDrawing = true
-                                pencilType = .watercolor
-                            } label: {
+                            Button(action: { viewModel.isDrawing = true; viewModel.pencilType = .watercolor }) {
                                 Label("Watercolor", systemImage: "paintbrush.pointed")
                             }
                             
-                            Button {
-                                // Menu: Crayon
-                                isDrawing = true
-                                pencilType = .crayon
-                            } label: {
+                            Button(action: { viewModel.isDrawing = true; viewModel.pencilType = .crayon }) {
                                 Label("Crayon", systemImage: "applepencil.and.scribble")
                             }
-                            
                         } label: {
                             Image(systemName: "pencil.tip.crop.circle.fill")
                         }
@@ -118,19 +74,13 @@ struct CustomNavigationLink: View {
                         Divider()
                             .rotationEffect(.degrees(90))
                         
-                        ColorPicker("", selection: $color)
+                        ColorPicker("", selection: $viewModel.color)
                         
-                        
-                        Button {
-                            // Set ruler as active
-                            canvas.isRulerActive.toggle()
-                        } label: {
+                        Button(action: viewModel.toggleRuler) {
                             Image(systemName: "pencil.and.ruler.fill")
                         }
                         
-                        Button {
-                            saveDrawing()
-                        } label: {
+                        Button(action: viewModel.saveDrawing) {
                             VStack {
                                 Image(systemName: "square.and.arrow.down.on.square")
                                 Text("Save")
@@ -138,49 +88,14 @@ struct CustomNavigationLink: View {
                             }
                         }
                         
-                        NavigationLink(destination: ContentView(), isActive: $navigateBackToTreeHome) {
+                        NavigationLink(destination: ContentView(), isActive: $viewModel.navigateBackToTreeHome) {
                             EmptyView()
                         }
                     }
                 }
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Save Drawing"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                .alert(isPresented: $viewModel.showAlert) {
+                    Alert(title: Text("Save Drawing"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
                 }
-            
         }
-    }
-    
-    func saveDrawing() {
-        let drawingImage = canvas.drawing.image(from: canvas.drawing.bounds, scale: 1.0)
-        
-        PHPhotoLibrary.shared().performChanges({
-            let request = PHAssetChangeRequest.creationRequestForAsset(from: drawingImage)
-            let albumTitle = "BloomSketch"
-            if let album = fetchAlbum(named: albumTitle) {
-                let albumChangeRequest = PHAssetCollectionChangeRequest(for: album)
-                albumChangeRequest?.addAssets([request.placeholderForCreatedAsset!] as NSArray)
-            } else {
-                let albumChangeRequest = PHAssetCollectionChangeRequest.creationRequestForAssetCollection(withTitle: albumTitle)
-                albumChangeRequest.addAssets([request.placeholderForCreatedAsset!] as NSArray)
-            }
-        }) { success, error in
-//            DispatchQueue.main.async {
-//                if success {
-//                    self.alertMessage = "Your drawing has been saved to the My Drawings album."
-//                } else {
-//                    self.alertMessage = "Failed to save drawing: \(error?.localizedDescription ?? "unknown error")."
-//                }
-//                self.showAlert = true
-//            }
-        }
-        
-        navigateBackToTreeHome = true
-    }
-    
-    func fetchAlbum(named title: String) -> PHAssetCollection? {
-        let fetchOptions = PHFetchOptions()
-        fetchOptions.predicate = NSPredicate(format: "title = %@", title)
-        let fetchResult = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: fetchOptions)
-        return fetchResult.firstObject
     }
 }

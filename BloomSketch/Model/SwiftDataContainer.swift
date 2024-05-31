@@ -13,7 +13,7 @@ class SwiftDataContainer {
     static let container: ModelContainer = {
         do {
             let config = ModelConfiguration(isStoredInMemoryOnly: true)
-            let container = try ModelContainer(for: Tree.self, Drawing.self, configurations: config)
+            let container = try ModelContainer(for: Tree.self, configurations: config)
             
             // Seeder
             container.mainContext.insert(Tree(name: "Yebol", dailyDone: true, streak: 34, enableTimer: true))

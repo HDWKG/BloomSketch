@@ -17,9 +17,9 @@
 		042041682C0866C500BF995F /* BoardingScreen_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041672C0866C500BF995F /* BoardingScreen_3.swift */; };
 		043584372C0961FF00BAB29F /* AlbumImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043584362C0961FF00BAB29F /* AlbumImagesViewModel.swift */; };
 		043584392C09630600BAB29F /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043584382C09630600BAB29F /* ImagePreviewView.swift */; };
+		0435843C2C0969B200BAB29F /* DrawingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435843B2C0969B200BAB29F /* DrawingViewModel.swift */; };
 		043D20C72C08472D00BEBFE0 /* OpeningPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C62C08472D00BEBFE0 /* OpeningPager.swift */; };
 		043D20CD2C08474000BEBFE0 /* DefaultNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C82C08474000BEBFE0 /* DefaultNavigationLink.swift */; };
-		043D20CE2C08474000BEBFE0 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C92C08474000BEBFE0 /* Drawing.swift */; };
 		043D20CF2C08474000BEBFE0 /* SwiftDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20CA2C08474000BEBFE0 /* SwiftDataContainer.swift */; };
 		043D20D02C08474000BEBFE0 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20CB2C08474000BEBFE0 /* Tree.swift */; };
 		043D20D32C08474F00BEBFE0 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20D12C08474F00BEBFE0 /* OpeningView.swift */; };
@@ -78,9 +78,9 @@
 		042041672C0866C500BF995F /* BoardingScreen_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_3.swift; sourceTree = "<group>"; };
 		043584362C0961FF00BAB29F /* AlbumImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImagesViewModel.swift; sourceTree = "<group>"; };
 		043584382C09630600BAB29F /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
+		0435843B2C0969B200BAB29F /* DrawingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewModel.swift; sourceTree = "<group>"; };
 		043D20C62C08472D00BEBFE0 /* OpeningPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningPager.swift; sourceTree = "<group>"; };
 		043D20C82C08474000BEBFE0 /* DefaultNavigationLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNavigationLink.swift; sourceTree = "<group>"; };
-		043D20C92C08474000BEBFE0 /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		043D20CA2C08474000BEBFE0 /* SwiftDataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDataContainer.swift; sourceTree = "<group>"; };
 		043D20CB2C08474000BEBFE0 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		043D20D12C08474F00BEBFE0 /* OpeningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
@@ -160,6 +160,7 @@
 				3F33718B2BF6EAFC00318356 /* DrawingView.swift */,
 				047DF8FB2BF5D449006525EB /* Color.swift */,
 				3F3371902BF6FAA700318356 /* CustomNavigationLink.swift */,
+				0435843B2C0969B200BAB29F /* DrawingViewModel.swift */,
 			);
 			path = Draw;
 			sourceTree = "<group>";
@@ -167,7 +168,6 @@
 		043D20CC2C08474000BEBFE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				043D20C92C08474000BEBFE0 /* Drawing.swift */,
 				043D20CA2C08474000BEBFE0 /* SwiftDataContainer.swift */,
 				043D20CB2C08474000BEBFE0 /* Tree.swift */,
 			);
@@ -395,6 +395,7 @@
 				042041642C08663E00BF995F /* BoardingScreen_1.swift in Sources */,
 				042041662C0866B900BF995F /* BoardingScreen_2.swift in Sources */,
 				042041682C0866C500BF995F /* BoardingScreen_3.swift in Sources */,
+				0435843C2C0969B200BAB29F /* DrawingViewModel.swift in Sources */,
 				3F33718C2BF6EAFC00318356 /* DrawingView.swift in Sources */,
 				047DF8FC2BF5D449006525EB /* Color.swift in Sources */,
 				047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */,
@@ -404,7 +405,6 @@
 				043584372C0961FF00BAB29F /* AlbumImagesViewModel.swift in Sources */,
 				04F936B02C08A7CF00D8D644 /* HomePager.swift in Sources */,
 				043D20D02C08474000BEBFE0 /* Tree.swift in Sources */,
-				043D20CE2C08474000BEBFE0 /* Drawing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
