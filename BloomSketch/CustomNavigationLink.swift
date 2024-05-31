@@ -8,8 +8,8 @@ struct CustomNavigationLink: View {
     @State private var color: Color = .black
     @State private var pencilType: PKInkingTool.InkType = .crayon
     @Environment(\.undoManager) private var undoManager
-    //    @Binding var action: Int?
-    
+    @State private var navigateBackToTreeHome = false
+
     @State private var showAlert = false
     @State private var alertMessage = ""
     
@@ -137,6 +137,10 @@ struct CustomNavigationLink: View {
                                     .font(.caption2)
                             }
                         }
+                        
+                        NavigationLink(destination: ContentView(), isActive: $navigateBackToTreeHome) {
+                            EmptyView()
+                        }
                     }
                 }
                 .alert(isPresented: $showAlert) {
@@ -145,6 +149,7 @@ struct CustomNavigationLink: View {
             
         }
     }
+    
     func saveDrawing() {
         let drawingImage = canvas.drawing.image(from: canvas.drawing.bounds, scale: 1.0)
         
@@ -168,24 +173,14 @@ struct CustomNavigationLink: View {
 //                self.showAlert = true
 //            }
         }
+        
+        navigateBackToTreeHome = true
     }
+    
     func fetchAlbum(named title: String) -> PHAssetCollection? {
         let fetchOptions = PHFetchOptions()
         fetchOptions.predicate = NSPredicate(format: "title = %@", title)
         let fetchResult = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: fetchOptions)
         return fetchResult.firstObject
     }
-    
-    //    func saveDrawing() {
-    //        // Your saving logic here...
-    //        // Get the drawing image from the canvas
-    //        let drawingImage = canvas.drawing.image(from: canvas.drawing.bounds, scale: 1.0)
-    //
-    //        // Save drawings to the Photos Album
-    //        UIImageWriteToSavedPhotosAlbum(drawingImage, nil, nil, nil)
-    //
-    //        // Update the alert message and show the alert
-    //        alertMessage = "Your drawing has been saved to your Photos."
-    //        showAlert = true
-    //    }
 }
