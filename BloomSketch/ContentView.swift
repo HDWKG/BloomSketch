@@ -7,21 +7,30 @@
 
 import SwiftUI
 struct ContentView: View {
-    @State private var selection = 0
+    @State private var selection = 1
+    
     var body: some View {
         VStack {
             TabView(selection: $selection) {
-                TreeHomeView()
+                AlbumImagesView()
                     .modelContainer(SwiftDataContainer.container)
                     .tag(0)
+                    .tabItem {
+                        Label("Your Drawings", systemImage: "photo.on.rectangle.angled")
+                    }
+                
+                TreeHomeView()
+                    .modelContainer(SwiftDataContainer.container)
+                    .tag(1)
                     .tabItem {
                         Label("Tree", systemImage: "tree")
                     }
                 
-                AlbumImagesView()
-                    .tag(1)
+                CollectionView()
+                    .modelContainer(SwiftDataContainer.container)
+                    .tag(2)
                     .tabItem {
-                        Label("Your Drawings", systemImage: "photo.on.rectangle.angled")
+                        Label("Collection", systemImage: "folder")
                     }
             }
             
