@@ -27,15 +27,13 @@ struct AlbumImagesView: View {
         if let tree = trees.first {
             NavigationView {
                 ZStack {
-                    Color(#colorLiteral(red: 0.8352941176, green: 0.8941176471, blue: 0.8666666667, alpha: 1))
-                        .ignoresSafeArea()
                     
                     ScrollView {
                         Text("\(tree.name)'s Album")
                             .font(.system(size: 28, weight: .bold))
                             .foregroundColor(Color(hex: 0x1B3F2E))
                         
-                        Text("Draw more to unlock all drawings!")
+                        Text("Check out all of your creations!")
                             .font(.system(size: 20))
                             .foregroundColor(Color(hex: 0x1B3F2E))
                         

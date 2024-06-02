@@ -60,7 +60,7 @@ struct NewSprout_View: View {
                         Button(action: {
                             saveSproutName()
                         }) {
-                            Text("Start")
+                            Text("Plant")
                                 .font(.headline)
                                 .foregroundColor(.white)
                                 .padding(.vertical, 12)

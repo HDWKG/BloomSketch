@@ -39,11 +39,31 @@ struct CollectionView: View {
                                     Text(drawing.name)
                                         .padding(.bottom)
                                 }
+                            } else {
+                                VStack(alignment: .center) {
+                                    Spacer()
+                                    ZStack {
+                                        Image(drawing.filename)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(maxWidth: .infinity)
+                                            .padding()
+                                            .blur(radius: 10)
+                                        Image(systemName: "lock")
+                                            .resizable(resizingMode: .tile) // Prevent stretching
+                                            .scaledToFit()
+                                            .frame(width: 32, height: 32)
+                                            .foregroundColor(.black)
+                                    }
+                                    Text("Locked")
+                                        .padding(.bottom)
+                                }
+                                
                             }
                             
                         }
                     }
-                }                
+                }
             }
         }
     }

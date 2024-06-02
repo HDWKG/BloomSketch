@@ -40,7 +40,7 @@ struct BoardingScreen_3: View {
                     .offset(y: 110)
                 
                 Button(action: { onComplete() }) {
-                    Text("Continue")
+                    Text("Start")
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding(.vertical, 12)
