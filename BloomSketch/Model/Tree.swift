@@ -10,12 +10,12 @@ import SwiftData
 
 @Model
 class Tree {
-    var name: String
+    @Attribute(.unique) var name: String
     var dailyDone: Bool
     var streak: Int
     var treePhase: String
     var enableTimer: Bool
-
+    
     init(name: String, dailyDone: Bool, streak: Int, enableTimer: Bool) {
         self.name = name
         self.dailyDone = dailyDone

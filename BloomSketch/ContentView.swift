@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 struct ContentView: View {
     @State private var selection = 1
     
@@ -33,7 +34,6 @@ struct ContentView: View {
                         Label("Collection", systemImage: "folder")
                     }
             }
-            .padding(.top, 8)
             .gesture(DragGesture()
                 .onEnded({ value in
                     if value.translation.width > 100 {

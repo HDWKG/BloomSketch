@@ -13,7 +13,7 @@ struct BoardingScreen_3: View {
     
     var body: some View {
         ZStack {
-            Color(#colorLiteral(red: 0.8352941176, green: 0.8941176471, blue: 0.8666666667, alpha: 1))
+            Color(hex: 0xD5E4DD)
                 .ignoresSafeArea()
             
             VStack {

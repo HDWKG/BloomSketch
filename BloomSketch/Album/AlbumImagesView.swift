@@ -82,7 +82,6 @@ struct AlbumImagesView: View {
                         ImagePreviewView(image: identifiableImage.image) {
                             removeImage(identifiableImage.image)
                         }
-                        
                     }
                 }
             }

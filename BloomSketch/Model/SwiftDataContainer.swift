@@ -13,6 +13,7 @@ class SwiftDataContainer {
     static let container: ModelContainer = {
         do {
             let config = ModelConfiguration(isStoredInMemoryOnly: true)
+//            let config = ModelConfiguration(url: URL("path"))
             let container = try ModelContainer(for: Tree.self, Drawing.self, configurations: config)
             
             // Seeder

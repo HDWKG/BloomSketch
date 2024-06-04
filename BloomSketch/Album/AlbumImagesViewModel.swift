@@ -12,6 +12,8 @@ class AlbumImagesViewModel: ObservableObject {
     @Published var images: [UIImage] = []
     
     func loadImages() {
+        images.removeAll() // reset album
+        
         let albumTitle = "BloomSketch"
         if let album = fetchAlbum(named: albumTitle) {
             let assets = PHAsset.fetchAssets(in: album, options: nil)

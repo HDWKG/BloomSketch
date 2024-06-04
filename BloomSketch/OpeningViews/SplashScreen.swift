@@ -14,7 +14,7 @@ struct SplashScreenView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.init(Color(#colorLiteral(red: 0.8352941176, green: 0.8941176471, blue: 0.8666666667, alpha: 1))), Color(hex: 0x63B256)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [.init(Color(.white)), Color(hex: 0x63B256)]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea(.all)
             
             if isActive {

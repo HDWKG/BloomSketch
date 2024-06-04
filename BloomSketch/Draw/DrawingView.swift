@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 import PencilKit
 
 struct DrawingView: UIViewRepresentable {
+//    @Environment(\.modelContext) var modelContext
+//    @Query var drawings: [Drawing]
+    
     @Binding var canvas: PKCanvasView
     @Binding var isDrawing: Bool
     @Binding var pencilType: PKInkingTool.InkType
@@ -35,6 +39,9 @@ struct DrawingView: UIViewRepresentable {
         canvasView.drawingPolicy = .anyInput
         canvasView.tool = isDrawing ? ink : eraser
         canvasView.alwaysBounceVertical = true
+        
+//        let rand_index = Int.random(in: 0..<drawings.count)
+//        let imageBackground = drawings[rand_index]
         
         // Add background image
         if let image = UIImage(named: "BloomSketch_LogoFull") {

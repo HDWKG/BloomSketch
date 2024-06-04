@@ -10,26 +10,40 @@ import SwiftUI
 struct ImagePreviewView: View {
     let image: UIImage
     let onRemove: () -> Void
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
             HStack {
-                Spacer()
-                Button(action: onRemove) {
-                    Image(systemName: "trash")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.black.opacity(0.7))
-                        .clipShape(Circle())
+                Button("Close") {
+                    presentationMode.wrappedValue.dismiss() // To dismiss the sheet
                 }
-                .padding()
+                .padding(.leading, 16)
+                .padding(.top, 8)
+                
+                Spacer()
+                
+                Button {
+                  onRemove()
+                  presentationMode.wrappedValue.dismiss()
+                } label: {
+                  Image(systemName: "trash")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.black.opacity(0.7))
+                    .clipShape(Circle())
+                }
+                .padding(.top, 8)
+                .padding(.trailing, 8)
+
             }
-            Spacer()
+            .background(Color(hex: 0xD5E4DD))
+            
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.black)
+                .background(Color(hex: 0xD5E4DD))
                 .edgesIgnoringSafeArea(.all)
             Spacer()
         }
