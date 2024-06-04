@@ -30,7 +30,7 @@ struct NewSprout_View: View {
                             .frame(maxWidth: .infinity, alignment: .topTrailing)
                             .edgesIgnoringSafeArea(.top)
                         
-                        Image("BloomSketch_LogoWhite")
+                        Image("BloomSketch_LogoFull")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 240, height: 240)

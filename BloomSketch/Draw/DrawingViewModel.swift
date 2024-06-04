@@ -33,7 +33,7 @@ class DrawingViewModel: ObservableObject {
         }) { success, error in
             DispatchQueue.main.async {
                 if success {
-                    self.alertMessage = "Your drawing has been saved to the BloomSketch album."
+                    self.alertMessage = "Your drawing has been saved!"
                 } else {
                     self.alertMessage = "Failed to save drawing: \(error?.localizedDescription ?? "unknown error")."
                 }

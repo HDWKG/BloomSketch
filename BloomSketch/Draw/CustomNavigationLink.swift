@@ -1,3 +1,10 @@
+//
+//  CustomNavigationLink.swift
+//  BloomSketch
+//
+//  Created by MacBook Pro on 17/05/24.
+//
+
 import SwiftUI
 import PencilKit
 import Photos
@@ -9,6 +16,7 @@ struct CustomNavigationLink: View {
     var body: some View {
         NavigationStack {
             DrawingView(canvas: $viewModel.canvas, isDrawing: $viewModel.isDrawing, pencilType: $viewModel.pencilType, color: $viewModel.color)
+                .modelContainer(SwiftDataContainer.container) // ModelContainer include
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItemGroup(placement: .bottomBar) {

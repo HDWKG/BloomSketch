@@ -10,8 +10,8 @@ import SwiftData
 import PencilKit
 
 struct DrawingView: UIViewRepresentable {
-//    @Environment(\.modelContext) var modelContext
-//    @Query var drawings: [Drawing]
+    @Environment(\.modelContext) var modelContext
+    @Query var drawings: [Drawing]
     
     @Binding var canvas: PKCanvasView
     @Binding var isDrawing: Bool
@@ -40,11 +40,11 @@ struct DrawingView: UIViewRepresentable {
         canvasView.tool = isDrawing ? ink : eraser
         canvasView.alwaysBounceVertical = true
         
-//        let rand_index = Int.random(in: 0..<drawings.count)
-//        let imageBackground = drawings[rand_index]
+        let rand_index = Int.random(in: 0..<drawings.count)
+        let imageBackground = drawings[rand_index]
         
         // Add background image
-        if let image = UIImage(named: "BloomSketch_LogoFull") {
+        if let image = UIImage(named: imageBackground.filename) {
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFill
             imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,8 +56,8 @@ struct DrawingView: UIViewRepresentable {
             NSLayoutConstraint.activate([
                 imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
                 imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-                imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1), // Mengatur lebar gambar menjadi 100% dari lebar contentView
-                imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor) // Membuat gambar menjadi persegi panjang dengan tinggi yang sama dengan lebar
+                imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1),
+                imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
             ])
         }
         
@@ -66,7 +66,6 @@ struct DrawingView: UIViewRepresentable {
     
     
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
-        //update tool when main view update
         
         uiView.tool = isDrawing ? ink : eraser
     }
