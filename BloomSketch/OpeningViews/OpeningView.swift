@@ -18,6 +18,7 @@ struct OpeningView: View {
             // if condition to restrict OpeningPager :)
             if navigateToNewSprout {
                 NewSprout_View()
+                    .modelContainer(SwiftDataContainer.container)
             } else {
                 OpeningPager(pageCount: 3, currentIndex: $currentIndex) {
                     BoardingScreen_1 {

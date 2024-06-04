@@ -4,6 +4,7 @@
 //
 //  Created by MacBook Pro on 17/05/24.
 //
+
 import SwiftUI
 import SwiftData
 import PencilKit
@@ -12,6 +13,8 @@ import UIKit
 struct TreeHomeView: View {
     @Environment(\.modelContext) var modelContext
     @Query var trees: [Tree]
+    @Environment(\.calendar) var calendar
+    
     @State private var navigateToDrawingView = false
     @State private var action: Int? = 0
     
@@ -27,7 +30,7 @@ struct TreeHomeView: View {
     
     var body: some View {
         if let tree = trees.first {
-            NavigationView {
+            NavigationStack {
                 ZStack {
                     Color(hex: 0xD5E4DD)
                         .ignoresSafeArea()
@@ -95,7 +98,10 @@ struct TreeHomeView: View {
                                 }
                                 
                             } else {
-                                Button(action: { navigateToDrawingView = true
+                                Button(action: {
+                                    navigateToDrawingView = true
+                                    tree.streak += 1
+                                    tree.dailyDone = true
                                 }) {
                                     Text("Start Drawing Today")
                                         .font(.headline)
@@ -120,6 +126,12 @@ struct TreeHomeView: View {
                 }
             }
             .navigationBarBackButtonHidden(true) // Hide back button
+            .onAppear {
+                if calendar.component(.hour, from: Date()) >= 19 && tree.dailyDone {
+                    tree.dailyDone = false
+                }
+            }
+            
         }
     }
 }

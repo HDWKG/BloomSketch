@@ -25,8 +25,10 @@ struct AlbumImagesView: View {
     
     var body: some View {
         if let tree = trees.first {
-            NavigationView {
+            NavigationStack {
                 ZStack {
+                    Color(hex: 0xD5E4DD)
+                        .ignoresSafeArea()
                     
                     ScrollView {
                         Text("\(tree.name)'s Album")
@@ -41,14 +43,16 @@ struct AlbumImagesView: View {
                             ForEach(viewModel.images, id: \.self) { image in
                                 Image(uiImage: image)
                                     .resizable()
+                                    .scaledToFit()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: .infinity)
+                                    .frame(height: 140)
                                     .padding()
                                     .onTapGesture {
                                         selectedImage = IdentifiableImage(image: image)
                                     }
                             }
                         }
+                        .background(.white)
                     }
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
@@ -92,6 +96,8 @@ struct AlbumImagesView: View {
             viewModel.images.remove(at: index)
         }
     }
+    
 }
+
 
 

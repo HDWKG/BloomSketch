@@ -17,7 +17,7 @@ class SwiftDataContainer {
             let container = try ModelContainer(for: Tree.self, Drawing.self, configurations: config)
             
             // Seeder
-            container.mainContext.insert(Tree(name: "Yebol", dailyDone: true, streak: 34, enableTimer: true))
+            container.mainContext.insert(Tree(name: "Yebol", dailyDone: false, streak: 34, enableTimer: true))
             
             for drawing in [
                 Drawing(name: "Flower", filename: "drawimage_1", drawnStatus: false, difficulty: "Hard"),
@@ -40,12 +40,13 @@ class SwiftDataContainer {
                 Drawing(name: "Strawberry", filename: "drawimage_18", drawnStatus: true, difficulty: "Medium"),
                 Drawing(name: "Banana", filename: "drawimage_19", drawnStatus: true, difficulty: "Easy"),
                 Drawing(name: "Cactus", filename: "drawimage_20", drawnStatus: false, difficulty: "Medium"),
+                Drawing(name: "Sprout", filename: "drawimage_21", drawnStatus: true, difficulty: "Hard"),
             ] {
                 container.mainContext.insert(drawing)
             }
             
-            
             return container
+            
         } catch {
             fatalError("Failed to create dummy data~")
         }

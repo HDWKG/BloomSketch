@@ -33,17 +33,16 @@ struct ImagePreviewView: View {
                     .background(Color.black.opacity(0.7))
                     .clipShape(Circle())
                 }
-                .padding(.top, 8)
-                .padding(.trailing, 8)
+                .padding(.top, 16)
+                .padding(.trailing, 16)
 
             }
-            .background(Color(hex: 0xD5E4DD))
             
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(hex: 0xD5E4DD))
+                .background(.white)
                 .edgesIgnoringSafeArea(.all)
             Spacer()
         }

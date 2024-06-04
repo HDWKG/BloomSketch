@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var selection = 1
     
     var body: some View {
-        VStack {
+        ZStack {
             TabView(selection: $selection) {
                 AlbumImagesView()
                     .modelContainer(SwiftDataContainer.container)

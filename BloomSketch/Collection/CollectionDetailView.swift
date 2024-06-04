@@ -28,15 +28,15 @@ struct CollectionDetailView: View {
                 
                 if drawing.difficulty == "Easy" {
                     Text("\(drawing.difficulty)")
-                        .font(.system(size: 20, weight: .semibold))
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.green)
                 } else if drawing.difficulty == "Medium" {
                     Text("\(drawing.difficulty)")
-                        .font(.system(size: 20, weight: .semibold))
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.orange)
                 } else {
                     Text("\(drawing.difficulty)")
-                        .font(.system(size: 20, weight: .semibold))
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.red)
                 }
             }
@@ -48,11 +48,11 @@ struct CollectionDetailView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(hex: 0xD5E4DD))
+                .background(.white)
                 .edgesIgnoringSafeArea(.all)
 
         }
-        .background(Color(hex: 0xD5E4DD))
+        .background(.white)
     }
 }
 
