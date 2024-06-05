@@ -27,11 +27,12 @@ struct BoardingScreen1: View {
                     
                     GeometryReader { geometry in
                         
-                        Text("Unleash your creativity and see your plant grow!")
+                        Text("“An app where you can draw and grow your plant daily.”")
                             .font(.system(size: geometry.size.width * 0.05, weight: .bold))
                             .foregroundColor(Color(hex: 0x1B3F2E))
                             .padding(.top, geometry.size.height * -0.02)
-                            .offset(x: geometry.size.width * 0.1, y: geometry.size.height * -0.5)
+                            .padding(.horizontal, geometry.size.height * 0.02)
+                            .offset(x: geometry.size.width * 0.05, y: geometry.size.height * -0.5)
 
                         VStack {
                             Image("boarding_1")
@@ -39,7 +40,7 @@ struct BoardingScreen1: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: geometry.size.width * 0.6, height: geometry.size.width * 0.6)
                                 .padding(.top, geometry.size.height * 0.2)
-                                .offset(x: geometry.size.width * 0.2, y: geometry.size.height * -0.1)
+                                .offset(x: geometry.size.width * 0.2, y: geometry.size.height * -0.2)
                             
                             Spacer()
                             
@@ -51,7 +52,7 @@ struct BoardingScreen1: View {
                                     .padding(.horizontal, geometry.size.width * 0.2)
                                     .background(Color(hex: 0x1B3F2E))
                                     .cornerRadius(16)
-                                    .padding(.top, geometry.size.height * 0.05)
+                                    .padding(.top, geometry.size.height * -0.05)
                                     .offset(x: geometry.size.width * 0.2)
                             }
                             

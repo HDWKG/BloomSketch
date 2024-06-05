@@ -39,8 +39,9 @@ struct BoardingScreen3: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: geometry.size.width * 0.6, height: geometry.size.width * 0.6)
                                 .padding(.top, geometry.size.height * 0.2)
+                                .padding(.horizontal, geometry.size.height * 0.02)
                                 .offset(x: geometry.size.width * 0.2, y: geometry.size.height * -0.2)
-
+                            
                             Spacer()
                             
                             Button(action: { success = true }) {
@@ -51,7 +52,7 @@ struct BoardingScreen3: View {
                                     .padding(.horizontal, geometry.size.width * 0.2)
                                     .background(Color(hex: 0x1B3F2E))
                                     .cornerRadius(16)
-                                    .padding(.top, geometry.size.height * 0.05)
+                                    .padding(.top, geometry.size.height * -0.05)
                                     .offset(x: geometry.size.width * 0.2)
                             }
                             

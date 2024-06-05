@@ -24,7 +24,9 @@ struct BoardingScreen2: View {
                             .font(.system(size: geometry.size.width * 0.05, weight: .bold))
                             .foregroundColor(Color(hex: 0x1B3F2E))
                             .padding(.top, geometry.size.height * -0.02)
-                            .offset(x: geometry.size.width * 0.1, y: geometry.size.height * -0.5)
+                            .padding(.top, geometry.size.height * -0.02)
+                            .padding(.horizontal, geometry.size.height * 0.02)
+                            .offset(x: geometry.size.width * 0.07, y: geometry.size.height * -0.5)
 
                         VStack {
                             Image("boarding_2")
@@ -32,7 +34,7 @@ struct BoardingScreen2: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: geometry.size.width * 0.6, height: geometry.size.width * 0.6)
                                 .padding(.top, geometry.size.height * 0.2)
-                                .offset(x: geometry.size.width * 0.2, y: geometry.size.height * -0.1)
+                                .offset(x: geometry.size.width * 0.2, y: geometry.size.height * -0.2)
                             
                             Spacer()
                             
@@ -44,14 +46,14 @@ struct BoardingScreen2: View {
                                     .padding(.horizontal, geometry.size.width * 0.2)
                                     .background(Color(hex: 0x1B3F2E))
                                     .cornerRadius(16)
-                                    .padding(.top, geometry.size.height * 0.05)
+                                    .padding(.top, geometry.size.height * -0.05)
                                     .offset(x: geometry.size.width * 0.2)
                             }
                             
                             Spacer()
                         }
                     }
-                    .font(.system(size: 20)) // Set the default font size here
+                    .font(.system(size: 20))
                     
                     Image("BottomBarLeaves")
                         .resizable()
