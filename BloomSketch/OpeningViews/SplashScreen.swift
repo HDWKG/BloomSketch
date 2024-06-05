@@ -14,24 +14,27 @@ struct SplashScreenView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.init(Color(.white)), Color(hex: 0x63B256)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [Color(.white), Color(hex: 0x63B256)]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea(.all)
             
             if isActive {
                 OpeningView()
             } else {
-                VStack {
-                    
+                GeometryReader { geometry in
                     VStack {
+                        Spacer()
+                            .frame(height: geometry.size.height * 0.2)
                         Image("BloomSketch_LogoWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 240, height: 240)
+                            .frame(width: geometry.size.width * 1, height: geometry.size.width * 0.6)
                             .foregroundColor(.red)
-                        
+                            
                         Text("BloomSketch")
-                            .font(Font.custom("Baskerville-Bold", size: 40))
+                            .font(Font.custom("Baskerville-Bold", size: geometry.size.width * 0.1))
                             .foregroundColor(Color(hex: 0x1B3F2E))
+                        
+                        Spacer()
                     }
                     .scaleEffect(size)
                     .opacity(opacity)
@@ -41,7 +44,6 @@ struct SplashScreenView: View {
                             self.opacity = 1.0
                         }
                     }
-                    
                 }
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
