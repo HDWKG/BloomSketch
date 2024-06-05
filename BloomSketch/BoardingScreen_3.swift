@@ -23,33 +23,43 @@ struct BoardingScreen3: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity, alignment: .topTrailing)
-                        .overlay(
-                    Text("Draw everyday to get dailty streaks!")
-                        .font(.system(size: 30, weight: .bold))
-                        .foregroundColor(Color(hex: 0x1B3F2E))
-                        .padding(.horizontal, 40)
-                        .offset(y: 90)
-                    )
                         .offset(y: -60)
+                    
+                    GeometryReader { geometry in
+                        
+                        Text("Draw everyday to get daily streaks!")
+                            .font(.system(size: geometry.size.width * 0.05, weight: .bold))
+                            .foregroundColor(Color(hex: 0x1B3F2E))
+                            .padding(.top, geometry.size.height * -0.02)
+                            .offset(x: geometry.size.width * 0.1, y: geometry.size.height * -0.5)
+                        
+                        VStack {
+                            Image("boarding_3")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: geometry.size.width * 0.6, height: geometry.size.width * 0.6)
+                                .padding(.top, geometry.size.height * 0.2)
+                                .offset(x: geometry.size.width * 0.2, y: geometry.size.height * -0.2)
 
-                        Image("boarding_3")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 240, height: 240)
-                            .foregroundColor(.red)
-                            .padding(.top, 12)
-                            .offset(y: 110)
-
-                        Button(action: { success = true }) {
-                            Text("Continue")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding(.vertical, 12)
-                                .padding(.horizontal, 64)
-                                .background(Color(hex: 0x1B3F2E))
-                                .cornerRadius(16)
-                                .padding(.top, 200)
+                            Spacer()
+                            
+                            Button(action: { success = true }) {
+                                Text("Continue")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, geometry.size.height * 0.04)
+                                    .padding(.horizontal, geometry.size.width * 0.2)
+                                    .background(Color(hex: 0x1B3F2E))
+                                    .cornerRadius(16)
+                                    .padding(.top, geometry.size.height * 0.05)
+                                    .offset(x: geometry.size.width * 0.2)
+                            }
+                            
+                            Spacer()
+                        }
                     }
+                    .font(.system(size: 20)) // Set the default font size here
+                    
                     Image("BottomBarLeaves")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -65,4 +75,3 @@ struct BoardingScreen3: View {
     @State var success = false
     return BoardingScreen3(success: $success)
 }
-
