@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct SplashScreenView: View {
+struct SplashScreen: View {
     @Environment(\.modelContext) var modelContext
     @Query var trees: [Tree]
     
@@ -64,10 +64,11 @@ struct SplashScreenView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true) // Hide back button
     }
 }
 
 #Preview {
-    SplashScreenView()
+    SplashScreen()
         .modelContainer(SwiftDataContainer.container)
 }

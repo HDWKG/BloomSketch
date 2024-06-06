@@ -40,6 +40,7 @@ struct AlbumImagesView: View {
                                 Text("Check out all of your creations!")
                                     .font(.system(size: geometry.size.width * 0.05))
                                     .foregroundColor(Color(hex: 0x1B3F2E))
+                                    .padding(.bottom, geometry.size.height * 0.02)
                                 
                                 LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], spacing: 16) {
                                     ForEach(viewModel.images, id: \.asset) { imageTuple in

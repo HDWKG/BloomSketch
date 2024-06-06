@@ -10,12 +10,14 @@ import SwiftData
 
 @main
 struct BloomSketchApp: App {
+    
+    // Run through the simulator for best performance~
     var body: some Scene {
         WindowGroup {
-            SplashScreenView()
+            SplashScreen()
                 .modelContainer(SwiftDataContainer.container)
         }
-        .modelContainer(for: [Tree.self])
+        .modelContainer(for: [Tree.self, Drawing.self])
         
         #if os(watchOS)
         WKNotificationScene(Controller: NotificationController.self, category: "StreakEnding")

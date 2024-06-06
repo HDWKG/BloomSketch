@@ -16,6 +16,7 @@ struct TreeHomeView: View {
     @Environment(\.calendar) var calendar
     
     @State private var navigateToDrawingView = false
+    @State private var navigateToSettingView = false
     @State private var action: Int? = 0
     
     @State var canvas = PKCanvasView()
@@ -32,7 +33,6 @@ struct TreeHomeView: View {
         GeometryReader { geometry in
             
             if let tree = trees.first {
-                
                 NavigationStack {
                     ZStack {
                         Color(hex: 0xD5E4DD)
@@ -40,24 +40,37 @@ struct TreeHomeView: View {
                         
                         if UIDevice.current.userInterfaceIdiom == .phone {
                             VStack {
+                                // Settings Button
+                                HStack {
+                                    Spacer()
+                                    
+                                    Button(action: {
+                                        navigateToSettingView = true
+                                    }) {
+                                        Image(systemName: "gearshape.fill")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: screenWidth * 0.05, height: screenWidth * 0.05)
+                                            .foregroundColor(Color(hex: 0x1B3F2E))
+                                    }
+                                    .padding(.top, screenHeight * 0.02)
+                                }
+                                
                                 Text("\(tree.name)'s Den")
                                     .font(.system(size: screenWidth * 0.07, weight: .bold))
                                     .foregroundColor(Color(hex: 0x1B3F2E))
-                                    .padding(.top, screenHeight * 0.05)
                                 
                                 ZStack {
                                     if tree.dailyDone {
-                                        Image("LeafON")
+                                        Image("LeafOn")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
-                                            .foregroundColor(.red)
                                     } else {
                                         Image("LeafOff")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
-                                            .foregroundColor(.red)
                                     }
                                     
                                     Text("\(tree.streak)")
@@ -106,8 +119,6 @@ struct TreeHomeView: View {
                                     } else {
                                         Button(action: {
                                             navigateToDrawingView = true
-                                            tree.streak += 1
-                                            tree.dailyDone = true
                                         }) {
                                             Text("Start Drawing Today")
                                                 .foregroundColor(.white)
@@ -137,17 +148,15 @@ struct TreeHomeView: View {
                                 
                                 ZStack {
                                     if tree.dailyDone {
-                                        Image("LeafON")
+                                        Image("LeafOn")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: screenWidth * 0.28, height: screenWidth * 0.28)
-                                            .foregroundColor(.red)
                                     } else {
                                         Image("LeafOff")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: screenWidth * 0.28, height: screenWidth * 0.28)
-                                            .foregroundColor(.red)
                                     }
                                     
                                     Text("\(tree.streak)")
@@ -175,7 +184,7 @@ struct TreeHomeView: View {
                                             }) {
                                                 HStack {
                                                     Text("Draw Again")
-                                                        .font(.headline)
+                                                        .font(.system(size: .infinity, weight: .bold))
                                                         .foregroundColor(Color(hex: 0x1B3F2E))
                                                     
                                                     Image(systemName: "checkmark.circle")
@@ -196,10 +205,9 @@ struct TreeHomeView: View {
                                     } else {
                                         Button(action: {
                                             navigateToDrawingView = true
-                                            tree.streak += 1
-                                            tree.dailyDone = true
                                         }) {
                                             Text("Start Drawing Today")
+                                                .font(.system(size: .infinity, weight: .bold))
                                                 .foregroundColor(.white)
                                                 .padding(.vertical, screenHeight * 0.015)
                                                 .padding(.horizontal, screenWidth * 0.15)
@@ -209,9 +217,11 @@ struct TreeHomeView: View {
                                         .padding(.top, 24)
                                     }
                                     
-                                    NavigationLink(destination: DrawNavigationLink(), isActive: $navigateToDrawingView) {
+                                    NavigationLink(destination: DrawNavigationLink()
+                                        .modelContainer(SwiftDataContainer.container), isActive: $navigateToDrawingView) {
                                         EmptyView()
                                     }
+                                    
                                 }
                                 .frame(maxWidth: .infinity)
                                 .padding(.bottom, screenHeight * 0.1)
@@ -219,14 +229,16 @@ struct TreeHomeView: View {
                             .padding(.horizontal, screenWidth * 0.07)
                         }
 
+                        
+                        NavigationLink(destination: SettingView()
+                            .modelContainer(SwiftDataContainer.container), isActive:
+                            $navigateToSettingView) {
+                            EmptyView()
+                        }
                     }
                 }
                 .navigationBarBackButtonHidden(true) // Hide back button
-                .onAppear {
-                    if calendar.component(.hour, from: Date()) >= 19 && tree.dailyDone {
-                        tree.dailyDone = false
-                    }
-                }
+                
             }
         }
     }

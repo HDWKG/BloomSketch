@@ -67,6 +67,7 @@ struct NewSprout_View: View {
                                         if sproutName != "" {
                                             navigateToTreeHome = true
                                             tree.name = sproutName
+                                            tree.namedStatus = true
                                         } else {
                                             // Show alert
                                             showAlert.toggle()
@@ -145,6 +146,7 @@ struct NewSprout_View: View {
                                         if sproutName != "" {
                                             navigateToTreeHome = true
                                             tree.name = sproutName
+                                            tree.namedStatus = true
                                         } else {
                                             // Show alert
                                             showAlert.toggle()
