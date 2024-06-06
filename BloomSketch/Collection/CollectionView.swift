@@ -18,77 +18,82 @@ struct CollectionView: View {
     var body: some View {
         let sortedDrawings = drawings.sorted { $0.name < $1.name }
         
-        NavigationStack {
-            ZStack {
-                Color(hex: 0xD5E4DD)
-                    .ignoresSafeArea()
-                
-                ScrollView {
-                    Text("Collection")
-                        .font(.system(size: 28, weight: .bold))
-                        .foregroundColor(Color(hex: 0x1B3F2E))
-                    Text("Draw more to unlock all drawings!")
-                        .font(.system(size: 20))
-                        .foregroundColor(Color(hex: 0x1B3F2E))
-                    VStack {
-                        
-                        LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-                            ForEach(sortedDrawings) { drawing in
-                                if drawing.drawnStatus {
-                                    VStack(alignment: .center) {
-                                        Spacer()
-                                        Image(drawing.filename)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(height: 120)
-                                            .padding()
-                                        
-                                        Button(action: {
-                                            showDetailSheet = true
-                                            selectedDrawing = drawing
-                                        }) {
-                                            Text(drawing.name)
-                                        }
-                                    }
-                                    
-                                } else {
-                                    VStack(alignment: .center) {
-                                        ZStack {
+        GeometryReader { geometry in
+            NavigationStack {
+                ZStack {
+                    Color(hex: 0xD5E4DD)
+                        .ignoresSafeArea()
+                    
+                    ScrollView {
+                        VStack(spacing: 16) {
+                            Text("Collection")
+                                .font(.system(size: geometry.size.width * 0.07, weight: .bold))
+                                .foregroundColor(Color(hex: 0x1B3F2E))
+                            
+                            Text("Draw more to unlock all drawings!")
+                                .font(.system(size: geometry.size.width * 0.05))
+                                .foregroundColor(Color(hex: 0x1B3F2E))
+                            
+                            LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], spacing: 16) {
+                                ForEach(sortedDrawings) { drawing in
+                                    if drawing.drawnStatus {
+                                        VStack(alignment: .center) {
+                                            Spacer()
                                             Image(drawing.filename)
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
-                                                .frame(height: 120)
-                                                .padding()
-                                                .blur(radius: 20) // if iOS kurangin radiusnya yaa
+                                                .frame(height: geometry.size.width * 0.3)
+                                                .padding(4)
                                             
-                                            Image(systemName: "lock")
-                                                .resizable(resizingMode: .tile)
-                                                .scaledToFit()
-                                                .frame(width: 32, height: 32)
-                                                .foregroundColor(.black)
-                                                .offset(x: 0, y: 0)
+                                            Button(action: {
+                                                showDetailSheet = true
+                                                selectedDrawing = drawing
+                                            }) {
+                                                Text(drawing.name)
+                                                    .font(.system(size: geometry.size.width * 0.04))
+                                                    .foregroundColor(Color(hex: 0x1B3F2E))
+                                            }
+                                        }
+                                        
+                                    } else {
+                                        VStack(alignment: .center) {
+                                            ZStack {
+                                                Image(drawing.filename)
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(height: geometry.size.width * 0.3)
+                                                    .padding(4)
+                                                    .blur(radius: 20) // Adjust radius if needed
+                                                
+                                                Image(systemName: "lock")
+                                                    .resizable(resizingMode: .tile)
+                                                    .scaledToFit()
+                                                    .frame(width: geometry.size.width * 0.08, height: geometry.size.width * 0.08)
+                                                    .foregroundColor(.black)
+                                                    .offset(x: 0, y: 0)
+                                            }
                                         }
                                     }
-                                    
                                 }
                             }
+                            .padding(.horizontal, geometry.size.width * 0.05)
+                            
+                            Text("~ More to come! ~")
+                                .font(.system(size: geometry.size.width * 0.05))
+                                .foregroundColor(Color(hex: 0x1B3F2E))
+                                .padding(.vertical, geometry.size.height * 0.04)
                         }
-                        
-                        Text("~ More to come! ~")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color(hex: 0x1B3F2E))
-                            .padding(.vertical, 32)
+                        .background(.white)
+                        .padding(.top, geometry.size.height * 0.02)
                     }
-                    .background(.white)
+                }
+            }
+            .sheet(isPresented: $showDetailSheet) {
+                if let drawing = selectedDrawing {
+                    CollectionDetailView(drawing: drawing)
                 }
             }
         }
-        .sheet(isPresented: $showDetailSheet) {
-            if let drawing = selectedDrawing {
-                CollectionDetailView(drawing: drawing)
-            }
-        }
-        
     }
 }
 
