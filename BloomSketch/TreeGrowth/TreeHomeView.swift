@@ -124,9 +124,9 @@ struct TreeHomeView: View {
                                 }
                             }
                             .frame(maxWidth: .infinity)
-                            .padding(.bottom, screenHeight * 0.05)
+                            .padding(.bottom, screenHeight * 0.1)
                         }
-                        .padding(.horizontal, screenWidth * 0.05)
+                        .padding(.horizontal, screenWidth * 0.07)
                     }
                 }
                 .navigationBarBackButtonHidden(true) // Hide back button

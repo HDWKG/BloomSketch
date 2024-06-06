@@ -31,19 +31,19 @@ final class Tree: Identifiable {
         
         if streak < 5 {
             treePhase = "Tree_1"
-            treeWidth = 400
+            treeWidth = 350
         } else if streak < 15 {
             treePhase = "Tree_2"
-            treeWidth = 400
+            treeWidth = 350
         } else if streak < 30 {
             treePhase = "Tree_3"
-            treeWidth = 400
+            treeWidth = 350
         } else if streak < 50 {
             treePhase = "Tree_4"
-            treeWidth = 500
+            treeWidth = 350
         } else {
             treePhase = "Tree_5"
-            treeWidth = 520
+            treeWidth = 350
         }
         
         return treeWidth
