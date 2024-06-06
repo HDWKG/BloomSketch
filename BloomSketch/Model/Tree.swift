@@ -14,8 +14,23 @@ final class Tree: Identifiable {
     var namedStatus: Bool
     var dailyDone: Bool
     var streak: Int
-    var treePhase: String
     var enableTimer: Bool
+    
+    // Computed property for treePhase based on streak
+    var treePhase: String {
+        switch streak {
+        case 0..<5:
+            return "Tree_1"
+        case 5..<15:
+            return "Tree_2"
+        case 15..<30:
+            return "Tree_3"
+        case 30..<50:
+            return "Tree_4"
+        default:
+            return "Tree_5"
+        }
+    }
     
     init(name: String, namedStatus: Bool, dailyDone: Bool, streak: Int, enableTimer: Bool) {
         self.name = name
@@ -23,29 +38,7 @@ final class Tree: Identifiable {
         self.dailyDone = dailyDone
         self.streak = streak
         self.enableTimer = enableTimer
-        self.treePhase = ""
     }
     
-    func checkTreePhase() -> CGFloat {
-        var treeWidth: CGFloat
-        
-        if streak < 5 {
-            treePhase = "Tree_1"
-            treeWidth = 350
-        } else if streak < 15 {
-            treePhase = "Tree_2"
-            treeWidth = 350
-        } else if streak < 30 {
-            treePhase = "Tree_3"
-            treeWidth = 350
-        } else if streak < 50 {
-            treePhase = "Tree_4"
-            treeWidth = 350
-        } else {
-            treePhase = "Tree_5"
-            treeWidth = 350
-        }
-        
-        return treeWidth
-    }
+    
 }

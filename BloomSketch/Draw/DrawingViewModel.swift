@@ -16,7 +16,10 @@ class DrawingViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var alertMessage = ""
     @Published var navigateBackToTreeHome = false
-
+    
+    private var album: PHAssetCollection? // Cache the fetched album
+    
+    
     func saveDrawing() {
         let drawingImage = canvas.drawing.image(from: canvas.drawing.bounds, scale: 1.0)
         
@@ -42,26 +45,24 @@ class DrawingViewModel: ObservableObject {
             }
         }
     }
-
+    
+    private func fetchAlbumIfNeeded() {
+        if album == nil {
+            album = fetchAlbum(named: "BloomSketch")
+        }
+    }
+    
     func fetchAlbum(named title: String) -> PHAssetCollection? {
         let fetchOptions = PHFetchOptions()
         fetchOptions.predicate = NSPredicate(format: "title = %@", title)
         let fetchResult = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: fetchOptions)
         return fetchResult.firstObject
     }
-
+    
     func clearCanvas() {
         canvas.drawing = PKDrawing()
     }
-
-//    func undoDrawing() {
-//        undoManager?.undo()
-//    }
-//
-//    func redoDrawing() {
-//        undoManager?.redo()
-//    }
-
+    
     func toggleRuler() {
         canvas.isRulerActive.toggle()
     }

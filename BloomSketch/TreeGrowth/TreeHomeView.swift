@@ -47,7 +47,7 @@ struct TreeHomeView: View {
                                 
                                 ZStack {
                                     if tree.dailyDone {
-                                        Image("LeafOn")
+                                        Image("LeafON")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
@@ -74,7 +74,7 @@ struct TreeHomeView: View {
                                     Image(tree.treePhase)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: tree.checkTreePhase() * screenWidth * 0.003, height: tree.checkTreePhase() * screenWidth * 0.003)
+                                        .frame(width: 350 * screenWidth * 0.0025, height: 350 * screenWidth * 0.0025)
                                 }
                                 
                                 VStack {
@@ -137,7 +137,7 @@ struct TreeHomeView: View {
                                 
                                 ZStack {
                                     if tree.dailyDone {
-                                        Image("LeafOn")
+                                        Image("LeafON")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: screenWidth * 0.28, height: screenWidth * 0.28)
@@ -164,7 +164,7 @@ struct TreeHomeView: View {
                                     Image(tree.treePhase)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: tree.checkTreePhase() * screenWidth * 0.002, height: tree.checkTreePhase() * screenWidth * 0.0017)
+                                        .frame(width: 350 * screenWidth * 0.002, height: 350 * screenWidth * 0.0017)
                                 }
                                 
                                 VStack {

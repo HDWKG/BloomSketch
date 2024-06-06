@@ -10,28 +10,51 @@ import Photos
 
 class AlbumImagesViewModel: ObservableObject {
     @Published var images: [(image: UIImage, asset: PHAsset)] = []
-    
+    private let imageManager = PHCachingImageManager()
+    private var imageRequests: [PHImageRequestID] = []
+
     func loadImages() {
-        images.removeAll() // reset album
-        
+        images.removeAll()  // Reset album
+
         let albumTitle = "BloomSketch"
         if let album = fetchAlbum(named: albumTitle) {
             let assets = PHAsset.fetchAssets(in: album, options: nil)
-            let imageManager = PHCachingImageManager()
+            let targetSize = CGSize(width: 200, height: 200)
+            
+            // Configure batch loading
+            var assetsBatch: [PHAsset] = []
             assets.enumerateObjects { asset, _, _ in
-                let options = PHImageRequestOptions()
-                options.isSynchronous = true
-                imageManager.requestImage(for: asset, targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFill, options: options) { image, _ in
-                    if let image = image {
-                        DispatchQueue.main.async {
-                            self.images.append((image: image, asset: asset))
-                        }
-                    }
+                assetsBatch.append(asset)
+                if assetsBatch.count == 10 { // Adjust batch size as needed
+                    self.loadImages(for: assetsBatch, targetSize: targetSize)
+                    assetsBatch.removeAll()
                 }
+            }
+            // Load any remaining assets
+            if !assetsBatch.isEmpty {
+                self.loadImages(for: assetsBatch, targetSize: targetSize)
             }
         }
     }
-    
+
+    private func loadImages(for assets: [PHAsset], targetSize: CGSize) {
+        let options = PHImageRequestOptions()
+        options.isSynchronous = false
+        options.deliveryMode = .highQualityFormat
+        options.resizeMode = .fast
+        
+        for asset in assets {
+            let requestID = imageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: options) { image, _ in
+                if let image = image {
+                    DispatchQueue.main.async {
+                        self.images.append((image: image, asset: asset))
+                    }
+                }
+            }
+            imageRequests.append(requestID)
+        }
+    }
+
     private func fetchAlbum(named title: String) -> PHAssetCollection? {
         let fetchOptions = PHFetchOptions()
         fetchOptions.predicate = NSPredicate(format: "title = %@", title)
@@ -53,6 +76,13 @@ class AlbumImagesViewModel: ObservableObject {
                     print("Asset successfully deleted")
                 }
             }
+        }
+    }
+    
+    deinit {
+        // Cancel all image requests
+        for requestID in imageRequests {
+            imageManager.cancelImageRequest(requestID)
         }
     }
 }
