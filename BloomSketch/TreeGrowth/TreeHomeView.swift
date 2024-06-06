@@ -38,95 +38,187 @@ struct TreeHomeView: View {
                         Color(hex: 0xD5E4DD)
                             .ignoresSafeArea()
                         
-                        VStack {
-                            Text("\(tree.name)'s Den")
-                                .font(.system(size: screenWidth * 0.07, weight: .bold))
-                                .foregroundColor(Color(hex: 0x1B3F2E))
-                                .padding(.top, screenHeight * 0.05)
-                            
-                            ZStack {
-                                if tree.dailyDone {
-                                    Image("LeafOn")
+                        if UIDevice.current.userInterfaceIdiom == .phone {
+                            VStack {
+                                Text("\(tree.name)'s Den")
+                                    .font(.system(size: screenWidth * 0.07, weight: .bold))
+                                    .foregroundColor(Color(hex: 0x1B3F2E))
+                                    .padding(.top, screenHeight * 0.05)
+                                
+                                ZStack {
+                                    if tree.dailyDone {
+                                        Image("LeafOn")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
+                                            .foregroundColor(.red)
+                                    } else {
+                                        Image("LeafOff")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
+                                            .foregroundColor(.red)
+                                    }
+                                    
+                                    Text("\(tree.streak)")
+                                        .font(.system(size: screenWidth * 0.12, weight: .bold))
+                                        .foregroundColor(Color(hex: 0x1B3F2E))
+                                }
+                                .padding(.vertical, screenHeight * 0.0)
+                                
+                                Spacer()
+                                
+                                ZStack {
+                                    // Chatbox
+                                    
+                                    Image(tree.treePhase)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
-                                        .foregroundColor(.red)
-                                } else {
-                                    Image("LeafOff")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
-                                        .foregroundColor(.red)
+                                        .frame(width: tree.checkTreePhase() * screenWidth * 0.003, height: tree.checkTreePhase() * screenWidth * 0.003)
                                 }
                                 
-                                Text("\(tree.streak)")
-                                    .font(.system(size: screenWidth * 0.12, weight: .bold))
-                                    .foregroundColor(Color(hex: 0x1B3F2E))
-                            }
-                            .padding(.vertical, screenHeight * 0.0)
-                            
-                            Spacer()
-                            
-                            ZStack {
-                                // Chatbox
-                                
-                                Image(tree.treePhase)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: tree.checkTreePhase(), height: tree.checkTreePhase())
-                            }
-                            
-                            VStack {
-                                if tree.dailyDone {
-                                    VStack {
+                                VStack {
+                                    if tree.dailyDone {
+                                        VStack {
+                                            Button(action: {
+                                                navigateToDrawingView = true
+                                            }) {
+                                                HStack {
+                                                    Text("Draw Again")
+                                                        .font(.headline)
+                                                        .foregroundColor(Color(hex: 0x1B3F2E))
+                                                    
+                                                    Image(systemName: "checkmark.circle")
+                                                        .foregroundColor(Color(hex: 0x1B3F2E))
+                                                }
+                                                .padding(.vertical, screenHeight * 0.015)
+                                                .padding(.horizontal, screenWidth * 0.15)
+                                                .background(Color.white)
+                                                .cornerRadius(16)
+                                                .overlay(
+                                                    RoundedRectangle(cornerRadius: 16)
+                                                        .stroke(Color(hex: 0x1B3F2E), lineWidth: 1)
+                                                )
+                                            }
+                                            .padding(.top, 24)
+                                        }
+                                        
+                                    } else {
                                         Button(action: {
                                             navigateToDrawingView = true
+                                            tree.streak += 1
+                                            tree.dailyDone = true
                                         }) {
-                                            HStack {
-                                                Text("Draw Again")
-                                                    .font(.headline)
-                                                    .foregroundColor(Color(hex: 0x1B3F2E))
-                                                
-                                                Image(systemName: "checkmark.circle")
-                                                    .foregroundColor(Color(hex: 0x1B3F2E))
-                                            }
-                                            .padding(.vertical, screenHeight * 0.015)
-                                            .padding(.horizontal, screenWidth * 0.15)
-                                            .background(Color.white)
-                                            .cornerRadius(screenWidth * 0.02)
-                                            .overlay(
-                                                RoundedRectangle(cornerRadius: 16)
-                                                    .stroke(Color(hex: 0x1B3F2E), lineWidth: 1)
-                                            )
+                                            Text("Start Drawing Today")
+                                                .foregroundColor(.white)
+                                                .padding(.vertical, screenHeight * 0.015)
+                                                .padding(.horizontal, screenWidth * 0.15)
+                                                .background(Color(hex: 0x1B3F2E))
+                                                .cornerRadius(16)
                                         }
                                         .padding(.top, 24)
                                     }
                                     
-                                } else {
-                                    Button(action: {
-                                        navigateToDrawingView = true
-                                        tree.streak += 1
-                                        tree.dailyDone = true
-                                    }) {
-                                        Text("Start Drawing Today")
-                                            .font(.system(size: screenWidth * 0.025))
-                                            .foregroundColor(.white)
-                                            .padding(.vertical, screenHeight * 0.015)
-                                            .padding(.horizontal, screenWidth * 0.15)
-                                            .background(Color(hex: 0x1B3F2E))
-                                            .cornerRadius(screenWidth * 0.02)
+                                    NavigationLink(destination: CustomNavigationLink(), isActive: $navigateToDrawingView) {
+                                        EmptyView()
                                     }
-                                    .padding(.top, 24)
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding(.bottom, screenHeight * 0.05)
+                            }
+                            .padding(.horizontal, screenWidth * 0.07)
+                            
+                        } else if UIDevice.current.userInterfaceIdiom == .pad {
+                            VStack {
+                                Text("\(tree.name)'s Den")
+                                    .font(.system(size: screenWidth * 0.07, weight: .bold))
+                                    .foregroundColor(Color(hex: 0x1B3F2E))
+                                    .padding(.top, screenHeight * 0.05)
+                                
+                                ZStack {
+                                    if tree.dailyDone {
+                                        Image("LeafOn")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
+                                            .foregroundColor(.red)
+                                    } else {
+                                        Image("LeafOff")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
+                                            .foregroundColor(.red)
+                                    }
+                                    
+                                    Text("\(tree.streak)")
+                                        .font(.system(size: screenWidth * 0.12, weight: .bold))
+                                        .foregroundColor(Color(hex: 0x1B3F2E))
+                                }
+                                .padding(.vertical, screenHeight * 0.0)
+                                
+                                Spacer()
+                                
+                                ZStack {
+                                    // Chatbox
+                                    
+                                    Image(tree.treePhase)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: tree.checkTreePhase() * screenWidth * 0.002, height: tree.checkTreePhase() * screenWidth * 0.002)
                                 }
                                 
-                                NavigationLink(destination: CustomNavigationLink(), isActive: $navigateToDrawingView) {
-                                    EmptyView()
+                                VStack {
+                                    if tree.dailyDone {
+                                        VStack {
+                                            Button(action: {
+                                                navigateToDrawingView = true
+                                            }) {
+                                                HStack {
+                                                    Text("Draw Again")
+                                                        .font(.headline)
+                                                        .foregroundColor(Color(hex: 0x1B3F2E))
+                                                    
+                                                    Image(systemName: "checkmark.circle")
+                                                        .foregroundColor(Color(hex: 0x1B3F2E))
+                                                }
+                                                .padding(.vertical, screenHeight * 0.015)
+                                                .padding(.horizontal, screenWidth * 0.15)
+                                                .background(Color.white)
+                                                .cornerRadius(16)
+                                                .overlay(
+                                                    RoundedRectangle(cornerRadius: 16)
+                                                        .stroke(Color(hex: 0x1B3F2E), lineWidth: 1)
+                                                )
+                                            }
+                                            .padding(.top, 24)
+                                        }
+                                        
+                                    } else {
+                                        Button(action: {
+                                            navigateToDrawingView = true
+                                            tree.streak += 1
+                                            tree.dailyDone = true
+                                        }) {
+                                            Text("Start Drawing Today")
+                                                .foregroundColor(.white)
+                                                .padding(.vertical, screenHeight * 0.015)
+                                                .padding(.horizontal, screenWidth * 0.15)
+                                                .background(Color(hex: 0x1B3F2E))
+                                                .cornerRadius(16)
+                                        }
+                                        .padding(.top, 24)
+                                    }
+                                    
+                                    NavigationLink(destination: CustomNavigationLink(), isActive: $navigateToDrawingView) {
+                                        EmptyView()
+                                    }
                                 }
+                                .frame(maxWidth: .infinity)
+                                .padding(.bottom, screenHeight * 0.05)
                             }
-                            .frame(maxWidth: .infinity)
-                            .padding(.bottom, screenHeight * 0.1)
+                            .padding(.horizontal, screenWidth * 0.07)
                         }
-                        .padding(.horizontal, screenWidth * 0.07)
+
                     }
                 }
                 .navigationBarBackButtonHidden(true) // Hide back button

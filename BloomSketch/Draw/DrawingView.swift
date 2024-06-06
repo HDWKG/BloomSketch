@@ -42,6 +42,7 @@ struct DrawingView: UIViewRepresentable {
         
         let rand_index = Int.random(in: 0..<drawings.count)
         let imageBackground = drawings[rand_index]
+        drawings[rand_index].drawnStatus = true
         
         // Add background image
         if let image = UIImage(named: imageBackground.filename) {
