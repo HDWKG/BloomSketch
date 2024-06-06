@@ -55,8 +55,10 @@ struct NewSprout_View: View {
 
                                     TextField("CutiePatotie", text: $sproutName)
                                         .padding(.horizontal)
+                                        .font(.system(size: geometry.size.width * 0.03, weight: .bold))
+
                                 }
-                                .frame(width: geometry.size.width * 0.75)
+                                .frame(width: geometry.size.width * 0.6)
                                 .padding(.top, geometry.size.height * 0.02)
                                 
                                 
