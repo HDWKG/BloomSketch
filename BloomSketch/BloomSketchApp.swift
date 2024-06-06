@@ -13,6 +13,7 @@ struct BloomSketchApp: App {
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
+                .modelContainer(SwiftDataContainer.container)
         }
         .modelContainer(for: [Tree.self])
         

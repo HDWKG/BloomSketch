@@ -9,7 +9,7 @@ import SwiftUI
 import PencilKit
 import Photos
 
-struct CustomNavigationLink: View {
+struct DrawNavigationLink: View {
     @StateObject private var viewModel = DrawingViewModel()
     @Environment(\.undoManager) private var undoManager
     

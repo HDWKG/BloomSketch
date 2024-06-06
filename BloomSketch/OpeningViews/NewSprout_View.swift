@@ -56,16 +56,17 @@ struct NewSprout_View: View {
                                     TextField("CutiePatotie", text: $sproutName)
                                         .padding(.horizontal)
                                         .font(.system(size: geometry.size.width * 0.03, weight: .bold))
-
                                 }
                                 .frame(width: geometry.size.width * 0.6)
                                 .padding(.top, geometry.size.height * 0.02)
-                                
                                 
                                 Button(action: {
                                     if sproutName != "" {
                                         navigateToTreeHome = true
                                         tree.name = sproutName
+                                        tree.namedStatus = true
+                                        // Save changes to the context
+                                        try? modelContext.save()
                                     } else {
                                         // Show alert
                                         showAlert.toggle()
@@ -93,9 +94,7 @@ struct NewSprout_View: View {
                                 }
                                 
                                 Spacer()
-                                
                             }
-                            
                             
                             Image("bottom_fluid")
                                 .resizable()
@@ -110,7 +109,6 @@ struct NewSprout_View: View {
         }
     }
 }
-
 
 #Preview {
     NewSprout_View()

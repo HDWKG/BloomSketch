@@ -119,7 +119,7 @@ struct TreeHomeView: View {
                                         .padding(.top, 24)
                                     }
                                     
-                                    NavigationLink(destination: CustomNavigationLink(), isActive: $navigateToDrawingView) {
+                                    NavigationLink(destination: DrawNavigationLink(), isActive: $navigateToDrawingView) {
                                         EmptyView()
                                     }
                                 }
@@ -209,7 +209,7 @@ struct TreeHomeView: View {
                                         .padding(.top, 24)
                                     }
                                     
-                                    NavigationLink(destination: CustomNavigationLink(), isActive: $navigateToDrawingView) {
+                                    NavigationLink(destination: DrawNavigationLink(), isActive: $navigateToDrawingView) {
                                         EmptyView()
                                     }
                                 }

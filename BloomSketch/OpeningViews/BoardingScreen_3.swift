@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct BoardingScreen_3: View {
-    @State private var sproutName = ""
     var onComplete: () -> Void
     
     var body: some View {

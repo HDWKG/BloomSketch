@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SplashScreenView: View {
+    @Environment(\.modelContext) var modelContext
+    @Query var trees: [Tree]
+    
     @State private var isActive = false
     @State private var size = 0.8
     @State private var opacity = 0.5
@@ -18,18 +22,24 @@ struct SplashScreenView: View {
                 .ignoresSafeArea(.all)
             
             if isActive {
-                OpeningView()
+                if let tree = trees.first {
+                    if tree.namedStatus {
+                        ContentView()
+                    } else {
+                        OpeningView()
+                    }
+                }
             } else {
                 GeometryReader { geometry in
                     VStack {
                         Spacer()
-
+                        
                         Image("BloomSketch_LogoWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: geometry.size.width * 1, height: geometry.size.width * 0.6)
                             .foregroundColor(.red)
-                            
+                        
                         Text("BloomSketch")
                             .font(Font.custom("Baskerville-Bold", size: geometry.size.width * 0.1))
                             .foregroundColor(Color(hex: 0x1B3F2E))
@@ -59,4 +69,5 @@ struct SplashScreenView: View {
 
 #Preview {
     SplashScreenView()
+        .modelContainer(SwiftDataContainer.container)
 }

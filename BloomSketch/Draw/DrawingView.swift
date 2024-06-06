@@ -57,7 +57,7 @@ struct DrawingView: UIViewRepresentable {
             NSLayoutConstraint.activate([
                 imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
                 imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-                imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1),
+                imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8),
                 imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
             ])
         }

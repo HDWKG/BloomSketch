@@ -11,17 +11,19 @@ import SwiftData
 @Model
 final class Tree: Identifiable {
     var name: String
+    var namedStatus: Bool
     var dailyDone: Bool
     var streak: Int
     var treePhase: String
     var enableTimer: Bool
     
-    init(name: String, dailyDone: Bool, streak: Int, enableTimer: Bool) {
+    init(name: String, namedStatus: Bool, dailyDone: Bool, streak: Int, enableTimer: Bool) {
         self.name = name
+        self.namedStatus = namedStatus
         self.dailyDone = dailyDone
         self.streak = streak
-        self.treePhase = ""
         self.enableTimer = enableTimer
+        self.treePhase = ""
     }
     
     func checkTreePhase() -> CGFloat {
@@ -46,5 +48,4 @@ final class Tree: Identifiable {
         
         return treeWidth
     }
-    
 }
