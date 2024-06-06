@@ -23,7 +23,7 @@ struct SplashScreenView: View {
                 GeometryReader { geometry in
                     VStack {
                         Spacer()
-                            .frame(height: geometry.size.height * 0.2)
+
                         Image("BloomSketch_LogoWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)

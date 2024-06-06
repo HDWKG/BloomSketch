@@ -4,6 +4,7 @@
 //
 //  Created by MacBook Pro on 28/05/24.
 //
+
 import SwiftUI
 import SwiftData
 import PhotosUI
@@ -41,8 +42,8 @@ struct AlbumImagesView: View {
                                     .foregroundColor(Color(hex: 0x1B3F2E))
                                 
                                 LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], spacing: 16) {
-                                    ForEach(viewModel.images, id: \.self) { image in
-                                        Image(uiImage: image)
+                                    ForEach(viewModel.images, id: \.asset) { imageTuple in
+                                        Image(uiImage: imageTuple.image)
                                             .resizable()
                                             .scaledToFit()
                                             .aspectRatio(contentMode: .fit)
@@ -52,7 +53,7 @@ struct AlbumImagesView: View {
                                             .cornerRadius(8)
                                             .shadow(radius: 4)
                                             .onTapGesture {
-                                                selectedImage = IdentifiableImage(image: image)
+                                                selectedImage = IdentifiableImage(image: imageTuple.image)
                                             }
                                     }
                                 }
@@ -78,7 +79,7 @@ struct AlbumImagesView: View {
                                     case .success(let data):
                                         if let data = data, let image = UIImage(data: data) {
                                             DispatchQueue.main.async {
-                                                viewModel.images.append(image)
+                                                viewModel.images.append((image: image, asset: PHAsset()))
                                             }
                                         }
                                     case .failure(let error):
@@ -90,18 +91,12 @@ struct AlbumImagesView: View {
                         .onAppear(perform: viewModel.loadImages)
                         .sheet(item: $selectedImage) { identifiableImage in
                             ImagePreviewView(image: identifiableImage.image) {
-                                removeImage(identifiableImage.image)
+                                viewModel.removeImage(identifiableImage.image)
                             }
                         }
                     }
                 }
             }
-        }
-    }
-    
-    func removeImage(_ image: UIImage) {
-        if let index = viewModel.images.firstIndex(where: { $0 === image }) {
-            viewModel.images.remove(at: index)
         }
     }
 }

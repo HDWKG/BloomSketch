@@ -164,7 +164,7 @@ struct TreeHomeView: View {
                                     Image(tree.treePhase)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: tree.checkTreePhase() * screenWidth * 0.002, height: tree.checkTreePhase() * screenWidth * 0.002)
+                                        .frame(width: tree.checkTreePhase() * screenWidth * 0.0015, height: tree.checkTreePhase() * screenWidth * 0.0015)
                                 }
                                 
                                 VStack {
