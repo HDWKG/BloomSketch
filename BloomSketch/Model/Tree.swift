@@ -9,42 +9,36 @@ import Foundation
 import SwiftData
 
 @Model
-class Tree {
+final class Tree: Identifiable {
     var name: String
+    var namedStatus: Bool
     var dailyDone: Bool
     var streak: Int
-    var treePhase: String
     var enableTimer: Bool
-
-    init(name: String, dailyDone: Bool, streak: Int, enableTimer: Bool) {
+    
+    // Computed property for treePhase based on streak
+    var treePhase: String {
+        switch streak {
+        case 0..<3:
+            return "Tree_1"
+        case 1..<7:
+            return "Tree_2"
+        case 3..<14:
+            return "Tree_3"
+        case 10..<21:
+            return "Tree_4"
+        default:
+            return "Tree_5"
+        }
+    }
+    
+    init(name: String, namedStatus: Bool, dailyDone: Bool, streak: Int, enableTimer: Bool) {
         self.name = name
+        self.namedStatus = namedStatus
         self.dailyDone = dailyDone
         self.streak = streak
-        self.treePhase = ""
         self.enableTimer = enableTimer
     }
     
-    func checkTreePhase() -> CGFloat {
-        var treeWidth: CGFloat
-        
-        if streak < 5 {
-            treePhase = "Tree_1"
-            treeWidth = 300
-        } else if streak < 15 {
-            treePhase = "Tree_2"
-            treeWidth = 300
-        } else if streak < 30 {
-            treePhase = "Tree_3"
-            treeWidth = 300
-        } else if streak < 50 {
-            treePhase = "Tree_4"
-            treeWidth = 400
-        } else {
-            treePhase = "Tree_5"
-            treeWidth = 420
-        }
-        
-        return treeWidth
-    }
     
 }
