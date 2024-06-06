@@ -131,7 +131,7 @@ struct TreeHomeView: View {
                         } else if UIDevice.current.userInterfaceIdiom == .pad {
                             VStack {
                                 Text("\(tree.name)'s Den")
-                                    .font(.system(size: screenWidth * 0.07, weight: .bold))
+                                    .font(.system(size: screenWidth * 0.058, weight: .bold))
                                     .foregroundColor(Color(hex: 0x1B3F2E))
                                     .padding(.top, screenHeight * 0.05)
                                 
@@ -140,18 +140,18 @@ struct TreeHomeView: View {
                                         Image("LeafOn")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
+                                            .frame(width: screenWidth * 0.28, height: screenWidth * 0.28)
                                             .foregroundColor(.red)
                                     } else {
                                         Image("LeafOff")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
+                                            .frame(width: screenWidth * 0.28, height: screenWidth * 0.28)
                                             .foregroundColor(.red)
                                     }
                                     
                                     Text("\(tree.streak)")
-                                        .font(.system(size: screenWidth * 0.12, weight: .bold))
+                                        .font(.system(size: screenWidth * 0.11, weight: .bold))
                                         .foregroundColor(Color(hex: 0x1B3F2E))
                                 }
                                 .padding(.vertical, screenHeight * 0.0)
@@ -164,7 +164,7 @@ struct TreeHomeView: View {
                                     Image(tree.treePhase)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: tree.checkTreePhase() * screenWidth * 0.0015, height: tree.checkTreePhase() * screenWidth * 0.0015)
+                                        .frame(width: tree.checkTreePhase() * screenWidth * 0.002, height: tree.checkTreePhase() * screenWidth * 0.0017)
                                 }
                                 
                                 VStack {
@@ -214,7 +214,7 @@ struct TreeHomeView: View {
                                     }
                                 }
                                 .frame(maxWidth: .infinity)
-                                .padding(.bottom, screenHeight * 0.05)
+                                .padding(.bottom, screenHeight * 0.1)
                             }
                             .padding(.horizontal, screenWidth * 0.07)
                         }
