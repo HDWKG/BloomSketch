@@ -23,7 +23,6 @@
 		042041642C08663E00BF995F /* BoardingScreen_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041632C08663E00BF995F /* BoardingScreen_1.swift */; };
 		042041662C0866B900BF995F /* BoardingScreen_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041652C0866B900BF995F /* BoardingScreen_2.swift */; };
 		042041682C0866C500BF995F /* BoardingScreen_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042041672C0866C500BF995F /* BoardingScreen_3.swift */; };
-		043D20C72C08472D00BEBFE0 /* OpeningPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20C62C08472D00BEBFE0 /* OpeningPager.swift */; };
 		043D20CF2C08474000BEBFE0 /* SwiftDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20CA2C08474000BEBFE0 /* SwiftDataContainer.swift */; };
 		043D20D02C08474000BEBFE0 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20CB2C08474000BEBFE0 /* Tree.swift */; };
 		043D20D32C08474F00BEBFE0 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20D12C08474F00BEBFE0 /* OpeningView.swift */; };
@@ -42,6 +41,7 @@
 		04B312D82C1308E50040F61E /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB872C0AFB5700E9CAF5 /* Drawing.swift */; };
 		04B312DA2C1312640040F61E /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B312D92C1312640040F61E /* CollectionView.swift */; };
 		04B312DC2C1319AB0040F61E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C89B582BF6E8FA0024E261 /* Assets.xcassets */; };
+		04B312DE2C13259D0040F61E /* OpeningPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B312DD2C13259D0040F61E /* OpeningPager.swift */; };
 		04C89B552BF6E8F90024E261 /* WatchBloomSketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B542BF6E8F90024E261 /* WatchBloomSketchApp.swift */; };
 		04C89B572BF6E8F90024E261 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B562BF6E8F90024E261 /* ContentView.swift */; };
 		04C89B5C2BF6E8FA0024E261 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C89B5B2BF6E8FA0024E261 /* Preview Assets.xcassets */; };
@@ -95,7 +95,6 @@
 		042041632C08663E00BF995F /* BoardingScreen_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_1.swift; sourceTree = "<group>"; };
 		042041652C0866B900BF995F /* BoardingScreen_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_2.swift; sourceTree = "<group>"; };
 		042041672C0866C500BF995F /* BoardingScreen_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingScreen_3.swift; sourceTree = "<group>"; };
-		043D20C62C08472D00BEBFE0 /* OpeningPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningPager.swift; sourceTree = "<group>"; };
 		043D20CA2C08474000BEBFE0 /* SwiftDataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDataContainer.swift; sourceTree = "<group>"; };
 		043D20CB2C08474000BEBFE0 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		043D20D12C08474F00BEBFE0 /* OpeningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
@@ -112,6 +111,7 @@
 		047DF8F72BF5D418006525EB /* NewSprout_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSprout_View.swift; sourceTree = "<group>"; };
 		048ED8B22C0F2C0D0073CA3F /* PreAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAlertView.swift; sourceTree = "<group>"; };
 		04B312D92C1312640040F61E /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		04B312DD2C13259D0040F61E /* OpeningPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningPager.swift; sourceTree = "<group>"; };
 		04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchBloomSketch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C89B542BF6E8F90024E261 /* WatchBloomSketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBloomSketchApp.swift; sourceTree = "<group>"; };
 		04C89B562BF6E8F90024E261 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -173,6 +173,7 @@
 		042041622C08662400BF995F /* OpeningViews */ = {
 			isa = PBXGroup;
 			children = (
+				04B312DD2C13259D0040F61E /* OpeningPager.swift */,
 				043D20D12C08474F00BEBFE0 /* OpeningView.swift */,
 				0440C1F82BF61409007D74E0 /* SplashScreen.swift */,
 				042041632C08663E00BF995F /* BoardingScreen_1.swift */,
@@ -229,7 +230,6 @@
 				3F33718F2BF6F75300318356 /* Info.plist */,
 				047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */,
 				043D20CC2C08474000BEBFE0 /* Model */,
-				04F936AE2C08A79000D8D644 /* PagerManager */,
 				04DCCB8D2C0B829300E9CAF5 /* TreeGrowth */,
 				043F11FA2C0ED7F500701E7B /* Collection */,
 				042041622C08662400BF995F /* OpeningViews */,
@@ -285,14 +285,6 @@
 				04DCCB8E2C0B833F00E9CAF5 /* SpeechViewModel.swift */,
 			);
 			path = TreeGrowth;
-			sourceTree = "<group>";
-		};
-		04F936AE2C08A79000D8D644 /* PagerManager */ = {
-			isa = PBXGroup;
-			children = (
-				043D20C62C08472D00BEBFE0 /* OpeningPager.swift */,
-			);
-			path = PagerManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,7 +418,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043D20C72C08472D00BEBFE0 /* OpeningPager.swift in Sources */,
 				0405CF4A2C0A060D002B8F83 /* ImagePreviewView.swift in Sources */,
 				0405CF502C0A062B002B8F83 /* Color.swift in Sources */,
 				043F11FC2C0ED80A00701E7B /* CollectionDetailView.swift in Sources */,
@@ -445,6 +436,7 @@
 				047DF8D32BF5D28C006525EB /* BloomSketchApp.swift in Sources */,
 				043D20D42C08474F00BEBFE0 /* TreeHomeView.swift in Sources */,
 				0405CF442C0A028A002B8F83 /* SettingView.swift in Sources */,
+				04B312DE2C13259D0040F61E /* OpeningPager.swift in Sources */,
 				0405CF532C0A062B002B8F83 /* DrawingViewModel.swift in Sources */,
 				0405CF512C0A062B002B8F83 /* DrawNavigationLink.swift in Sources */,
 				043D20CF2C08474000BEBFE0 /* SwiftDataContainer.swift in Sources */,

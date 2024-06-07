@@ -22,8 +22,9 @@ struct PreAlertView: View {
                         ContentView()
                     } else {
                         ZStack {
-                            Color(hex: 0xD5E4DD)
-                                .ignoresSafeArea()
+                            LinearGradient(gradient: Gradient(colors: [Color(hex: 0x63B256), Color(.white)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                                .ignoresSafeArea(.all)
+                            
                             if UIDevice.current.userInterfaceIdiom == .phone {
                                 
                                 VStack {
@@ -36,34 +37,16 @@ struct PreAlertView: View {
                                     
                                     Spacer()
                                     
-                                    Text("Allow phone access on the next screen to:")
+                                    Text("The app requires phone access to enable features")
                                         .font(.system(size: 28, weight: .bold))
                                         .foregroundColor(Color(hex: 0x1B3F2E))
-                                        .padding(.horizontal, 48)
+                                        .padding(.horizontal, 32)
                                         .fixedSize(horizontal: false, vertical: true)
+                                        .multilineTextAlignment(.center)
+                                    
+                                    Spacer()
                                     
                                     VStack {
-                                        HStack {
-                                            Image(systemName: "person.crop.circle")
-                                                .resizable(resizingMode: .tile)
-                                                .scaledToFit()
-                                                .frame(width: 48, height: 48)
-                                                .foregroundColor(Color(hex: 0x1B3F2E))
-                                                .offset(x: 0, y: 0)
-                                                .padding(.leading, 8)
-                                            
-                                            Spacer()
-                                            
-                                            Text("Personalized User Experience")
-                                                .font(.system(size: 20, weight: .bold))
-                                                .foregroundColor(Color(hex: 0x1B3F2E))
-                                                .fixedSize(horizontal: false, vertical: true)
-                                                .padding(.horizontal, 8)
-                                                .offset(x: -65)
-                                        }
-                                        .padding(.horizontal, 24)
-                                        .padding(.top, 16)
-                                        
                                         HStack {
                                             Image(systemName: "photo")
                                                 .resizable(resizingMode: .tile)
@@ -72,10 +55,8 @@ struct PreAlertView: View {
                                                 .foregroundColor(Color(hex: 0x1B3F2E))
                                                 .offset(x: 0, y: 0)
                                                 .padding(.leading, 8)
-                                            
-                                            Spacer()
-                                            
-                                            Text("Access to phone for saving photos to gallery")
+                                                                                        
+                                            Text("Image saving access to Photos")
                                                 .font(.system(size: 20, weight: .bold))
                                                 .foregroundColor(Color(hex: 0x1B3F2E))
                                                 .fixedSize(horizontal: false, vertical: true)
@@ -94,7 +75,7 @@ struct PreAlertView: View {
                                             HStack {
                                                
                                                 Text("Check to continue")
-                                                    .font(.system(size: 20, weight: .bold))
+                                                    .font(.system(size: 20, weight: .regular))
                                                     .foregroundColor(Color(hex: 0x1B3F2E))
                                                 
                                                 Image(systemName: isCheckBoxSelected ? "checkmark.square" : "square")
@@ -137,33 +118,16 @@ struct PreAlertView: View {
                                        
                                     Spacer()
                                    
-                                    Text("Allow phone access on the next screen to:")
+                                    Text("The app requires phone access to enable features")
                                         .font(.system(size: geometry.size.width * 0.05, weight: .bold))
                                         .foregroundColor(Color(hex: 0x1B3F2E))
                                         .padding(.horizontal, geometry.size.width * 0.1)
                                         .fixedSize(horizontal: false, vertical: true)
+                                        .multilineTextAlignment(.center)
                                        
+                                    Spacer()
+                                    
                                     VStack(spacing: 20) {
-                                        HStack {
-                                            Image(systemName: "person.crop.circle")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: geometry.size.width * 0.1, height: geometry.size.width * 0.1)
-                                                .foregroundColor(Color(hex: 0x1B3F2E))
-                                                .padding(.leading, geometry.size.width * 0.02)
-                                            
-                                            Spacer()
-                                            
-                                            Text("Personalized User Experience")
-                                                .font(.system(size: geometry.size.width * 0.045, weight: .bold))
-                                                .foregroundColor(Color(hex: 0x1B3F2E))
-                                                .fixedSize(horizontal: false, vertical: true)
-                                                .padding(.horizontal, geometry.size.width * 0.02)
-                                                .offset(x: -geometry.size.width * 0.03)
-                                        }
-                                        .padding(.horizontal, geometry.size.width * 0.05)
-                                        .padding(.top, geometry.size.height * 0.02)
-                                        
                                         HStack {
                                             Image(systemName: "photo")
                                                 .resizable()
@@ -174,8 +138,8 @@ struct PreAlertView: View {
                                             
                                             Spacer()
                                             
-                                            Text("Access to phone for saving photos to gallery")
-                                                .font(.system(size: geometry.size.width * 0.045, weight: .bold))
+                                            Text("Image saving access to Photos")
+                                                .font(.system(size: geometry.size.width * 0.040, weight: .bold))
                                                 .foregroundColor(Color(hex: 0x1B3F2E))
                                                 .fixedSize(horizontal: false, vertical: true)
                                                 .padding(.horizontal, geometry.size.width * 0.02)
@@ -193,7 +157,7 @@ struct PreAlertView: View {
                                         }) {
                                             HStack {
                                                 Text("Check to continue")
-                                                    .font(.system(size: geometry.size.width * 0.040, weight: .bold))
+                                                    .font(.system(size: geometry.size.width * 0.040, weight: .regular))
                                                     .foregroundColor(Color(hex: 0x1B3F2E))
                                                 
                                                 Image(systemName: isCheckBoxSelected ? "checkmark.square" : "square")

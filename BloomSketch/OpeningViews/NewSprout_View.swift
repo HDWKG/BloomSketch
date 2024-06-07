@@ -160,7 +160,7 @@ struct NewSprout_View: View {
                                             .background(Color(hex: 0x1B3F2E))
                                             .cornerRadius(16)
                                     }
-                                    .padding(.top, 16)
+                                    .padding(.top, 32)
                                     .alert(isPresented: $showAlert) {
                                         Alert(
                                             title: Text("Empty Name <3"),
