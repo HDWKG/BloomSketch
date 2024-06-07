@@ -29,6 +29,7 @@ struct CollectionView: View {
                             Text("Collection")
                                 .font(.system(size: geometry.size.width * 0.07, weight: .bold))
                                 .foregroundColor(Color(hex: 0x1B3F2E))
+                                .padding(.top, geometry.size.height * 0.02)
                             
                             Text("Draw more to unlock all drawings!")
                                 .font(.system(size: geometry.size.width * 0.05))
@@ -39,19 +40,22 @@ struct CollectionView: View {
                                     if drawing.drawnStatus {
                                         VStack(alignment: .center) {
                                             Spacer()
-                                            Image(drawing.filename)
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(height: geometry.size.width * 0.3)
-                                                .padding(4)
                                             
                                             Button(action: {
                                                 showDetailSheet = true
                                                 selectedDrawing = drawing
                                             }) {
-                                                Text(drawing.name)
-                                                    .font(.system(size: geometry.size.width * 0.04))
-                                                    .foregroundColor(Color(hex: 0x1B3F2E))
+                                                VStack {
+                                                    Image(drawing.filename)
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fit)
+                                                        .frame(height: geometry.size.width * 0.3)
+                                                        .padding(4)
+                                                    
+                                                    Text(drawing.name)
+                                                        .font(.system(size: geometry.size.width * 0.04))
+                                                        .foregroundColor(Color(hex: 0x1B3F2E))
+                                                }
                                             }
                                         }
                                         
@@ -83,7 +87,6 @@ struct CollectionView: View {
                                 .foregroundColor(Color(hex: 0x1B3F2E))
                                 .padding(.vertical, geometry.size.height * 0.04)
                         }
-                        .background(.white)
                         .padding(.top, geometry.size.height * 0.02)
                     }
                 }

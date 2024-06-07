@@ -16,6 +16,7 @@ struct TreeHomeView: View {
     @Environment(\.calendar) var calendar
     
     @State private var navigateToDrawingView = false
+    @State private var navigateToSettingView = false
     @State private var action: Int? = 0
     
     @State var canvas = PKCanvasView()
@@ -40,10 +41,25 @@ struct TreeHomeView: View {
                         
                         if UIDevice.current.userInterfaceIdiom == .phone {
                             VStack {
+                                // Settings Button
+                                HStack {
+                                    Spacer()
+                                    
+                                    Button(action: {
+                                        navigateToSettingView = true
+                                    }) {
+                                        Image(systemName: "gearshape.fill")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: screenWidth * 0.05, height: screenWidth * 0.05)
+                                            .foregroundColor(Color(hex: 0x1B3F2E))
+                                    }
+                                    .padding(.top, screenHeight * 0.02)
+                                }
+                                
                                 Text("\(tree.name)'s Den")
                                     .font(.system(size: screenWidth * 0.07, weight: .bold))
                                     .foregroundColor(Color(hex: 0x1B3F2E))
-                                    .padding(.top, screenHeight * 0.05)
                                 
                                 ZStack {
                                     if tree.dailyDone {
@@ -218,7 +234,11 @@ struct TreeHomeView: View {
                             }
                             .padding(.horizontal, screenWidth * 0.07)
                         }
-
+                        NavigationLink(destination: SettingView()
+                            .modelContainer(SwiftDataContainer.container), isActive:
+                                        $navigateToSettingView) {
+                            EmptyView()
+                        }
                     }
                 }
                 .navigationBarBackButtonHidden(true) // Hide back button
