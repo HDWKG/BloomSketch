@@ -13,7 +13,6 @@ struct OpeningView: View {
     
     var body: some View {
         NavigationStack {
-            
             // if condition to restrict OpeningPager :)
             if navigateToNewSprout {
                 NewSprout_View()
@@ -32,7 +31,7 @@ struct OpeningView: View {
                 }
             }
         }
-        
+        .navigationBarBackButtonHidden(true) // Hide back button
     }
 }
 

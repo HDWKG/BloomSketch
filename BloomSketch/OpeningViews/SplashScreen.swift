@@ -7,14 +7,11 @@
 
 import SwiftUI
 import SwiftData
-import AVFoundation
 
 struct SplashScreen: View {
     @Environment(\.modelContext) var modelContext
     @Query var trees: [Tree]
     
-    @State private var player: AVAudioPlayer? // Audio player state variable
-
     @State private var isActive = false
     @State private var size = 0.8
     @State private var opacity = 0.5
@@ -63,21 +60,7 @@ struct SplashScreen: View {
             }
         }
         .navigationBarBackButtonHidden(true) // Hide back button
-        .onAppear {
-            guard let url = Bundle.main.url(forResource: "Background_Music", withExtension: "mp3") else { return }
-            do {
-                try player = AVAudioPlayer(contentsOf: url)
-                player?.volume = 0.5
-                player?.numberOfLoops = -1 // infinite loop music!
-                try player?.prepareToPlay()
-                player?.play()
-            } catch {
-                print("Error playing audio:", error.localizedDescription)
-            }
-        }
-        .onDisappear { // Stop audio on disappear
-            player?.stop()
-        }
+        
     }
 }
 

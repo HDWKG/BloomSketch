@@ -63,7 +63,7 @@ struct TreeHomeView: View {
                                 
                                 ZStack {
                                     if tree.dailyDone {
-                                        Image("LeafON")
+                                        Image("LeafOn")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
@@ -122,8 +122,7 @@ struct TreeHomeView: View {
                                     } else {
                                         Button(action: {
                                             navigateToDrawingView = true
-                                            tree.streak += 1
-                                            tree.dailyDone = true
+                                            
                                         }) {
                                             Text("Start Drawing Today")
                                                 .foregroundColor(.white)
@@ -169,7 +168,7 @@ struct TreeHomeView: View {
                                 
                                 ZStack {
                                     if tree.dailyDone {
-                                        Image("LeafON")
+                                        Image("LeafOn")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: screenWidth * 0.28, height: screenWidth * 0.28)
@@ -228,8 +227,6 @@ struct TreeHomeView: View {
                                     } else {
                                         Button(action: {
                                             navigateToDrawingView = true
-                                            tree.streak += 1
-                                            tree.dailyDone = true
                                         }) {
                                             Text("Start Drawing Today")
                                                 .foregroundColor(.white)
