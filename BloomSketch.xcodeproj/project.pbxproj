@@ -48,8 +48,6 @@
 		04C89B5F2BF6E8FA0024E261 /* WatchBloomSketch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04DCCB882C0AFB5700E9CAF5 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB872C0AFB5700E9CAF5 /* Drawing.swift */; };
 		04DCCB8A2C0B183800E9CAF5 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB892C0B183800E9CAF5 /* CollectionView.swift */; };
-		04DCCB8C2C0B529000E9CAF5 /* DailyResetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB8B2C0B529000E9CAF5 /* DailyResetManager.swift */; };
-		04DCCB8F2C0B833F00E9CAF5 /* SpeechViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB8E2C0B833F00E9CAF5 /* SpeechViewModel.swift */; };
 		3FB3C9FB2C12B14D006DEF46 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405CF4B2C0A062B002B8F83 /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -119,8 +117,6 @@
 		04C89B5B2BF6E8FA0024E261 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04DCCB872C0AFB5700E9CAF5 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		04DCCB892C0B183800E9CAF5 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		04DCCB8B2C0B529000E9CAF5 /* DailyResetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyResetManager.swift; sourceTree = "<group>"; };
-		04DCCB8E2C0B833F00E9CAF5 /* SpeechViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewModel.swift; sourceTree = "<group>"; };
 		3F33718F2BF6F75300318356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				0405CF462C0A060D002B8F83 /* AlbumImagesView.swift */,
-				0405CF472C0A060D002B8F83 /* ImagePreviewView.swift */,
 				0405CF542C0A078E002B8F83 /* AlbumImagesViewModel.swift */,
+				0405CF472C0A060D002B8F83 /* ImagePreviewView.swift */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -176,11 +172,11 @@
 				04B312DD2C13259D0040F61E /* OpeningPager.swift */,
 				043D20D12C08474F00BEBFE0 /* OpeningView.swift */,
 				0440C1F82BF61409007D74E0 /* SplashScreen.swift */,
+				048ED8B22C0F2C0D0073CA3F /* PreAlertView.swift */,
 				042041632C08663E00BF995F /* BoardingScreen_1.swift */,
 				042041652C0866B900BF995F /* BoardingScreen_2.swift */,
 				042041672C0866C500BF995F /* BoardingScreen_3.swift */,
 				047DF8F72BF5D418006525EB /* NewSprout_View.swift */,
-				048ED8B22C0F2C0D0073CA3F /* PreAlertView.swift */,
 			);
 			path = OpeningViews;
 			sourceTree = "<group>";
@@ -253,17 +249,17 @@
 		04C89B532BF6E8F90024E261 /* WatchBloomSketch Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				041A5D322C083E6400718673 /* StreakView.swift */,
-				041A5D332C083E6400718673 /* TreeView.swift */,
 				04C89B542BF6E8F90024E261 /* WatchBloomSketchApp.swift */,
 				04C89B562BF6E8F90024E261 /* ContentView.swift */,
+				041A5D322C083E6400718673 /* StreakView.swift */,
+				041A5D332C083E6400718673 /* TreeView.swift */,
+				04B312D92C1312640040F61E /* CollectionView.swift */,
 				04C89B582BF6E8FA0024E261 /* Assets.xcassets */,
 				04C89B5A2BF6E8FA0024E261 /* Preview Content */,
 				041A5D2B2C083D5E00718673 /* PageControl.swift */,
 				041A5D2D2C083D6F00718673 /* NotificationView.swift */,
 				041A5D2F2C083D8000718673 /* NotificationController.swift */,
 				041A5D312C083D9000718673 /* PushNotificationPayload.apns */,
-				04B312D92C1312640040F61E /* CollectionView.swift */,
 			);
 			path = "WatchBloomSketch Watch App";
 			sourceTree = "<group>";
@@ -279,10 +275,8 @@
 		04DCCB8D2C0B829300E9CAF5 /* TreeGrowth */ = {
 			isa = PBXGroup;
 			children = (
-				0405CF432C0A028A002B8F83 /* SettingView.swift */,
 				043D20D22C08474F00BEBFE0 /* TreeHomeView.swift */,
-				04DCCB8B2C0B529000E9CAF5 /* DailyResetManager.swift */,
-				04DCCB8E2C0B833F00E9CAF5 /* SpeechViewModel.swift */,
+				0405CF432C0A028A002B8F83 /* SettingView.swift */,
 			);
 			path = TreeGrowth;
 			sourceTree = "<group>";
@@ -422,7 +416,6 @@
 				0405CF502C0A062B002B8F83 /* Color.swift in Sources */,
 				043F11FC2C0ED80A00701E7B /* CollectionDetailView.swift in Sources */,
 				0440C1F92BF61409007D74E0 /* SplashScreen.swift in Sources */,
-				04DCCB8F2C0B833F00E9CAF5 /* SpeechViewModel.swift in Sources */,
 				04DCCB8A2C0B183800E9CAF5 /* CollectionView.swift in Sources */,
 				043D20D32C08474F00BEBFE0 /* OpeningView.swift in Sources */,
 				047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */,
@@ -440,7 +433,6 @@
 				0405CF532C0A062B002B8F83 /* DrawingViewModel.swift in Sources */,
 				0405CF512C0A062B002B8F83 /* DrawNavigationLink.swift in Sources */,
 				043D20CF2C08474000BEBFE0 /* SwiftDataContainer.swift in Sources */,
-				04DCCB8C2C0B529000E9CAF5 /* DailyResetManager.swift in Sources */,
 				0405CF552C0A078E002B8F83 /* AlbumImagesViewModel.swift in Sources */,
 				0405CF492C0A060D002B8F83 /* AlbumImagesView.swift in Sources */,
 				043D20D02C08474000BEBFE0 /* Tree.swift in Sources */,
