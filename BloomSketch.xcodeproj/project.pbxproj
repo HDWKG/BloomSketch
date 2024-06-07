@@ -37,15 +37,20 @@
 		047DF8DA2BF5D28E006525EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047DF8D92BF5D28E006525EB /* Preview Assets.xcassets */; };
 		047DF8F82BF5D418006525EB /* NewSprout_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DF8F72BF5D418006525EB /* NewSprout_View.swift */; };
 		048ED8B32C0F2C0D0073CA3F /* PreAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ED8B22C0F2C0D0073CA3F /* PreAlertView.swift */; };
+		04B312D62C1308DE0040F61E /* SwiftDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20CA2C08474000BEBFE0 /* SwiftDataContainer.swift */; };
+		04B312D72C1308E10040F61E /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D20CB2C08474000BEBFE0 /* Tree.swift */; };
+		04B312D82C1308E50040F61E /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB872C0AFB5700E9CAF5 /* Drawing.swift */; };
+		04B312DA2C1312640040F61E /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B312D92C1312640040F61E /* CollectionView.swift */; };
+		04B312DC2C1319AB0040F61E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C89B582BF6E8FA0024E261 /* Assets.xcassets */; };
 		04C89B552BF6E8F90024E261 /* WatchBloomSketchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B542BF6E8F90024E261 /* WatchBloomSketchApp.swift */; };
 		04C89B572BF6E8F90024E261 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C89B562BF6E8F90024E261 /* ContentView.swift */; };
-		04C89B592BF6E8FA0024E261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C89B582BF6E8FA0024E261 /* Assets.xcassets */; };
 		04C89B5C2BF6E8FA0024E261 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C89B5B2BF6E8FA0024E261 /* Preview Assets.xcassets */; };
 		04C89B5F2BF6E8FA0024E261 /* WatchBloomSketch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04DCCB882C0AFB5700E9CAF5 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB872C0AFB5700E9CAF5 /* Drawing.swift */; };
 		04DCCB8A2C0B183800E9CAF5 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB892C0B183800E9CAF5 /* CollectionView.swift */; };
 		04DCCB8C2C0B529000E9CAF5 /* DailyResetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB8B2C0B529000E9CAF5 /* DailyResetManager.swift */; };
 		04DCCB8F2C0B833F00E9CAF5 /* SpeechViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB8E2C0B833F00E9CAF5 /* SpeechViewModel.swift */; };
+		3FB3C9FB2C12B14D006DEF46 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405CF4B2C0A062B002B8F83 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +111,7 @@
 		047DF8E42BF5D2EA006525EB /* NewSproutView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSproutView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DF8F72BF5D418006525EB /* NewSprout_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSprout_View.swift; sourceTree = "<group>"; };
 		048ED8B22C0F2C0D0073CA3F /* PreAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAlertView.swift; sourceTree = "<group>"; };
+		04B312D92C1312640040F61E /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		04C89B522BF6E8F90024E261 /* WatchBloomSketch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchBloomSketch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C89B542BF6E8F90024E261 /* WatchBloomSketchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBloomSketchApp.swift; sourceTree = "<group>"; };
 		04C89B562BF6E8F90024E261 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,8 +178,8 @@
 				042041632C08663E00BF995F /* BoardingScreen_1.swift */,
 				042041652C0866B900BF995F /* BoardingScreen_2.swift */,
 				042041672C0866C500BF995F /* BoardingScreen_3.swift */,
-				043D20C62C08472D00BEBFE0 /* OpeningPager.swift */,
 				047DF8F72BF5D418006525EB /* NewSprout_View.swift */,
+				048ED8B22C0F2C0D0073CA3F /* PreAlertView.swift */,
 			);
 			path = OpeningViews;
 			sourceTree = "<group>";
@@ -223,14 +229,13 @@
 				3F33718F2BF6F75300318356 /* Info.plist */,
 				047DF8D22BF5D28C006525EB /* BloomSketchApp.swift */,
 				043D20CC2C08474000BEBFE0 /* Model */,
+				04F936AE2C08A79000D8D644 /* PagerManager */,
 				04DCCB8D2C0B829300E9CAF5 /* TreeGrowth */,
 				043F11FA2C0ED7F500701E7B /* Collection */,
 				042041622C08662400BF995F /* OpeningViews */,
 				0405CF482C0A060D002B8F83 /* Album */,
 				0405CF4F2C0A062B002B8F83 /* Draw */,
 				047DF8D42BF5D28C006525EB /* ContentView.swift */,
-				048ED8B22C0F2C0D0073CA3F /* PreAlertView.swift */,
-				0405CF432C0A028A002B8F83 /* SettingView.swift */,
 				047DF8D62BF5D28E006525EB /* Assets.xcassets */,
 				047DF8D82BF5D28E006525EB /* Preview Content */,
 			);
@@ -258,6 +263,7 @@
 				041A5D2D2C083D6F00718673 /* NotificationView.swift */,
 				041A5D2F2C083D8000718673 /* NotificationController.swift */,
 				041A5D312C083D9000718673 /* PushNotificationPayload.apns */,
+				04B312D92C1312640040F61E /* CollectionView.swift */,
 			);
 			path = "WatchBloomSketch Watch App";
 			sourceTree = "<group>";
@@ -273,11 +279,20 @@
 		04DCCB8D2C0B829300E9CAF5 /* TreeGrowth */ = {
 			isa = PBXGroup;
 			children = (
+				0405CF432C0A028A002B8F83 /* SettingView.swift */,
 				043D20D22C08474F00BEBFE0 /* TreeHomeView.swift */,
 				04DCCB8B2C0B529000E9CAF5 /* DailyResetManager.swift */,
 				04DCCB8E2C0B833F00E9CAF5 /* SpeechViewModel.swift */,
 			);
 			path = TreeGrowth;
+			sourceTree = "<group>";
+		};
+		04F936AE2C08A79000D8D644 /* PagerManager */ = {
+			isa = PBXGroup;
+			children = (
+				043D20C62C08472D00BEBFE0 /* OpeningPager.swift */,
+			);
+			path = PagerManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,7 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C89B5C2BF6E8FA0024E261 /* Preview Assets.xcassets in Resources */,
-				04C89B592BF6E8FA0024E261 /* Assets.xcassets in Resources */,
+				04B312DC2C1319AB0040F61E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,8 +471,13 @@
 				04C89B572BF6E8F90024E261 /* ContentView.swift in Sources */,
 				04C89B552BF6E8F90024E261 /* WatchBloomSketchApp.swift in Sources */,
 				041A5D2C2C083D5E00718673 /* PageControl.swift in Sources */,
+				04B312D72C1308E10040F61E /* Tree.swift in Sources */,
+				04B312DA2C1312640040F61E /* CollectionView.swift in Sources */,
+				3FB3C9FB2C12B14D006DEF46 /* Color.swift in Sources */,
+				04B312D62C1308DE0040F61E /* SwiftDataContainer.swift in Sources */,
 				041A5D352C083E6500718673 /* TreeView.swift in Sources */,
 				041A5D2E2C083D6F00718673 /* NotificationView.swift in Sources */,
+				04B312D82C1308E50040F61E /* Drawing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

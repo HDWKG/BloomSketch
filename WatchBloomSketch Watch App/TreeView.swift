@@ -1,43 +1,26 @@
 import Foundation
 import SwiftUI
+import SwiftData
+
 struct TreeView: View {
-    @State private var treePhase = ""
+    @Environment(\.modelContext) var modelContext
+    @Query var trees: [Tree]
+    
     @State private var treeWidth: CGFloat = 160
-    @Binding var streak: Int
     
     var body: some View {
-        VStack {
+        if let tree = trees.first {
             ZStack {
-                // Chatbox
-                Image(treePhase)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .onAppear {
-                        updateTreePhase()
-                    }
-                    .onChange(of: streak) { newValue in
-                        updateTreePhase()
-                    }
+                LinearGradient(gradient: Gradient(colors: [Color(hex: 0x63B256), Color(.white)]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea(.all)
+                
+                VStack {
+                    Image(tree.treePhase)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: treeWidth, maxHeight: .infinity)
+                }
             }
-        }
-    }
-    
-    func updateTreePhase() {
-        if streak < 5 {
-            treePhase = "Tree_1"
-            treeWidth = 300
-        } else if streak < 15 {
-            treePhase = "Tree_2"
-            treeWidth = 300
-        } else if streak < 30 {
-            treePhase = "Tree_3"
-            treeWidth = 300
-        } else if streak < 50 {
-            treePhase = "Tree_4"
-            treeWidth = 400
-        } else {
-            treePhase = "Tree_5"
-            treeWidth = 420
         }
     }
 }

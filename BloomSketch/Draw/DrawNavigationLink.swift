@@ -16,7 +16,7 @@ struct DrawNavigationLink: View {
     @Environment(\.modelContext) var modelContext
     @Query var trees: [Tree]
     
-    @State private var timeRemaining = 30
+    @State private var timeRemaining = 120
     @State private var timer: Timer?
     @State private var saveEarly: Bool = false
     
@@ -166,7 +166,7 @@ struct DrawNavigationLink: View {
     // Timer functions
     private func startTimer() {
         timer?.invalidate()
-        timeRemaining = 30
+        timeRemaining = 120
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             tick()
         }

@@ -15,7 +15,7 @@ class SwiftDataContainer {
             let fileManager = FileManager.default
             let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
             let storageURL = documentDirectory.appendingPathComponent("BloomSketchModelData")
-
+            
             let config = ModelConfiguration(url: storageURL)
             let container = try ModelContainer(for: Tree.self, Drawing.self, configurations: config)
             
@@ -51,6 +51,8 @@ class SwiftDataContainer {
                 ] {
                     container.mainContext.insert(drawing)
                 }
+                
+                
             }
             
             return container

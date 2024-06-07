@@ -32,25 +32,7 @@ struct PreAlertView: View {
                         .fixedSize(horizontal: false, vertical: true)
                     
                     VStack {
-                        HStack {
-                            Image(systemName: "person.crop.circle")
-                                .resizable(resizingMode: .tile)
-                                .scaledToFit()
-                                .frame(width: 48, height: 48)
-                                .foregroundColor(.white)
-                                .offset(x: 0, y: 0)
-                                .padding(.leading, 8)
-                            
-                            Spacer()
-                            
-                            Text("Personalized User Experience")
-                                .font(.system(size: 20, weight: .bold))
-                                .foregroundColor(.white)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .padding(.horizontal, 8)
-                        }
-                        .padding(.horizontal, 24)
-                        .padding(.top, 16)
+                        
                         
                         HStack {
                             Image(systemName: "photo")
@@ -63,7 +45,7 @@ struct PreAlertView: View {
                             
                             Spacer()
                             
-                            Text("Allow phone access on the next screen to:")
+                            Text("Allow photos of your access on the next screen to:")
                                 .font(.system(size: 20, weight: .bold))
                                 .foregroundColor(.white)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -106,4 +88,5 @@ struct PreAlertView: View {
 
 #Preview {
     PreAlertView()
+        
 }

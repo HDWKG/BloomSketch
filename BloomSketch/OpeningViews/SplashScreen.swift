@@ -15,20 +15,15 @@ struct SplashScreen: View {
     @State private var isActive = false
     @State private var size = 0.8
     @State private var opacity = 0.5
-
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color(.white), Color(hex: 0x63B256)]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea(.all)
             
             if isActive {
-                if let tree = trees.first {
-                    if tree.namedStatus {
-                        ContentView()
-                    } else {
-                        OpeningView()
-                    }
-                }
+                PreAlertView()
+                    .modelContainer(SwiftDataContainer.container)
             } else {
                 GeometryReader { geometry in
                     VStack {
@@ -65,6 +60,7 @@ struct SplashScreen: View {
             }
         }
         .navigationBarBackButtonHidden(true) // Hide back button
+        
     }
 }
 

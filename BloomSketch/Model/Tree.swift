@@ -19,13 +19,13 @@ final class Tree: Identifiable {
     // Computed property for treePhase based on streak
     var treePhase: String {
         switch streak {
-        case 0..<3:
+        case 0..<1:
             return "Tree_1"
-        case 1..<7:
+        case 1..<3:
             return "Tree_2"
-        case 3..<14:
+        case 3..<7:
             return "Tree_3"
-        case 10..<21:
+        case 7..<14:
             return "Tree_4"
         default:
             return "Tree_5"
