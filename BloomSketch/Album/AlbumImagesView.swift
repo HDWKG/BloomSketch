@@ -28,8 +28,8 @@ struct AlbumImagesView: View {
             if let tree = trees.first {
                 NavigationStack {
                     ZStack {
-                        Color(hex: 0xD5E4DD)
-                            .ignoresSafeArea()
+                        LinearGradient(gradient: Gradient(colors: [Color(hex: 0x63B256), Color(.white)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            .ignoresSafeArea(.all)
                         
                         ScrollView {
                             VStack(spacing: 16) {

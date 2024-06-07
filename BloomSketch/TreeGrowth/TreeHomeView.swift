@@ -36,8 +36,8 @@ struct TreeHomeView: View {
                 
                 NavigationStack {
                     ZStack {
-                        Color(hex: 0xD5E4DD)
-                            .ignoresSafeArea()
+                        LinearGradient(gradient: Gradient(colors: [Color(hex: 0x63B256), Color(.white)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            .ignoresSafeArea(.all)
                         
                         if UIDevice.current.userInterfaceIdiom == .phone {
                             VStack {
@@ -63,7 +63,7 @@ struct TreeHomeView: View {
                                 
                                 ZStack {
                                     if tree.dailyDone {
-                                        Image("LeafOn")
+                                        Image("LeafON")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: screenWidth * 0.35, height: screenWidth * 0.35)
@@ -168,7 +168,7 @@ struct TreeHomeView: View {
                                 
                                 ZStack {
                                     if tree.dailyDone {
-                                        Image("LeafOn")
+                                        Image("LeafON")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: screenWidth * 0.28, height: screenWidth * 0.28)

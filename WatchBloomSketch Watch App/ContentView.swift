@@ -12,12 +12,14 @@ struct ContentView3: View {
 }
 struct ContentView: View {
     @State private var currentIndex = 0
-    @State private var streak = 2
-    @State private var dailyDone = true
     var body: some View {
-        PagerManager(pageCount: 2, currentIndex: $currentIndex) {
-            StreakView(dailyDone: $dailyDone, streak: $streak)
-            TreeView(streak: $streak)
+        PagerManager(pageCount: 3, currentIndex: $currentIndex) {
+            StreakView()
+                .modelContainer(SwiftDataContainer.container)
+            TreeView()
+                .modelContainer(SwiftDataContainer.container)
+            CollectionView()
+                .modelContainer(SwiftDataContainer.container)
         }
     }
 }

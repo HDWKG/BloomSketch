@@ -15,8 +15,9 @@ struct PagerManager<Content: View>: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack{
-                Color(hex: 0xD5E4DD)
+                Color(.white)
                     .ignoresSafeArea()
+                
                 VStack {
                     HStack(spacing: 0) {
                         self.content.frame(width: geometry.size.width)
