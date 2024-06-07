@@ -7,6 +7,8 @@ struct StreakView: View {
     var body: some View {
         VStack {
             ZStack {
+                Color(hex: 0xD5E4DD)
+                    .ignoresSafeArea()
                 if dailyDone {
                     Image("LeafON")
                         .resizable()

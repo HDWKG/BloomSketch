@@ -146,6 +146,22 @@ struct TreeHomeView: View {
                             
                         } else if UIDevice.current.userInterfaceIdiom == .pad {
                             VStack {
+                                // Settings Button
+                                HStack {
+                                    Spacer()
+                                    
+                                    Button(action: {
+                                        navigateToSettingView = true
+                                    }) {
+                                        Image(systemName: "gearshape.fill")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: screenWidth * 0.05, height: screenWidth * 0.05)
+                                            .foregroundColor(Color(hex: 0x1B3F2E))
+                                    }
+                                    .padding(.top, screenHeight * 0.02)
+                                }
+                                
                                 Text("\(tree.name)'s Den")
                                     .font(.system(size: screenWidth * 0.058, weight: .bold))
                                     .foregroundColor(Color(hex: 0x1B3F2E))

@@ -8,10 +8,12 @@ struct TreeView: View {
     var body: some View {
         VStack {
             ZStack {
-                // Chatbox
+                Color(hex: 0xD5E4DD)
+                    .ignoresSafeArea()
                 Image(treePhase)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .onAppear {
                         updateTreePhase()
                     }
@@ -25,19 +27,14 @@ struct TreeView: View {
     func updateTreePhase() {
         if streak < 5 {
             treePhase = "Tree_1"
-            treeWidth = 300
         } else if streak < 15 {
             treePhase = "Tree_2"
-            treeWidth = 300
         } else if streak < 30 {
             treePhase = "Tree_3"
-            treeWidth = 300
         } else if streak < 50 {
             treePhase = "Tree_4"
-            treeWidth = 400
         } else {
             treePhase = "Tree_5"
-            treeWidth = 420
         }
     }
 }

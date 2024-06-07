@@ -46,6 +46,7 @@
 		04DCCB8A2C0B183800E9CAF5 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB892C0B183800E9CAF5 /* CollectionView.swift */; };
 		04DCCB8C2C0B529000E9CAF5 /* DailyResetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB8B2C0B529000E9CAF5 /* DailyResetManager.swift */; };
 		04DCCB8F2C0B833F00E9CAF5 /* SpeechViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCCB8E2C0B833F00E9CAF5 /* SpeechViewModel.swift */; };
+		3FB3C9FB2C12B14D006DEF46 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405CF4B2C0A062B002B8F83 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -464,6 +465,7 @@
 				04C89B572BF6E8F90024E261 /* ContentView.swift in Sources */,
 				04C89B552BF6E8F90024E261 /* WatchBloomSketchApp.swift in Sources */,
 				041A5D2C2C083D5E00718673 /* PageControl.swift in Sources */,
+				3FB3C9FB2C12B14D006DEF46 /* Color.swift in Sources */,
 				041A5D352C083E6500718673 /* TreeView.swift in Sources */,
 				041A5D2E2C083D6F00718673 /* NotificationView.swift in Sources */,
 			);

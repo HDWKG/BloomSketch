@@ -40,7 +40,7 @@ struct SettingView: View {
                     .fixedSize()
                     
                     Button(action: {
-                        tree.namedStatus = false
+                        tree.name = "Default"
                         navigateToSplashScreen = true
                     }) {
                         Text("Admin: Reset Name + Show Boarding!")

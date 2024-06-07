@@ -7,28 +7,26 @@
 
 import SwiftUI
 import SwiftData
+import AVFoundation
 
 struct SplashScreen: View {
     @Environment(\.modelContext) var modelContext
     @Query var trees: [Tree]
     
+    @State private var player: AVAudioPlayer? // Audio player state variable
+
     @State private var isActive = false
     @State private var size = 0.8
     @State private var opacity = 0.5
-
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color(.white), Color(hex: 0x63B256)]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea(.all)
             
             if isActive {
-                if let tree = trees.first {
-                    if tree.namedStatus {
-                        ContentView()
-                    } else {
-                        OpeningView()
-                    }
-                }
+                PreAlertView()
+                    .modelContainer(SwiftDataContainer.container)
             } else {
                 GeometryReader { geometry in
                     VStack {
@@ -65,6 +63,21 @@ struct SplashScreen: View {
             }
         }
         .navigationBarBackButtonHidden(true) // Hide back button
+        .onAppear {
+            guard let url = Bundle.main.url(forResource: "Background_Music", withExtension: "mp3") else { return }
+            do {
+                try player = AVAudioPlayer(contentsOf: url)
+                player?.volume = 0.5
+                player?.numberOfLoops = -1 // infinite loop music!
+                try player?.prepareToPlay()
+                player?.play()
+            } catch {
+                print("Error playing audio:", error.localizedDescription)
+            }
+        }
+        .onDisappear { // Stop audio on disappear
+            player?.stop()
+        }
     }
 }
 

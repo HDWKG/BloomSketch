@@ -91,11 +91,10 @@ struct CollectionView: View {
                     }
                 }
             }
-            .sheet(isPresented: $showDetailSheet) {
-                if let drawing = selectedDrawing {
-                    CollectionDetailView(drawing: drawing)
-                }
+            .sheet(item: $selectedDrawing) { drawing in
+                CollectionDetailView(drawing: drawing)
             }
+
         }
     }
 }
